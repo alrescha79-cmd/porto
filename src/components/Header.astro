@@ -10,7 +10,7 @@ import Container from "@components/Container.astro";
 <header class="w-full ">
   <Container size="md">
   <div
-    class="container z-50 fixed top-0 left-0 right-0 flex justify-evenly items-center p-4 w-full"
+    class="container z-50 fixed top-0 left-0 right-0 flex justify-evenly items-center p-4 w-full bg-white/80 dark:bg-black/80 transition-colors duration-300 ease-in-out backdrop:blur-md"
   >
     <div>
       <a
@@ -27,9 +27,9 @@ import Container from "@components/Container.astro";
     </div>
     <div>
       <nav
-        class="fixed md:sticky bottom-0 left-0 right-0 bg-primary-foreground w-full px-2 py-4 z-50 "
+        class="fixed md:sticky bottom-0 left-0 right-0 bg-primary-foreground w-full px-2 py-4 z-50 bg-white/80 dark:bg-black/80 transition-colors duration-300 ease-in-out backdrop:blur-md"
       >
-        <ul class="flex justify-evenly">
+        <ul class="flex justify-evenly md:gap-4">
           {
             LINKS.map((LINK) => (
               <a
