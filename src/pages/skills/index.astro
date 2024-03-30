@@ -1,0 +1,23 @@
+---
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import { SKILLS } from "@consts"
+import Skills from "@components/Skills"
+
+---
+
+<PageLayout title={SKILLS.TITLE} description={SKILLS.DESCRIPTION}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {SKILLS.TITLE}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate">
+      <Skills />
+    </div>
+  </BottomLayout>
+</PageLayout>
+
+
