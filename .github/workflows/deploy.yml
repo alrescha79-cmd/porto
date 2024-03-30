@@ -30,7 +30,7 @@ jobs:
           # **Specify pnpm version using either method:**
           # Method 1 (Recommended): Check your package.json for "packageManager".
           # Method 2 (Less Preferred):
-          # package-manager: pnpm@latest  # Uncomment to explicitly use pnpm's latest version.
+           package-manager: pnpm@latest  # Uncomment to explicitly use pnpm's latest version.
           # version: 'your-desired-pnpm-version'  # Uncomment to use a specific version.
 
   deploy:
