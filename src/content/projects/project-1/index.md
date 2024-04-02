@@ -1,14 +1,15 @@
 ---
-title: "Project One"
+title: "Project PHP"
 summary: "Lorem ipsum dolor sit amet"
 date: "Mar 18 2022"
 draft: false
 tags:
-- Astro
+- PHP
 - Javascript
-- Typescript
+- HTML
 - Tailwind
 - SolidJs
+- JQuery
 demoUrl: https://astro-sphere-demo.vercel.app
 repoUrl: https://github.com/markhorn-dev/astro-sphere
 ---

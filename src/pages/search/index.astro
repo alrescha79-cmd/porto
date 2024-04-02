@@ -23,7 +23,7 @@ const data = [...posts, ...projects] as CollectionEntry<"blog">[]
   </TopLayout>
   <BottomLayout>
     <div class="animate">
-      <Search client:load data={data}/>
+      <Search client:load/>
     </div>
   </BottomLayout>
 </PageLayout>
