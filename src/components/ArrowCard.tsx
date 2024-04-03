@@ -6,9 +6,9 @@ type Props = {
   pill?: boolean
 }
 
-export default function ArrowCard({entry, pill}: Props) {
-    return (
-      <a href={`/${entry.collection}/${entry.slug}`} className="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
+export default function ArrowCard({ entry, pill }: Props) {
+  return (
+    <a href={`/${entry.collection}/${entry.slug}`} className="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
       <div className="w-full group-hover:text-black group-hover:dark:text-white blend">
         <div className="flex flex-wrap items-center gap-2">
           {pill &&
@@ -28,7 +28,7 @@ export default function ArrowCard({entry, pill}: Props) {
           {entry.data.summary}
         </div>
         <ul className="flex flex-wrap mt-2 gap-1">
-          {entry.data.tags.map((tag:string) => (
+          {entry.data.tags.map((tag: string) => (
             <li className="text-xs uppercase py-0.5 px-1 rounded bg-black/5 dark:bg-white/20 text-black/75 dark:text-white/75">
               {tag}
             </li>
@@ -40,5 +40,5 @@ export default function ArrowCard({entry, pill}: Props) {
         <polyline points="12 5 19 12 12 19" className="translate-x-0 group-hover:translate-x-1 transition-all duration-300 ease-in-out" />
       </svg>
     </a>
-   )
+  )
 }

@@ -1,15 +1,40 @@
 ---
-title: "Project Two"
-summary: "Lorem ipsum dolor sit amet"
-date: "Mar 17 2022"
+title: "Decision Support System for New Factory Establishment"
+summary: "Description:
+This Decision Support System (DSS) empowers you to choose the optimal location
+for your new factory using the Simple Additive Weighting (SAW) method."
+date: "Mar 17 2023"
 draft: false
 tags:
-- Svelte
-- Sveltekit
-- Typescript
-- Tailwind
+- PHP
+- Bootstrap
+- JQuery
+- MySQL
+
+repoUrl: https://github.com/alrescha79-cmd/sistem-pendukung-keputusan
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+![alt text](<../../../../public/SPK SAW.png>)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+### Description:
+This Decision Support System (DSS) empowers you to choose the optimal location
+for your new factory using the Simple Additive Weighting (SAW) method.
+
+#### The DSS is equipped with:
+- `Automatic Search Feature`: Effortlessly find your desired location.
+- `Organized Tables`: Structured and easy-to-read data presentation.
+
+#### Comprehensive Data Management: 
+- Add, edit, and delete data with ease.
+- Manage alternatives (potential locations) and criteria based on real-
+world conditions.
+- Input alternative values for more accurate results.
+- Printable Results: Save and share ranking results conveniently.
+
+#### Tech Stack:
+- `Client`: PHP, JavaScript, Bootstrap, JQuery, dataTables, Admin LTE, Chart
+JS, fpdf.
+- `Server`: Xampp, MySQL.
+
+### Repo
+[https://github.com/alrescha79-cmd/sistem-pendukung-keputusan](https://github.com/alrescha79-cmd/sistem-pendukung-keputusan)

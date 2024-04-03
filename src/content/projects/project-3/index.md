@@ -1,12 +1,35 @@
 ---
-title: "Project Three"
-summary: "Lorem ipsum dolor sit amet"
-date: "Mar 16 2022"
+title: "News Portal"
+summary: "A news portal web application with separate dashboards for Admin and Users."
+date: "Mar 16 2023"
 draft: false
 tags:
-- Vue
-- Javascript
-- Tailwind
----
+- PHP
+- Bootstrap
+- MySQL
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+repoUrl: https://github.com/alrescha79-cmd/portal-berita-php
+---
+![alt text](<../../../../public/thumbnail Berita.png>)
+
+### Description:
+A news portal web application with separate dashboards for Admin and Users.
+
+#### Admin Features:
+- Add, edit, and delete news and users.
+- Manage user roles and permissions.
+- View comprehensive statistics and analytics.
+
+#### User Features:
+- Browse and read news articles.
+- View news categories and tags.
+- Search for specific news items.
+
+#### Tech Stack:
+- `Client`: PHP, JavaScript, Bootstrap, JQuery, dataTables, Admin LTE, Chart
+JS.
+- `Server`: Xampp, MySQL.
+
+
+#### Repo 
+[https://github.com/alrescha79-cmd/portal-berita-php](https://github.com/alrescha79-cmd/portal-berita-php)

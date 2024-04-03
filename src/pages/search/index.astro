@@ -3,7 +3,6 @@ import { type CollectionEntry, getCollection } from "astro:content"
 import PageLayout from "../../layouts/PageLayout.astro"
 import TopLayout from "../../layouts/TopLayout.astro"
 import BottomLayout from "../../layouts/BottomLayout.astro"
-import Search from "../../components/Search"
 import { SEARCH } from "../../consts"
 
 ---
@@ -16,7 +15,9 @@ import { SEARCH } from "../../consts"
   </TopLayout>
   <BottomLayout>
     <div class="animate">
-      <Search client:load/>
+      <div class="container flex justify-center items-center border-b-current w-full h-32">
+        <h1 class="text-4xl">Update Soon...</h1>
+      </div>
     </div>
   </BottomLayout>
 </PageLayout>
