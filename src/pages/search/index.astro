@@ -6,11 +6,6 @@ import BottomLayout from "../../layouts/BottomLayout.astro"
 import Search from "../../components/Search"
 import { SEARCH } from "../../consts"
 
-const posts = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
-
-const projects = (await getCollection("projects"))
-  .filter(post => !post.data.draft)
 ---
 
 <PageLayout title={SEARCH.TITLE} description={SEARCH.DESCRIPTION}>
