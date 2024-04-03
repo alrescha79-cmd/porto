@@ -1,4 +1,4 @@
-import type { Site, Page, Links, Socials } from "@types"
+import type { Site, Page, Links, Socials } from "./types"
 
 // Global
 export const SITE: Site = {
