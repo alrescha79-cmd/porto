@@ -1,5 +1,3 @@
-import ArrowCard from "@components/ArrowCard"
-
 const Search = () => {
   return (
     <>

@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import ArrowCard from "@components/ArrowCard"
-import StackCard from "@components/StackCard.astro"
-import { SITE, SOCIALS } from "@consts"
+import PageLayout from "../layouts/PageLayout.astro"
+import ArrowCard from "../components/ArrowCard"
+import StackCard from "../components/StackCard.astro"
+import { SITE, SOCIALS } from "../consts"
 
 
 const projects = (await getCollection("projects"))

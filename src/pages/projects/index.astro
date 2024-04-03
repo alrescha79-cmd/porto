@@ -1,10 +1,10 @@
 ---
 import { getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import TopLayout from "@layouts/TopLayout.astro"
-import BottomLayout from "@layouts/BottomLayout.astro"
-import Projects from "@components/Projects"
-import { PROJECTS } from "@consts"
+import PageLayout from "../../layouts/PageLayout.astro"
+import TopLayout from "../../layouts/TopLayout.astro"
+import BottomLayout from "../../layouts/BottomLayout.astro"
+import Projects from "../../components/Projects"
+import { PROJECTS } from "../../consts"
 
 const projects = (await getCollection("projects"))
   .filter(project => !project.data.draft)

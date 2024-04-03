@@ -1,4 +1,4 @@
-import { cardData } from "@data.js"
+import { cardData } from "../data.js"
 import Card from "./Card"
 
 

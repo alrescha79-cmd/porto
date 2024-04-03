@@ -1,7 +1,7 @@
 import type { CollectionEntry } from "astro:content"
 import { createEffect, createSignal } from "solid-js"
-import ArrowCard from "@components/ArrowCard"
-import { cn } from "@lib/utils"
+import ArrowCard from "../components/ArrowCard"
+import { cn } from "../lib/utils"
 
 type Props = {
   tags: string[]
