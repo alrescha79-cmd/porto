@@ -11,8 +11,6 @@ const posts = (await getCollection("blog"))
 
 const projects = (await getCollection("projects"))
   .filter(post => !post.data.draft)
-
-const data = [...posts, ...projects] as CollectionEntry<"blog">[]
 ---
 
 <PageLayout title={SEARCH.TITLE} description={SEARCH.DESCRIPTION}>
