@@ -1,16 +1,15 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content"
 import PageLayout from "../../layouts/PageLayout.astro"
 import TopLayout from "../../layouts/TopLayout.astro"
 import BottomLayout from "../../layouts/BottomLayout.astro"
-import { SEARCH } from "../../consts"
+import { CONTACT } from "../../consts"
 
 ---
 
-<PageLayout title={SEARCH.TITLE} description={SEARCH.DESCRIPTION}>
+<PageLayout title={CONTACT.TITLE} description={CONTACT.DESCRIPTION}>
   <TopLayout>
     <div class="animate page-heading">
-      {SEARCH.TITLE}
+      {CONTACT.TITLE}
     </div>
   </TopLayout>
   <BottomLayout>

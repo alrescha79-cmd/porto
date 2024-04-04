@@ -3,7 +3,7 @@ import type { Site, Page, Links, Socials } from "./types"
 // Global
 export const SITE: Site = {
   TITLE: "Anggun Caksono",
-  DESCRIPTION: "Welcome to My Personal Website",
+  DESCRIPTION: "Saya adalah front-end developer yang berfokus pada pengembangan aplikasi web dan saat ini sedang menjalani program studi independen di Bangkit Academy 2024.",
   AUTHOR: "Anggun Caksono",
 }
 
@@ -14,7 +14,7 @@ export const PROJECTS: Page = {
 }
 
 // Work Page
-export const WORK: Page = {
+export const CERTIFICATIONS: Page = {
   TITLE: "Certifications",
   DESCRIPTION: "A list of certifications I have acquired over the years.",
 }
@@ -28,8 +28,8 @@ export const SKILLS: Page = {
 
 
 // Search Page
-export const SEARCH: Page = {
-  TITLE: "Contact",
+export const CONTACT: Page = {
+  TITLE: "Contact Me",
   DESCRIPTION: "Get in touch with me.",
 }
 
@@ -49,7 +49,7 @@ export const LINKS: Links = [
   },
   { 
     TEXT: "Certifications", 
-    HREF: "/work", 
+    HREF: "/certifications", 
   },
 ]
 

@@ -1,27 +1,25 @@
 ---
-title: "Terms of Use"
-date: "03/07/2024"
+title: "Terms and Conditions"
+date: "04/04/2024"
 ---
 
-Please read these Terms of Use ("Terms", "Terms of Use") carefully before using the [Your Website URL] website (the "Service") operated by [Your Company Name] ("us", "we", or "our").
+<p>Welcome to cakson.my.id By accessing this website, we assume you accept these terms and conditions. Do not continue to use cakson.my.id if you do not agree to take all of the terms and conditions stated on this page.</p>
 
-#### Agreement to Terms
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet massa ut neque consequat congue. Sed id ipsum vitae sem imperdiet suscipit. Nulla facilisi. Morbi quis nibh at nunc pulvinar rhoncus. Proin porttitor dapibus dolor, id fermentum urna eleifend et. In feugiat pretium erat nec vestibulum.
+#
 
 #### Intellectual Property Rights
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet massa ut neque consequat congue. Sed id ipsum vitae sem imperdiet suscipit. Nulla facilisi. Morbi quis nibh at nunc pulvinar rhoncus. Proin porttitor dapibus dolor, id fermentum urna eleifend et. In feugiat pretium erat nec vestibulum.
+Other than the content you own, under these terms, cakson.my.id and/or its licensors own all the intellectual property rights and materials contained in this website.
 
-#### User Representations
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet massa ut neque consequat congue. Sed id ipsum vitae sem imperdiet suscipit. Nulla facilisi. Morbi quis nibh at nunc pulvinar rhoncus. Proin porttitor dapibus dolor, id fermentum urna eleifend et. In feugiat pretium erat nec vestibulum.
+#### Restrictions
+##### You are specifically restricted from all of the following:
+- Publishing any website material in any other media
+- Selling, sublicensing, and/or otherwise commercializing any website material
+- Using this website in any way that is or may be damaging to this website
+- Engaging in any data mining, data harvesting, data extracting, or any other similar activity in relation to this website;
+- Certain areas of this website are restricted from being accessed by you and cakson.my.id may further restrict access by you to any areas of this website, at any time, in absolute discretion.
 
-#### Links to Other Websites
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet massa ut neque consequat congue. Sed id ipsum vitae sem imperdiet suscipit. Nulla facilisi. Morbi quis nibh at nunc pulvinar rhoncus. Proin porttitor dapibus dolor, id fermentum urna eleifend et. In feugiat pretium erat nec vestibulum.
+#### Privacy Policy
+We value your privacy and we are committed to protecting your personal information. Our Privacy Policy explains what information we collect, how we use it, and how we protect it. By accessing or using our website, you agree to our Privacy Policy. Please read our Privacy Policy carefully.
 
-#### Termination
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet massa ut neque consequat congue. Sed id ipsum vitae sem imperdiet suscipit. Nulla facilisi. Morbi quis nibh at nunc pulvinar rhoncus. Proin porttitor dapibus dolor, id fermentum urna eleifend et. In feugiat pretium erat nec vestibulum.
-
-#### Governing Law
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet massa ut neque consequat congue. Sed id ipsum vitae sem imperdiet suscipit. Nulla facilisi. Morbi quis nibh at nunc pulvinar rhoncus. Proin porttitor dapibus dolor, id fermentum urna eleifend et. In feugiat pretium erat nec vestibulum.
-
-#### Changes to These Terms of Use
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet massa ut neque consequat congue. Sed id ipsum vitae sem imperdiet suscipit. Nulla facilisi. Morbi quis nibh at nunc pulvinar rhoncus. Proin porttitor dapibus dolor, id fermentum urna eleifend et. In feugiat pretium erat nec vestibulum.
+#### Governing Law & Jurisdiction
+These terms will be governed by and interpreted in accordance with the laws of Indonesia, and you submit to the non-exclusive jurisdiction of the state and federal courts located in East Java for the resolution of any disputes.
