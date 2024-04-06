@@ -26,9 +26,9 @@ A news portal web application with separate dashboards for Admin and Users.
 - Search for specific news items.
 
 #### Tech Stack:
-- `Client`: PHP, JavaScript, Bootstrap, JQuery, dataTables, Admin LTE, Chart
+- Client: PHP, JavaScript, Bootstrap, JQuery, dataTables, Admin LTE, Chart
 JS.
-- `Server`: Xampp, MySQL.
+- Server: Xampp, MySQL.
 
 
 #### Repo 

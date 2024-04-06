@@ -21,8 +21,8 @@ This Decision Support System (DSS) empowers you to choose the optimal location
 for your new factory using the Simple Additive Weighting (SAW) method.
 
 #### The DSS is equipped with:
-- `Automatic Search Feature`: Effortlessly find your desired location.
-- `Organized Tables`: Structured and easy-to-read data presentation.
+- Automatic Search Feature: Effortlessly find your desired location.
+- Organized Tables: Structured and easy-to-read data presentation.
 
 #### Comprehensive Data Management: 
 - Add, edit, and delete data with ease.
@@ -32,9 +32,9 @@ world conditions.
 - Printable Results: Save and share ranking results conveniently.
 
 #### Tech Stack:
-- `Client`: PHP, JavaScript, Bootstrap, JQuery, dataTables, Admin LTE, Chart
+- Client: PHP, JavaScript, Bootstrap, JQuery, dataTables, Admin LTE, Chart
 JS, fpdf.
-- `Server`: Xampp, MySQL.
+- Server: Xampp, MySQL.
 
 ### Repo
 [https://github.com/alrescha79-cmd/sistem-pendukung-keputusan](https://github.com/alrescha79-cmd/sistem-pendukung-keputusan)
