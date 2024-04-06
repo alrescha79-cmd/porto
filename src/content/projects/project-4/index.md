@@ -1,16 +1,18 @@
 ---
 title: "Multittols"
-summary: "Lorem ipsum dolor sit amet"
+summary: "Website multi fungsi, yang siap membantu berbagai kebutahan Anda secara mudah dan gratis."
 date: "Mar 15 2022"
 draft: false
 tags:
 - TailwindCSS
-- Javascript
+- CSS
 - HTML
 
-demoUrl: https://github.com/alrescha79-cmd/portal-berita-php
-repoUrl: https://github.com/alrescha79-cmd/portal-berita-php
+demoUrl: https://alrescha79-cmd.github.io/multitools/
+repoUrl: https://github.com/alrescha79-cmd/multitools
 ---
+
+![!\[!\\[ChatDos\\] ()\](<../../../../public/thumbnail mtools.png>)](<../../../../public/thumbail mtools.png>)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. 
 

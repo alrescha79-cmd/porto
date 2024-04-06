@@ -36,7 +36,7 @@ export const CONTACT: Page = {
 // Links
 export const LINKS: Links = [
   { 
-    TEXT: "Home", 
+    TEXT: "Home",
     HREF: "/", 
   },
   { 
