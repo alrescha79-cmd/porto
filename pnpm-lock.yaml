@@ -71,6 +71,9 @@ dependencies:
   solid-js:
     specifier: ^1.8.15
     version: 1.8.15
+  sweetalert2:
+    specifier: ^11.6.13
+    version: 11.10.7
   tailwind-merge:
     specifier: ^2.2.1
     version: 2.2.2
@@ -5134,6 +5137,10 @@ packages:
   /supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+    dev: false
+
+  /sweetalert2@11.10.7:
+    resolution: {integrity: sha512-5Jlzrmaitay6KzU+2+LhYu9q+L4v/dZ8oZyEDH14ep0C/QilCnFLHmqAyD/Lhq/lm5DiwsOs6Tr58iv8k3wyGg==}
     dev: false
 
   /synckit@0.9.0:
