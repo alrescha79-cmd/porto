@@ -1,9 +1,9 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
-import TopLayout from "../../layouts/TopLayout.astro";
-import BottomLayout from "../../layouts/BottomLayout.astro";
-import { CONTACT } from "../../consts";
-import Socmed from "../../components/Socmed.astro";
+import PageLayout from "../../layouts/PageLayout.astro"
+import TopLayout from "../../layouts/TopLayout.astro"
+import BottomLayout from "../../layouts/BottomLayout.astro"
+import { CONTACT } from "../../consts"
+import FormContact from "../../components/FormContact.astro"
 ---
 
 <PageLayout title={CONTACT.TITLE} description={CONTACT.DESCRIPTION}>
@@ -13,14 +13,6 @@ import Socmed from "../../components/Socmed.astro";
     </div>
   </TopLayout>
   <BottomLayout>
-    <div class="animate">
-      <h1 class="text-xl">Form Contact</h1>
-      <div
-        class="container flex justify-center items-center border-b-current w-full h-32"
-      >
-        <h1 class="text-4xl">Update Soon...</h1>
-      </div>
-      <Socmed />
-    </div>
+    <FormContact />
   </BottomLayout>
 </PageLayout>

@@ -9,9 +9,8 @@ import react from "@astrojs/react"
 // https://astro.build/config
 export default defineConfig({
   site: "https://cakson.my.id",
-  // base: "porto",
   integrations: [mdx(), sitemap(), solidJs(), tailwind({
     applyBaseStyles: false
   }), react()],
-  jsx: "react"
+  jsx: "react",
 })

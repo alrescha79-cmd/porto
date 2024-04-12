@@ -29,7 +29,7 @@ export const SKILLS: Page = {
 
 // Search Page
 export const CONTACT: Page = {
-  TITLE: "Contact Me",
+  TITLE: "Get in touch",
   DESCRIPTION: "Get in touch with me.",
 }
 

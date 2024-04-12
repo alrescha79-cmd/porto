@@ -1,0 +1,43 @@
+---
+import ContactForm from "./ContactForm"
+import { SOCIALS } from "../consts"
+---
+
+<div class="animate">
+  <p class="text-md">
+    I'm currently available for freelance work. If you have a project that you
+    want to get started, think you need my help with something or just fancy
+    saying hey, then get in touch.
+  </p>
+  <div class="container border-b-current w-full">
+    <ContactForm client:load />
+  </div>
+
+  <section class="animate">
+    <div>
+      <p>Or, you can also reach me via email or on social media.</p>
+      <div class="grid grid-cols-4 gap-y-2 mt-4 auto-cols-min">
+        {
+          SOCIALS.map((social) => (
+            <>
+              <div class="col-span-1 flex items-center gap-1">
+                <span class="whitespace-nowrap truncate">{social.NAME}</span>
+              </div>
+              <div class="col-span-3 truncate">
+                <a
+                  href={social.HREF}
+                  target="_blank"
+                  class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend"
+                >
+                  <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
+                    {social.TEXT}
+                  </span>
+                </a>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</div>
