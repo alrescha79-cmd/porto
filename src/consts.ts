@@ -13,13 +13,13 @@ export const PROJECTS: Page = {
   DESCRIPTION: "Recent projects I have worked on.",
 }
 
-// Work Page
+// Certifications Page
 export const CERTIFICATIONS: Page = {
   TITLE: "Certifications",
   DESCRIPTION: "A list of certifications I have acquired over the years.",
 }
 
-// Blog Page
+// Skills Page
 export const SKILLS: Page = {
   TITLE: "Skills",
   DESCRIPTION: "A list of skills I have acquired over the years.",
@@ -27,7 +27,7 @@ export const SKILLS: Page = {
 
 
 
-// Search Page
+// Contact Page
 export const CONTACT: Page = {
   TITLE: "Get in touch",
   DESCRIPTION: "Get in touch with me.",
@@ -37,18 +37,22 @@ export const CONTACT: Page = {
 export const LINKS: Links = [
   { 
     TEXT: "Home",
+    ICON: "iconamoon--home-light",
     HREF: "/", 
   },
   { 
     TEXT: "Projects", 
+    ICON: "fluent--apps-32-regular",
     HREF: "/projects", 
   },
   { 
     TEXT: "Skills", 
+    ICON: "ri--code-box-line",
     HREF: "/skills", 
   },
   { 
     TEXT: "Certifications", 
+    ICON: "tabler--certificate",
     HREF: "/certifications", 
   },
 ]
