@@ -1,20 +1,88 @@
 ---
+import { format } from "date-fns"
 import PageLayout from "../../layouts/PageLayout.astro"
 import TopLayout from "../../layouts/TopLayout.astro"
 import BottomLayout from "../../layouts/BottomLayout.astro"
+import CertificateCard from "../../components/CertificateCard.astro"
 import { CERTIFICATIONS } from "../../consts"
 
+const response = await fetch("https://backend-porto.vercel.app/certificates")
+const datas = await response.json();
 ---
 
-<PageLayout title={CERTIFICATIONS.TITLE} description={CERTIFICATIONS.DESCRIPTION}>
+<PageLayout
+  title={CERTIFICATIONS.TITLE}
+  description={CERTIFICATIONS.DESCRIPTION}
+>
   <TopLayout>
     <div class="animate page-heading">
       {CERTIFICATIONS.TITLE}
     </div>
   </TopLayout>
   <BottomLayout>
-    <div class="animate container flex justify-center items-center border-b-current w-full h-32">
-      <h1 class="text-4xl">Update Soon...</h1>
+    <div class="animate my-4">
+      <div
+        class="text-sm font-semibold uppercase mb-2 text-black dark:text-white"
+      >
+        Filter
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button
+          class="px-2 py-1 text-sm font-semibold text-black dark:text-white bg-white dark:bg-black border border-black dark:border-white rounded-md"
+        >
+          Coursera
+        </button>
+        <button
+          class="px-2 py-1 text-sm font-semibold text-black dark:text-white bg-white dark:bg-black border border-black dark:border-white rounded-md"
+        >
+          Dicoding
+        </button>
+        <button
+          class="px-2 py-1 text-sm font-semibold text-black dark:text-white bg-white dark:bg-black border border-black dark:border-white rounded-md"
+        >
+          Google Cloud Skill Boost
+        </button>
+        <button
+        class="px-2 py-1 text-sm font-semibold text-black dark:text-white bg-white dark:bg-black border border-black dark:border-white rounded-md"
+      >
+        Other
+      </button>
+        <button
+          class="px-2 py-1 text-sm font-semibold text-black dark:text-white bg-white dark:bg-black border border-black dark:border-white rounded-md"
+        >
+          Oldest to Newest
+        </button>
+        <button
+          class="px-2 py-1 text-sm font-semibold text-black dark:text-white bg-white dark:bg-black border border-black dark:border-white rounded-md"
+        >
+          Newest to Oldest
+        </button>
+    </div>
+    </div>
+    <div
+      class="animate container flex flex-wrap justify-center items-center border-b-current w-full gap-2"
+    >
+      {
+        datas.map(
+          (data: {
+            imageUrl: string;
+            image: string;
+            provider: string;
+            date: string;
+            title: string;
+            link: string;
+          }) => (
+            <CertificateCard
+              imageUrl={data.image}
+              imageAlt={data.image}
+              provider={data.provider}
+              date={format(new Date(data.date), "MMMM dd, yyyy")}
+              title={data.title}
+              link={data.link}
+            />
+          )
+        )
+      }
     </div>
   </BottomLayout>
 </PageLayout>

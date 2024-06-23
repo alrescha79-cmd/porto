@@ -1,0 +1,38 @@
+---
+export interface Props {
+  imageUrl: string;
+  imageAlt: string;
+  provider: string;
+  date: string;
+  title: string;
+  link: string;
+}
+const { imageUrl, imageAlt, provider, date, title, link } = Astro.props;
+---
+
+<div
+  class="max-w-sm mb-6 md:md-0 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg"
+>
+  <a href={link} target="_blank">
+    <img
+      src={imageUrl}
+      class="w-72 mb-4 rounded-lg shadow-none transition duration-500 ease-in-out group-hover:shadow-lg"
+      alt={imageAlt}
+    />
+    <div class="flex items-center mb-3">
+      <span
+        class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold leading-5 text-white font-display mr-2 capitalize bg-red-500"
+      >
+        {provider}
+      </span>
+      <p class="font-mono text-xs font-normal opacity-75">
+        {date}
+      </p>
+    </div>
+    <p class="font-display max-w-[300px] text-xl font-bold leading-tight">
+      <span class="link-underline link-underline-black">
+        {title}
+      </span>
+    </p>
+  </a>
+</div>
