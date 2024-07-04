@@ -1,8 +1,6 @@
-import React from "react"
-
 const CertificateCard = ({ image, imageAlt, provider, date, name, link }) => {
   return (
-    <div className="max-w-sm mb-6 md:md-0 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg">
+    <div className="max-w-sm mb-6 md:md-0 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
       <div className="">
         <a href={link} target="_blank">
           <img

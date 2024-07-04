@@ -5,15 +5,15 @@ date: "June 30 2024"
 draft: false
 tags:
 - FullStack
+- TypeScript
 - Next Js
 - Supabase
-- Vercel
 
 repoUrl: https://github.com/alrescha79-cmd/project-srp-pati
 demoUrl: https://srp-theta.vercel.app/
 ---
 
-![alt text](<../../../../public/SPK SAW.png>)
+![alt text](<../../../../public/srp.png>)
 
 ### Description
 
@@ -28,7 +28,7 @@ Web landing page with admin dashboard
 
 #### Tech Stack
 
-- Client: Next Js
+- Client: Next Js, typescript
 - Server: Supabase, Vercel
 
 ### Repo

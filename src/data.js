@@ -1,9 +1,9 @@
-// data.js
 export const cardData = [
     {
         title: "Programming",
         items: [
             { name: "JavaScript", image: "skills/javascript.svg", alt: "JavaScript logo" },
+            { name: "TypeScript", image: "skills/typescript.svg", alt: "typeScript logo" },
             { name: "Kotlin", image: "skills/kotlin.svg", alt: "kotlin logo" },
             { name: "PHP", image: "skills/php.svg", alt: "PHP logo" },
             { name: "HTML", image: "skills/html.svg", alt: "HTML logo" },

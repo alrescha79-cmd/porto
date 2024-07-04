@@ -1,10 +1,9 @@
-import React from "react"
 import CertificateCard from "../components/CertificateCard"
 import { certificateData } from "../data"
 
 function CertificatePage() {
     return (
-                <div className="animate container flex flex-wrap justify-center items-center border-b-current w-full gap-2">
+                <div className="animate md:px-4 flex flex-wrap justify-center items-center border-b-current w-full gap-2">
                     {certificateData.map((data) => (
                         <CertificateCard
                             key={data.id}

@@ -13,7 +13,7 @@ repoUrl: https://github.com/ENTS-H112/mira-backend
 demoUrl: https://mira-backend-abwswzd4sa-et.a.run.app/
 ---
 
-![alt text](<../../../../public/SPK SAW.png>)
+![alt text](<../../../../public/Mira Pitch.png>)
 
 ### Description
 

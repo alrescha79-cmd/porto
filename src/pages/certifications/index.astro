@@ -11,11 +11,11 @@ import { CERTIFICATIONS } from "../../consts"
   description={CERTIFICATIONS.DESCRIPTION}
 >
   <TopLayout>
-    <div class="animate page-heading">
+    <div class="animate page-heading text-xl">
       {CERTIFICATIONS.TITLE}
     </div>
   </TopLayout>
     <div class="animate">
-      <CertificatePage />
+      <CertificatePage client:load />
     </div>
 </PageLayout>

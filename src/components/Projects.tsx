@@ -1,3 +1,4 @@
+// projects.tsx
 import type { CollectionEntry } from "astro:content"
 import { createEffect, createSignal } from "solid-js"
 import ArrowCard from "../components/ArrowCard"
@@ -68,3 +69,4 @@ export default function Projects({ data, tags }: Props) {
     </div>
   )
 }
+

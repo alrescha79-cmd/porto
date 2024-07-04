@@ -1,6 +1,6 @@
 ---
 title: "MIRA Admin Dashboard"
-summary: "Admin dashboard to manage patient data and radiology results."
+summary: "Admin dashboard to manage patient data and radiology results"
 date: "April 20 2024"
 draft: false
 tags:
@@ -12,7 +12,7 @@ repoUrl: https://github.com/ENTS-H112/mira-dashboard
 demoUrl: https://dashboard-abwswzd4sa-et.a.run.app/
 ---
 
-![alt text](<../../../../public/SPK SAW.png>)
+![alt text](<../../../../public/admin-mira.png>)
 
 #### Description
 
