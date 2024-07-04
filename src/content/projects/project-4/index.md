@@ -5,8 +5,6 @@ date: "Mar 15 2022"
 draft: false
 tags:
 - TailwindCSS
-- CSS
-- HTML
 
 demoUrl: https://alrescha79-cmd.github.io/multitools/
 repoUrl: https://github.com/alrescha79-cmd/multitools

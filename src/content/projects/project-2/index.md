@@ -7,8 +7,6 @@ date: "Mar 17 2023"
 draft: false
 tags:
 - PHP
-- Bootstrap
-- JQuery
 - MySQL
 
 repoUrl: https://github.com/alrescha79-cmd/sistem-pendukung-keputusan

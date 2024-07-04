@@ -1,3 +1,4 @@
+// data.js
 export const cardData = [
     {
         title: "Programming",
@@ -43,5 +44,56 @@ export const cardData = [
             { name: "Lunacy", image: "skills/lunacy.svg", alt: "Lunacy logo" },
             { name: "Adobe XD", image: "skills/xd.svg", alt: "Adobe XD logo" },
         ]
+    },
+]
+
+export const certificateData = [
+    {
+        id: 4,
+        name: "Google IT Support",
+        provider: "Coursera",
+        image: "certificates/it_support.png",
+        date: "2024-03-12",
+        link: "https://coursera.org/verify/professional-cert/ZJ2CZ5UY3P77",
+    },
+    {
+        id: 5,
+        name: "IT Security: Defense against the digital dark arts",
+        provider: "Coursera",
+        image: "certificates/coursera2.png",
+        date: "2024-03-12",
+        link: "https://coursera.org/verify/JKUX57YS3LDG",
+    },
+    {
+        id: 6,
+        name: "System Administration and IT Infrastructure Services",
+        provider: "Coursera",
+        image: "certificates/coursera3.png",
+        date: "2024-02-22",
+        link: "https://coursera.org/verify/BVGLJ2YTNK25",
+    },
+    {
+        id: 7,
+        name: "Technical Support Fundamentals",
+        provider: "Coursera",
+        image: "certificates/coursera4.png",
+        date: "2024-02-23",
+        link: "https://coursera.org/verify/F6XFRJE63KWV",
+    },
+    {
+        id: 8,
+        name: "The Bits and Bytes of Computer Networking",
+        provider: "Coursera",
+        image: "certificates/coursera5.png",
+        date: "2024-02-20",
+        link: "https://coursera.org/verify/W29JM3UU2RPQ",
+    },
+    {
+        id: 9,
+        name: "Operating Systems and You : Becoming a Power User",
+        provider: "Coursera",
+        image: "certificates/coursera6.png",
+        date: "2024-03-12",
+        link: "https://coursera.org/verify/QE2P65GSJ4NE",
     },
 ]

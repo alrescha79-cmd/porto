@@ -3,7 +3,7 @@ import type { Site, Page, Links, Socials } from "./types"
 // Global
 export const SITE: Site = {
   TITLE: "Anggun Caksono",
-  DESCRIPTION: "Saya adalah front-end developer yang berfokus pada pengembangan aplikasi web dan saat ini sedang menjalani program studi independen di Bangkit Academy 2024.",
+  DESCRIPTION: "Saya adalah Full Stack developer yang berfokus pada pengembangan aplikasi web dan saat ini sedang menjalani program studi independen di Bangkit Academy 2024.",
   AUTHOR: "Anggun Caksono",
 }
 

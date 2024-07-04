@@ -5,7 +5,6 @@ date: "Mar 16 2023"
 draft: false
 tags:
 - PHP
-- Bootstrap
 - MySQL
 
 repoUrl: https://github.com/alrescha79-cmd/portal-berita-php
