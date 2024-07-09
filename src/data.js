@@ -49,6 +49,14 @@ export const cardData = [
 
 export const certificateData = [
     {
+        id: 2,
+        name: "Studi Independen Bersetifikat Angkatan 6",
+        provider: "MSIB",
+        image: "certificates/msib.png",
+        date: "June 30, 2024",
+        link: "https://kampusmerdeka.kemdikbud.go.id/cert/d9aa2ecfff7b1e1addb456ce53bb9d634ddc298d944383",
+    },
+    {
         id: 3,
         name: "Google Cloud Computing Foundations Certificate",
         provider: "Google Cloud Skills Boost",
