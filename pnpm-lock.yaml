@@ -13,10 +13,10 @@ importers:
         version: 0.7.0(typescript@5.4.2)
       '@astrojs/mdx':
         specifier: ^3.1.1
-        version: 3.1.1(astro@4.11.0)
+        version: 3.1.1(astro@4.11.0(typescript@5.4.2))
       '@astrojs/react':
         specifier: ^3.6.0
-        version: 3.6.0(@types/react-dom@18.2.23)(@types/react@18.2.73)(react-dom@18.2.0)(react@18.2.0)(vite@5.3.1)
+        version: 3.6.0(@types/react-dom@18.2.23)(@types/react@18.2.73)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.3.1)
       '@astrojs/rss':
         specifier: ^4.0.6
         version: 4.0.6
@@ -28,7 +28,7 @@ importers:
         version: 4.4.0(solid-js@1.8.15)(vite@5.3.1)
       '@astrojs/tailwind':
         specifier: ^5.1.0
-        version: 5.1.0(astro@4.11.0)(tailwindcss@3.4.1)
+        version: 5.1.0(astro@4.11.0(typescript@5.4.2))(tailwindcss@3.4.1)
       '@emailjs/browser':
         specifier: ^4.3.3
         version: 4.3.3
@@ -46,10 +46,13 @@ importers:
         version: 18.2.23
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.2.0
-        version: 7.2.0(@typescript-eslint/parser@7.2.0)(eslint@8.57.0)(typescript@5.4.2)
+        version: 7.2.0(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.2))(eslint@8.57.0)(typescript@5.4.2)
       '@typescript-eslint/parser':
         specifier: ^7.2.0
         version: 7.2.0(eslint@8.57.0)(typescript@5.4.2)
+      '@vercel/analytics':
+        specifier: ^1.3.1
+        version: 1.3.1(react@18.2.0)
       astro:
         specifier: ^4.11.0
         version: 4.11.0(typescript@5.4.2)
@@ -1126,6 +1129,17 @@ packages:
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+
+  '@vercel/analytics@1.3.1':
+    resolution: {integrity: sha512-xhSlYgAuJ6Q4WQGkzYTLmXwhYl39sWjoMA3nHxfkvG+WdBT25c563a7QhwwKivEOZtPJXifYHR1m2ihoisbWyA==}
+    peerDependencies:
+      next: '>= 13'
+      react: ^18 || ^19
+    peerDependenciesMeta:
+      next:
+        optional: true
+      react:
+        optional: true
 
   '@vitejs/plugin-react@4.3.1':
     resolution: {integrity: sha512-m/V2syj5CuVnaxcUJOQRel/Wr31FFXRFlnOoq1TVtkCxsY5veGMTEmpWHndrhB2U8ScHtCQB1e+4hWYExQc6Lg==}
@@ -2661,6 +2675,9 @@ packages:
     resolution: {integrity: sha512-TM+Z11tHHvQVQKeNlOUonOWnsNM+2IBwZ4vwoi4j3zKzIpc5IDw8WPwCfcc8F17wy6cBcJGbZbFOR0UCuTZHQA==}
     engines: {node: '>=10'}
 
+  server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+
   sharp@0.33.2:
     resolution: {integrity: sha512-WlYOPyyPDiiM07j/UO+E720ju6gtNtHjEGg5vovUk1Lgxyjm2LFO+37Nt/UI3MMh2l6hxTWQWi7qk3cXJTutcQ==}
     engines: {libvips: '>=8.15.1', node: ^18.17.0 || ^20.3.0 || >=21.0.0}
@@ -3277,7 +3294,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@3.1.1(astro@4.11.0)':
+  '@astrojs/mdx@3.1.1(astro@4.11.0(typescript@5.4.2))':
     dependencies:
       '@astrojs/markdown-remark': 5.1.0
       '@mdx-js/mdx': 3.0.1
@@ -3302,7 +3319,7 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/react@3.6.0(@types/react-dom@18.2.23)(@types/react@18.2.73)(react-dom@18.2.0)(react@18.2.0)(vite@5.3.1)':
+  '@astrojs/react@3.6.0(@types/react-dom@18.2.23)(@types/react@18.2.73)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.3.1)':
     dependencies:
       '@types/react': 18.2.73
       '@types/react-dom': 18.2.23
@@ -3334,7 +3351,7 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.0(astro@4.11.0)(tailwindcss@3.4.1)':
+  '@astrojs/tailwind@5.1.0(astro@4.11.0(typescript@5.4.2))(tailwindcss@3.4.1)':
     dependencies:
       astro: 4.11.0(typescript@5.4.2)
       autoprefixer: 10.4.18(postcss@8.4.36)
@@ -4209,7 +4226,7 @@ snapshots:
     dependencies:
       '@types/node': 17.0.45
 
-  '@typescript-eslint/eslint-plugin@7.2.0(@typescript-eslint/parser@7.2.0)(eslint@8.57.0)(typescript@5.4.2)':
+  '@typescript-eslint/eslint-plugin@7.2.0(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.2))(eslint@8.57.0)(typescript@5.4.2)':
     dependencies:
       '@eslint-community/regexpp': 4.10.0
       '@typescript-eslint/parser': 7.2.0(eslint@8.57.0)(typescript@5.4.2)
@@ -4224,6 +4241,7 @@ snapshots:
       natural-compare: 1.4.0
       semver: 7.6.0
       ts-api-utils: 1.3.0(typescript@5.4.2)
+    optionalDependencies:
       typescript: 5.4.2
     transitivePeerDependencies:
       - supports-color
@@ -4236,6 +4254,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 7.2.0
       debug: 4.3.4
       eslint: 8.57.0
+    optionalDependencies:
       typescript: 5.4.2
     transitivePeerDependencies:
       - supports-color
@@ -4257,6 +4276,7 @@ snapshots:
       debug: 4.3.4
       eslint: 8.57.0
       ts-api-utils: 1.3.0(typescript@5.4.2)
+    optionalDependencies:
       typescript: 5.4.2
     transitivePeerDependencies:
       - supports-color
@@ -4275,6 +4295,7 @@ snapshots:
       minimatch: 9.0.3
       semver: 7.6.0
       ts-api-utils: 1.3.0(typescript@5.4.2)
+    optionalDependencies:
       typescript: 5.4.2
     transitivePeerDependencies:
       - supports-color
@@ -4304,6 +4325,12 @@ snapshots:
       eslint-visitor-keys: 3.4.3
 
   '@ungap/structured-clone@1.2.0': {}
+
+  '@vercel/analytics@1.3.1(react@18.2.0)':
+    dependencies:
+      server-only: 0.0.1
+    optionalDependencies:
+      react: 18.2.0
 
   '@vitejs/plugin-react@4.3.1(vite@5.3.1)':
     dependencies:
@@ -6067,8 +6094,9 @@ snapshots:
   postcss-load-config@4.0.2(postcss@8.4.36):
     dependencies:
       lilconfig: 3.1.1
-      postcss: 8.4.36
       yaml: 2.4.1
+    optionalDependencies:
+      postcss: 8.4.36
 
   postcss-nested@6.0.1(postcss@8.4.36):
     dependencies:
@@ -6345,6 +6373,8 @@ snapshots:
 
   seroval@1.0.5: {}
 
+  server-only@0.0.1: {}
+
   sharp@0.33.2:
     dependencies:
       color: 4.2.3
@@ -6594,7 +6624,7 @@ snapshots:
   ts-interface-checker@0.1.13: {}
 
   tsconfck@3.1.0(typescript@5.4.2):
-    dependencies:
+    optionalDependencies:
       typescript: 5.4.2
 
   tslib@2.6.2: {}
@@ -6777,47 +6807,52 @@ snapshots:
       fsevents: 2.3.3
 
   vitefu@0.2.5(vite@5.3.1):
-    dependencies:
+    optionalDependencies:
       vite: 5.3.1
 
   volar-service-css@0.0.45(@volar/language-service@2.2.5):
     dependencies:
-      '@volar/language-service': 2.2.5
       vscode-css-languageservice: 6.2.12
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.0.8
+    optionalDependencies:
+      '@volar/language-service': 2.2.5
 
   volar-service-emmet@0.0.45(@volar/language-service@2.2.5):
     dependencies:
       '@emmetio/css-parser': 0.4.0
       '@emmetio/html-matcher': 1.3.0
-      '@volar/language-service': 2.2.5
       '@vscode/emmet-helper': 2.9.2
+    optionalDependencies:
+      '@volar/language-service': 2.2.5
 
   volar-service-html@0.0.45(@volar/language-service@2.2.5):
     dependencies:
-      '@volar/language-service': 2.2.5
       vscode-html-languageservice: '@johnsoncodehk/vscode-html-languageservice@5.2.0-34a5462'
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.0.8
+    optionalDependencies:
+      '@volar/language-service': 2.2.5
 
   volar-service-prettier@0.0.45(@volar/language-service@2.2.5):
     dependencies:
-      '@volar/language-service': 2.2.5
       vscode-uri: 3.0.8
+    optionalDependencies:
+      '@volar/language-service': 2.2.5
 
   volar-service-typescript-twoslash-queries@0.0.45(@volar/language-service@2.2.5):
-    dependencies:
+    optionalDependencies:
       '@volar/language-service': 2.2.5
 
   volar-service-typescript@0.0.45(@volar/language-service@2.2.5):
     dependencies:
-      '@volar/language-service': 2.2.5
       path-browserify: 1.0.1
       semver: 7.6.0
       typescript-auto-import-cache: 0.3.2
       vscode-languageserver-textdocument: 1.0.11
       vscode-nls: 5.2.0
+    optionalDependencies:
+      '@volar/language-service': 2.2.5
 
   vscode-css-languageservice@6.2.12:
     dependencies:

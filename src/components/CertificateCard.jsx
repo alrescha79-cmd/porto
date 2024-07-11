@@ -5,7 +5,7 @@ const CertificateCard = ({ image, imageAlt, provider, date, name, link }) => {
         <a href={link} target="_blank">
           <img
             src={image}
-            class="w-72 mb-4 rounded-lg shadow-none transition duration-500 ease-in-out group-hover:shadow-lg"
+            class="w-72 h-64 m-auto mb-4 rounded-lg shadow-none transition duration-500 ease-in-out group-hover:shadow-lg"
             alt={imageAlt}
           />
           <div class="flex items-center mb-3">
