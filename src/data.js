@@ -54,7 +54,7 @@ export const certificateData = [
         provider: "Bangkit Academy",
         image: "certificates/bangkit.png",
         date: "July 10, 2024",
-        link: "https://grow.google/intl/id_id/bangkit/?tab=cloud-computing",
+        link: "https://drive.google.com/file/d/1rcbeNV4USyhwUZv9C1S8dzOQytxonw8e/view",
     },
     {
         id: 2,
