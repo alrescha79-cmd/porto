@@ -5,10 +5,10 @@ const ArrowCertificateCard = ({ image, imageAlt, provider, date, name, link }) =
     <a href={link} target="_blank" rel="noopener noreferrer" className="p-4 gap-3 flex flex-col items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
       <div className="w-full flex flex-col items-center md:items-start">
         <div className="flex justify-between w-full">
-          <div className="font-mono text-xs font-normal opacity-75 mb-2">
+          <div className="text-xs font-normal opacity-75  px-2 rounded-full content-center bg-black/5 dark:bg-white/10">
             {date}
           </div>
-          <div className="px-3 rounded-full text-xs font-bold text-white bg-sky-700 mb-2">
+          <div className="px-2 py-1 rounded-full text-base font-bold text-white bg-sky-700">
             {provider}
           </div>
         </div>

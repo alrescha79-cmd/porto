@@ -2,6 +2,7 @@
 import PageLayout from "../../layouts/PageLayout.astro"
 import TopLayout from "../../layouts/TopLayout.astro"
 import CertificatePage from "../../components/Certificates"
+// import FilterCertificate from "../../components/FilterCertificate"
 import { CERTIFICATIONS } from "../../consts"
 
 ---
@@ -11,11 +12,9 @@ import { CERTIFICATIONS } from "../../consts"
   description={CERTIFICATIONS.DESCRIPTION}
 >
   <TopLayout>
-    <div class="animate page-heading text-xl">
-      {CERTIFICATIONS.TITLE}
-    </div>
+    <!-- <FilterCertificate/> -->
   </TopLayout>
-    <div class="animate">
+  <div class="animate">
       <CertificatePage/>
     </div>
 </PageLayout>

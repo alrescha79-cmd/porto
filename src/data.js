@@ -49,6 +49,14 @@ export const cardData = [
 
 export const certificateData = [
     {
+        id: 1,
+        name: "Graduated from Bangkit 2024, a Google-led program in collaboration with GoTo, Tokopedia, and Traveloka in Cloud Computing learning path",
+        provider: "Bangkit Academy",
+        image: "certificates/bangkit.png",
+        date: "July 10, 2024",
+        link: "https://grow.google/intl/id_id/bangkit/?tab=cloud-computing",
+    },
+    {
         id: 2,
         name: "Studi Independen Bersetifikat Angkatan 6",
         provider: "MSIB",
@@ -344,4 +352,5 @@ export const certificateData = [
         date: "May 17, 2024",
         link: "https://www.cloudskillsboost.google/public_profiles/791bf115-ca30-49cc-937e-778065211a3e/badges/9060162",
     },
+
 ]
