@@ -1,23 +1,15 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro"
-import TopLayout from "../../layouts/TopLayout.astro"
 import CertificatePage from "../../components/Certificates"
-// import FilterCertificate from "../../components/FilterCertificate"
+import PageLayout from "../../layouts/PageLayout.astro"
 import { CERTIFICATIONS } from "../../consts"
-
 ---
 
 <PageLayout
   title={CERTIFICATIONS.TITLE}
   description={CERTIFICATIONS.DESCRIPTION}
 >
-  <TopLayout>
-    <!-- <FilterCertificate/> -->
-    <div class="animate page-heading text-2xl">
-      {CERTIFICATIONS.TITLE}
-    </div>
-  </TopLayout>
-  <div class="animate">
-      <CertificatePage/>
-    </div>
+
+  <div class="animate pt-24 md:pt-36 pb-5">
+    <CertificatePage client:load />
+  </div>
 </PageLayout>
