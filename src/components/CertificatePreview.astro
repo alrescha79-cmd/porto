@@ -1,9 +1,10 @@
 ---
+// CertificatePreview.astro component to display top certificates on the home page with ArrowCertificateCard component for each certificate data
 import ArrowCertificateCard from "../components/ArrowCertificateCard"
 import { certificateData } from "../data"
 ---
 
-<section class="animate">
+<section class="animate ">
   <div class="space-y-4">
     <div class="flex justify-between">
       <p class="font-semibold text-black dark:text-white">Top Certificates</p>
@@ -20,8 +21,9 @@ import { certificateData } from "../data"
     </div>
     <ul class="space-y-4">
       {
-        certificateData.slice(0, 4).map((data) => (
+        certificateData.slice(0, 5).map((data) => (
           <ArrowCertificateCard
+            client:load
             date={data.date}
             image={data.image}
             imageAlt={data.name}
