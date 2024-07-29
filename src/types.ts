@@ -19,3 +19,10 @@ export type Socials = {
   TEXT: string
   HREF: string
 }[]
+
+export type Experience = {
+  COMPANY: string
+  ROLE: string
+  DURATION: string
+  DESCRIPTION: string
+}[]

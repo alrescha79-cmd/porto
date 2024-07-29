@@ -8,6 +8,7 @@ import Socmed from "../components/Socmed.astro"
 import ProjectPreview from "../components/ProjectPreview.astro"
 import SkillsPreview from "../components/SkillsPreview.astro"
 import CertificatePreview from "../components/CertificatePreview.astro"
+import Experience from "../components/Experience"
 ---
 
 <PageLayout title="Home" description={SITE.DESCRIPTION}>
@@ -32,6 +33,7 @@ import CertificatePreview from "../components/CertificatePreview.astro"
   <div class="relative bg-white dark:bg-black">
     <div class="mx-auto max-w-screen-md p-5 space-y-24 pb-16">
       <About />
+      <Experience />
       <ProjectPreview />
       <CertificatePreview />
       <SkillsPreview />

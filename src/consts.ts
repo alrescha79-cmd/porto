@@ -1,4 +1,4 @@
-import type { Site, Page, Links, Socials } from "./types"
+import type { Site, Page, Links, Socials, Experience } from "./types"
 
 // Global
 export const SITE: Site = {
@@ -77,5 +77,28 @@ export const SOCIALS: Socials = [
     TEXT: "Anggun Caksono",
     HREF: "https://www.linkedin.com/in/angguncaksono",
   },
+]
+
+// experience
+export const EXPERIENCE: Experience = [
+  {
+    COMPANY: "Freelance",
+    ROLE: "Full Stack Developer",
+    DURATION: "November 2022 - Present",
+    DESCRIPTION: "I have been working as a freelance full stack developer for the past year. I have worked on a variety of projects, ranging from simple static websites to complex web applications. I have experience with a wide range of technologies, including HTML, CSS, JavaScript, TypeScript React, Next, Node.js, Express, PHP, Laravel, MongoDB, Supabase and Firebase."
+  },
+  {
+    COMPANY: "MSIB Bangkit Academy 2024",
+    ROLE: "Cloud Computing Learning Path",
+    DURATION: "February 16, 2024 - July 17, 2024",
+    DESCRIPTION: "Bangkit Academy is an initiative led by Google to prepare Indonesian students to become experts in cloud computing. The program offers a comprehensive curriculum, combining theory with practice, and provides opportunities for participants to hone their skills in building and managing cloud infrastructure."
+  },
+  {
+    COMPANY: "MIRA (Mitra Radiologi)",
+    ROLE: "Project Start-Up",
+    DURATION: "May 20, 2024 - July 17, 2024",
+    DESCRIPTION: "I have many responsibilities from creating APIs, creating Admin dashboard pages to setting up cloud infrastructure services and CI/CD."
+  },
+  
 ]
 
