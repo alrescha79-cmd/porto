@@ -8,7 +8,7 @@ const ArrowCertificateCard = ({ image, imageAlt, provider, date, name, link }) =
     if (selectedCertificate()) {
       const timer = setTimeout(() => {
         setModalLoading(false)
-      }, 1000)
+      }, 500)
 
       return () => clearTimeout(timer)
     }

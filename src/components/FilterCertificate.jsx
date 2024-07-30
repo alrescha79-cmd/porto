@@ -18,7 +18,7 @@ const FilterCertificate = ({ onFilterChange }) => {
     }
 
     return (
-        <div className="md:w-10/12 mx-auto mb-8 w-10/12">
+        <div className="md:w-8/12 mx-auto mb-8 w-10/12">
             <div className="flex flex-col md:flex-row items-center w-full">
                 <div className="flex flex-col items-start w-full">
                     <h2 className="text-2xl font-bold dark:text-white text-black">Certificates</h2>
@@ -31,13 +31,13 @@ const FilterCertificate = ({ onFilterChange }) => {
                 <label className="text-lg font-bold text-black dark:text-white">
                     Filter by Provider
                 </label>
-                <div className="flex flex-col md:flex-row gap-1 md:gap-2 w-full">
+                <div className="flex flex-col flex-wrap md:flex-row gap-1 md:gap-2 w-ful">
                     {uniqueProviders.map(provider => (
                         <button
                             key={provider}
                             onClick={() => toggleProvider(provider)}
                             className={cn(
-                                "w-full px-2 py-1 rounded",
+                                "px-2 py-1 rounded",
                                 "whitespace-nowrap overflow-hidden overflow-ellipsis",
                                 "flex gap-2 items-center",
                                 "bg-black/5 dark:bg-white/10",

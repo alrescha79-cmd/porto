@@ -5,22 +5,27 @@ const CertificateCard = ({ image, imageAlt, provider, date, name, link }) => {
   const [loading, setLoading] = createSignal(true)
   const [modalLoading, setModalLoading] = createSignal(true)
 
+  // Simulate data fetching
   createEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 1500)
-
-    return () => clearTimeout(timer)
+    // Simulate a fetch delay for the main content
+    fetchCertificateData().then(() => setLoading(false))
   })
+
+  const fetchCertificateData = () => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve()
+      }, 750) // Simulating network delay
+    })
+  }
 
   const openModal = (certificate) => {
     setSelectedCertificate(certificate)
     setModalLoading(true)
     document.getElementById("my_modal").showModal()
 
-    setTimeout(() => {
-      setModalLoading(false)
-    }, 500)
+    // Simulate a fetch delay for the modal content
+    fetchCertificateData().then(() => setModalLoading(false))
   }
 
   const closeModal = () => {
