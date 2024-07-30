@@ -82,6 +82,14 @@ export const certificateData = [
         link: "https://coursera.org/verify/professional-cert/ZJ2CZ5UY3P77",
     },
     {
+        id: 39,
+        name: "Alibaba Cloud Certified Developers",
+        provider: "Alibaba Cloud",
+        image: "certificates/alibaba.png",
+        date: "July 29, 2024",
+        link: "https://alicloud-common.oss-ap-southeast-1.aliyuncs.com/2023/Developers/Certified-Developer.jpg",
+    },
+    {
         id: 5,
         name: "IT Security: Defense against the digital dark arts",
         provider: "Coursera",
@@ -353,5 +361,6 @@ export const certificateData = [
         date: "May 17, 2024",
         link: "https://www.cloudskillsboost.google/public_profiles/791bf115-ca30-49cc-937e-778065211a3e/badges/9060162",
     },
+    
 
 ]
