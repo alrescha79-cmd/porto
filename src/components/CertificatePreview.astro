@@ -1,5 +1,4 @@
 ---
-// CertificatePreview.astro component to display top certificates on the home page with ArrowCertificateCard component for each certificate data
 import ArrowCertificateCard from "../components/ArrowCertificateCard"
 import { certificateData } from "../data"
 ---
@@ -19,7 +18,7 @@ import { certificateData } from "../data"
         </span>
       </a>
     </div>
-    <ul class="space-y-4">
+    <ul class="space-y-4 md:mb-4">
       {
         certificateData.slice(0, 5).map((data) => (
           <ArrowCertificateCard

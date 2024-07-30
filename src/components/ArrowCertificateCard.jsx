@@ -1,28 +1,30 @@
 import { createSignal } from "solid-js"
 
 const ArrowCertificateCard = ({ image, imageAlt, provider, date, name, link }) => {
-  const [isModalOpen, setIsModalOpen] = createSignal(false)
+  const [selectedCertificate, setSelectedCertificate] = createSignal(null)
 
-  const openModal = () => {
-    document.body.classList.add("modal-open")
-    setIsModalOpen(true)
+  const openModal = (certificate) => {
+    setSelectedCertificate(certificate)
+    document.getElementById("my_modal1").showModal()
   }
 
   const closeModal = () => {
-    document.body.classList.remove("modal-open")
-    setIsModalOpen(false)
+    document.getElementById("my_modal1").close()
+    setSelectedCertificate(null)
   }
 
+  const certificate = { image, imageAlt, provider, date, name, link }
+
   return (
-    <div>
-      <div className="card my-2 rounded-lg">
-        <button onClick={openModal} className="p-4 gap-3 flex flex-col items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
+    <div className="mb-4 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
+      <div className="w-full ">
+        <button className="w-full" onClick={() => openModal(certificate)}>
           <div className="w-full flex flex-col items-center md:items-start">
             <div className="flex justify-between w-full">
               <div className="text-xs font-normal opacity-75 px-2 rounded-full content-center bg-black/5 dark:bg-white/10">
                 {date}
               </div>
-              <div className="px-1 py-0.5 rounded-full text-sm text-white bg-sky-700">
+              <div className="px-2 py-0.5 rounded-full text-sm text-white bg-sky-700">
                 {provider}
               </div>
             </div>
@@ -37,35 +39,42 @@ const ArrowCertificateCard = ({ image, imageAlt, provider, date, name, link }) =
         </button>
       </div>
 
-      {isModalOpen() && (
-        <div className="fixed z-50 w-full h-[100vh]" onClick={closeModal}>
-          <div className="modal modal-open" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-box w-full max-w-4xl md:h-full h-1/2 bg-white dark:bg-black border rounded-md flex flex-col relative">
-              <button onClick={closeModal} className="absolute top-2 right-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
-              <h3 className="font-bold text-lg">{name}</h3>
-              <p className="py-4">{date}</p>
-              <img
-                src={image}
-                className="md:w-[400px] w-[200px] mx-auto my-4 rounded-lg shadow-lg"
-                alt={imageAlt}
-              />
-              <div className="modal-action mt-auto">
-                <button onClick={closeModal} className="btn">
-                  Close
-                </button>
-                <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-primary">
-                  More Info
-                </a>
-              </div>
-            </div>
+    {selectedCertificate() && (
+      <dialog id="my_modal1" className="modal">
+        <div className="modal-box bg-white dark:bg-black border">
+          <div className="flex items-center">
+            <span className="inline-flex items-center rounded-full px-2 text-xs leading-5 text-white font-display mr-2 capitalize bg-sky-700">
+              {selectedCertificate().provider}
+            </span>
+            <p className="ml-auto font-mono text-xs opacity-75">
+              {selectedCertificate().date}
+            </p>
           </div>
-          <div className="modal-backdrop" onClick={closeModal}></div>
+          <h3 className="font-bold text-lg mt-1 mb-2">{selectedCertificate().name}</h3>
+          <img
+            src={selectedCertificate().image}
+            className="w-[380px] md:w-[420px] m-auto mb-4 rounded-lg shadow-none transition duration-500 ease-in-out group-hover:shadow-lg"
+            alt={selectedCertificate().imageAlt}
+          />
+          <div className="flex flex-col w-full gap-2">
+            <a
+              href={selectedCertificate().link}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full py-2 text-center text-white bg-sky-700 rounded-lg shadow-md hover:bg-sky-800"
+            >
+              View Certificate
+            </a>
+            <form method="dialog">
+              <button className="btn w-full" onClick={closeModal}>Close</button>
+            </form>
+          </div>
         </div>
-      )}
+        <form method="dialog" className="modal-backdrop" onClick={closeModal}>
+          <button>close</button>
+        </form>
+      </dialog>
+    )}
     </div>
   )
 }

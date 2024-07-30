@@ -34,6 +34,7 @@ export const cardData = [
         title: "Cloud Computing",
         items: [
             { name: "Google Cloud Platform", image: "skills/gcp.svg", alt: "GCP logo" },
+            { name: "Alibaba Cloud", image: "skills/alibaba.svg", alt: "ALIBABA logo" },
             { name: "Amazon Web Services", image: "skills/aws.svg", alt: "AWS logo" },
         ]
     },
