@@ -4,26 +4,34 @@ const ArrowCertificateCard = ({ image, imageAlt, provider, date, name, link }) =
   const [selectedCertificate, setSelectedCertificate] = createSignal(null)
   const [modalLoading, setModalLoading] = createSignal(true)
 
-  createEffect(() => {
-    if (selectedCertificate()) {
-      const timer = setTimeout(() => {
-        setModalLoading(false)
-      }, 500)
 
-      return () => clearTimeout(timer)
-    }
-  }, [selectedCertificate])
+// Simulate data fetching
+createEffect(() => {
+  // Simulate a fetch delay for the main content
+  fetchCertificateData().then(() => modalLoading(false))
+})
 
-  const openModal = (certificate) => {
-    setSelectedCertificate(certificate)
-    setModalLoading(true)
-    document.getElementById("my_modal").showModal()
-  }
+const fetchCertificateData = () => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve()
+    }, 750) // Simulating network delay
+  })
+}
 
-  const closeModal = () => {
-    document.getElementById("my_modal").close()
-    setSelectedCertificate(null)
-  }
+const openModal = (certificate) => {
+  setSelectedCertificate(certificate)
+  setModalLoading(true)
+  document.getElementById("my_modal").showModal()
+
+  // Simulate a fetch delay for the modal content
+  fetchCertificateData().then(() => setModalLoading(false))
+}
+
+const closeModal = () => {
+  document.getElementById("my_modal").close()
+  setSelectedCertificate(null)
+}
 
   const certificate = { image, imageAlt, provider, date, name, link }
 
