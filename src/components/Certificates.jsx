@@ -20,6 +20,11 @@ function CertificatePage() {
     return (
         <>
             <FilterCertificate onFilterChange={handleFilterChange} />
+            <div className="w-full md:w-10/12 mx-auto">
+                <h1 className="text-xl font-bold text-center">
+                    Showing {filteredCertificates().length} of {certificateData.length} Certificates
+                </h1>
+            </div>
             <div className="animate md:px-4 flex flex-wrap justify-center items-center border-b-current w-full gap-2 md:w-11/12 mx-auto">
                 {filteredCertificates().map((data) => (
                     <CertificateCard
