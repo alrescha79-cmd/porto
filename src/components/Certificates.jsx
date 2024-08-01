@@ -1,4 +1,4 @@
-import { createSignal } from "solid-js"
+import { createSignal, createEffect } from "solid-js"
 import CertificateCard from "../components/CertificateCard"
 import { certificateData } from "../data"
 import FilterCertificate from "./FilterCertificate"
@@ -28,6 +28,13 @@ function CertificatePage() {
 
     const totalPages = () => Math.ceil(filteredCertificates().length / ITEMS_PER_PAGE)
 
+    createEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }, [currentPage])
+
     return (
         <>
             <FilterCertificate onFilterChange={handleFilterChange} />
@@ -45,7 +52,7 @@ function CertificatePage() {
                 ))}
             </div>
             <div className="w-full md:w-10/12 mx-auto mt-4 mb-1">
-                <h1 className="text-xl font-bold text-center">
+                <h1 className="md:text-xl text-base font-bold text-center">
                     Showing {paginatedCertificates().length} of {filteredCertificates().length} Certificates
                 </h1>
             </div>

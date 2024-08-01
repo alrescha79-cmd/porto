@@ -4,12 +4,18 @@ const Card = ({ title, items }) => {
     const [loading, setLoading] = createSignal(true)
 
     createEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false)
-        }, 1500)
-
-        return () => clearTimeout(timer)
+        fetchCardData().then(() => setLoading(false))
     })
+
+    const fetchCardData = () => {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve()
+            }, 1000)
+        })
+    }
+
+
 
     return (
         <div className="w-[350px] mx-auto md:mx-0 bg-white border border-gray-200 rounded-lg shadow dark:bg-black/15 dark:border-neutral-700">
@@ -17,7 +23,7 @@ const Card = ({ title, items }) => {
                 {title}
             </h5>
             <div className="flow-root p-4">
-                <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+                <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-500">
                     {loading() ? (
                         <SkeletonItems count={items.length} />
                     ) : (
@@ -40,10 +46,10 @@ const SkeletonItems = ({ count }) => {
                 <li key={index} className="py-3 sm:py-4">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-700 skeleton"></div>
+                            <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-500 skeleton"></div>
                         </div>
                         <div className="flex-1 min-w-0 ms-4">
-                            <p className="text-xl font-semibold bg-gray-300 dark:bg-gray-700 rounded-md skeleton">
+                            <p className="text-xl font-semibold bg-gray-300 dark:bg-gray-500 rounded-md skeleton">
                                 &nbsp;
                             </p>
                         </div>
