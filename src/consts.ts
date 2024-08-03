@@ -85,7 +85,7 @@ export const EXPERIENCE: Experience = [
     COMPANY: "Freelance",
     ROLE: "Full Stack Developer",
     DURATION: "November 2022 - Present",
-    DESCRIPTION: "I have been working as a freelance full stack developer for the past year. I have worked on a variety of projects, ranging from simple static websites to complex web applications. I have experience with a wide range of technologies, including HTML, CSS, JavaScript, TypeScript React, Next, Node.js, Express, PHP, Laravel, MongoDB, Supabase and Firebase."
+    DESCRIPTION: "I have been working as a freelance full stack developer for more than a year. I have worked on a variety of projects, ranging from simple static websites to complex web applications. I have experience with a wide range of technologies, including HTML, CSS, JavaScript, TypeScript React, Next, Node.js, Express, PHP, Laravel, MongoDB, Supabase and Firebase."
   },
   {
     COMPANY: "MSIB Bangkit Academy 2024",
@@ -95,10 +95,9 @@ export const EXPERIENCE: Experience = [
   },
   {
     COMPANY: "MIRA (Mitra Radiologi)",
-    ROLE: "Project Start-Up",
+    ROLE: "Capstone Project and Funding Initiative for a Startup with Support from Google.",
     DURATION: "May 20, 2024 - July 17, 2024",
-    DESCRIPTION: "I have many responsibilities from creating APIs, creating Admin dashboard pages to setting up cloud infrastructure services and CI/CD."
+    DESCRIPTION: "MIRA (Mitra Radiologi) is a Capstone Project aimed at revolutionizing radiology services through the seamless integration of Picture Archiving and Communication System (PACS) technology. My team and I developed this project with the goal of securing funding from Google to establish it as a startup. In this project, I was responsible for setting up the cloud infrastructure on Google Cloud Platform (GCP), preparing a CI/CD pipeline for seamless deployment, serving as a backend developer by creating APIs using Express JS, configuring databases and other services in Firebase, and developing the admin dashboard front end using React JS."
   },
-  
 ]
 

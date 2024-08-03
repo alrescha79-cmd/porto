@@ -110,7 +110,7 @@ export const certificateData = [
         name: "IT Security: Defense against the digital dark arts",
         provider: "Coursera",
         image: "certificates/coursera2.png",
-        date: "2024-03-12",
+        date: "Mar, 12 2024",
         link: "https://coursera.org/verify/JKUX57YS3LDG",
     },
     {
@@ -118,7 +118,7 @@ export const certificateData = [
         name: "System Administration and IT Infrastructure Services",
         provider: "Coursera",
         image: "certificates/coursera3.png",
-        date: "2024-02-22",
+        date: "Feb, 22 2024",
         link: "https://coursera.org/verify/BVGLJ2YTNK25",
     },
     {
@@ -126,7 +126,7 @@ export const certificateData = [
         name: "Technical Support Fundamentals",
         provider: "Coursera",
         image: "certificates/coursera4.png",
-        date: "2024-02-23",
+        date: "Feb, 23 2024",
         link: "https://coursera.org/verify/F6XFRJE63KWV",
     },
     {
@@ -134,7 +134,7 @@ export const certificateData = [
         name: "The Bits and Bytes of Computer Networking",
         provider: "Coursera",
         image: "certificates/coursera5.png",
-        date: "2024-02-20",
+        date: "Feb, 20 2024",
         link: "https://coursera.org/verify/W29JM3UU2RPQ",
     },
     {
@@ -142,7 +142,7 @@ export const certificateData = [
         name: "Operating Systems and You : Becoming a Power User",
         provider: "Coursera",
         image: "certificates/coursera6.png",
-        date: "2024-03-12",
+        date: "Mar, 12 2024",
         link: "https://coursera.org/verify/QE2P65GSJ4NE",
     },
     {
@@ -190,7 +190,7 @@ export const certificateData = [
         name: "Belajar Dasar Git dengan GitHub",
         provider: "Dicoding",
         image: "certificates/dicoding1.png",
-        date: "2024-02-19",
+        date: "Feb 19, 2024",
         link: "https://www.dicoding.com/certificates/98XW2QJVWPM3",
     },
     {
@@ -198,7 +198,7 @@ export const certificateData = [
         name: "Belajar Dasar Pemrograman Web",
         provider: "Dicoding",
         image: "certificates/dicoding2.png",
-        date: "2024-02-29",
+        date: "Feb, 29 2024",
         link: "https://www.dicoding.com/certificates/NVP77VV4OPR0",
     },
     {
@@ -206,7 +206,7 @@ export const certificateData = [
         name: "Belajar Membuat Aplikasi Back-End untuk Pemula",
         provider: "Dicoding",
         image: "certificates/dicoding3.png",
-        date: "2022-11-30",
+        date: "Nov, 30 2022",
         link: "https://www.dicoding.com/certificates/1OP85NWOQPQK",
     },
     {
@@ -214,7 +214,7 @@ export const certificateData = [
         name: "Belajar Penerapan Machine Learning dengan Google Cloud",
         provider: "Dicoding",
         image: "certificates/dicoding4.png",
-        date: "2024-05-16",
+        date: "May, 16 2024",
         link: "https://www.dicoding.com/certificates/72ZDV7VWLZYW",
     },
     {
@@ -222,7 +222,7 @@ export const certificateData = [
         name: "Cloud Practitioner Essentials (Belajar Dasar AWS Cloud)",
         provider: "Dicoding",
         image: "certificates/dicoding5.png",
-        date: "2022-10-12",
+        date: "Oct, 12 2022",
         link: "https://www.dicoding.com/certificates/MRZM458R3XYQ",
     },
     {
@@ -230,7 +230,7 @@ export const certificateData = [
         name: "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
         provider: "Dicoding",
         image: "certificates/dicoding6.png",
-        date: "2024-02-19",
+        date: "Feb, 19 2024",
         link: "https://www.dicoding.com/certificates/6RPNV9285Z2M",
     },
     {
@@ -238,7 +238,7 @@ export const certificateData = [
         name: "Memulai Pemrograman Dengan Kotlin",
         provider: "Dicoding",
         image: "certificates/dicoding7.png",
-        date: "2023-09-15",
+        date: "Sept, 15 2023",
         link: "https://www.dicoding.com/certificates/0LZ0QG1O0Z65",
     },
     {
@@ -246,7 +246,7 @@ export const certificateData = [
         name: "Menjadi Google Cloud Engineer",
         provider: "Dicoding",
         image: "certificates/dicoding8.png",
-        date: "2024-05-08",
+        date: "May, 8 2024",
         link: "https://www.dicoding.com/certificates/MRZME42D3PYQ",
     },
     {
@@ -254,7 +254,7 @@ export const certificateData = [
         name: "Pengenalan ke Logika Pemrograman (Programming Logic 101)",
         provider: "Dicoding",
         image: "certificates/dicoding9.png",
-        date: "2024-02-19",
+        date: "Feb, 19 2024",
         link: "https://www.dicoding.com/certificates/GRX5QYE5KZ0M",
     },
     {
@@ -262,7 +262,7 @@ export const certificateData = [
         name: "Belajar Dasar Pemrograman JavaScript",
         provider: "Dicoding",
         image: "certificates/dicoding10.png",
-        date: "2022-10-26",
+        date: "Oct, 26 2022",
         link: "https://www.dicoding.com/certificates/81P28G8LYPOY",
     },
     {
