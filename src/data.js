@@ -473,6 +473,4 @@ export const certificateData = [
         date: "Aug 1, 2024",
         link: "https://www.cloudskillsboost.google/public_profiles/791bf115-ca30-49cc-937e-778065211a3e/badges/10251198",
     },
-    
-
 ]

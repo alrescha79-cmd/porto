@@ -1,4 +1,4 @@
-import { createSignal, createEffect } from "solid-js"
+import { createSignal } from "solid-js"
 import CertificateCard from "../components/CertificateCard"
 import { certificateData } from "../data"
 import FilterCertificate from "./FilterCertificate"
@@ -28,12 +28,40 @@ function CertificatePage() {
 
     const totalPages = () => Math.ceil(filteredCertificates().length / ITEMS_PER_PAGE)
 
-    createEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    }, [currentPage])
+    const getPageNumbers = () => {
+        const total = totalPages()
+        const current = currentPage()
+        const delta = 2
+        const range = []
+        const rangeWithDots = []
+        let l
+
+        for (let i = 1; i <= total; i++) {
+            if (i === 1 || i === total || i >= current - delta && i <= current + delta) {
+                range.push(i)
+            }
+        }
+
+        for (let i of range) {
+            if (l) {
+                if (i - l === 2) {
+                    rangeWithDots.push(l + 1)
+                } else if (i - l !== 1) {
+                    rangeWithDots.push("...")
+                }
+            }
+            rangeWithDots.push(i)
+            l = i
+        }
+
+        return rangeWithDots
+    }
+
+    const handlePageChange = (newPage) => {
+        setCurrentPage(newPage)
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
 
     return (
         <>
@@ -62,22 +90,29 @@ function CertificatePage() {
                         <button
                             className="join-item btn btn-outline"
                             disabled={currentPage() === 1}
-                            onClick={() => setCurrentPage(currentPage() - 1)}
+                            onClick={() => handlePageChange(currentPage() - 1)}
                         >
                             « Prev
                         </button>
-                        {Array.from({ length: totalPages() }).map((_, index) => (
-                            <button
-                                className={`join-item btn-outline btn ${currentPage() === index + 1 ? "btn-active" : ""}`}
-                                onClick={() => setCurrentPage(index + 1)}
-                            >
-                                {index + 1}
-                            </button>
-                        ))}
+                        {getPageNumbers().map((page, index) =>
+                            page === "..." ? (
+                                <button key={index} className="join-item btn btn-disabled">
+                                    ...
+                                </button>
+                            ) : (
+                                <button
+                                    key={index}
+                                    className={`join-item btn-outline btn ${currentPage() === page ? "btn-active" : ""}`}
+                                    onClick={() => handlePageChange(page)}
+                                >
+                                    {page}
+                                </button>
+                            )
+                        )}
                         <button
                             className="join-item btn btn-outline"
                             disabled={currentPage() === totalPages()}
-                            onClick={() => setCurrentPage(currentPage() + 1)}
+                            onClick={() => handlePageChange(currentPage() + 1)}
                         >
                             Next »
                         </button>
