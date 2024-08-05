@@ -1,36 +1,33 @@
 ---
-title: "Website CV. Samudra Rahayu Perkasa"
-summary: "Web landing page with admin dashboard"
-date: "June 30 2024"
+title: "API for machine learning model inference"
+summary: "A machine learning application that is able to detect skin images and classify them into two classes, namely Cancer and Non-cancer."
+date: "May 16 2024"
 draft: false
 tags:
-- FullStack
-- TypeScript
-- Next Js
-- Supabase
+- Backend
+- Express
 
-repoUrl: https://github.com/alrescha79-cmd/project-srp-pati
-demoUrl: https://srp-theta.vercel.app/
+repoUrl: https://github.com/alrescha79-cmd/backend-mlgc.git
+
 ---
 
-![Website CV. Samudra Rahayu Perkasa](<../../../../public/srpmockup.png>)
+![API for machine learning model inference](<../../../../public/mlgc.png>)
 
 ### Description
 
-Web landing page with admin dashboard
+A machine learning application that is able to detect skin images and classify them into two classes, namely Cancer and Non-cancer.
 
 #### Features
 
-- Implements an intuitive and responsive user interface using Next.js, ensuring a seamless user experience across multiple devices
-- Leveraging Supabase for real-time data management
-- Optimized application performance and scalability through deployment on Vercel
-- Implemented an admin dashboard to manage content that will be displayed on the main website
+- Detecting skin cancer. The expected result is a machine learning application that is able to detect skin images and classify them into two classes, namely Cancer and Non-cancer.
+- Simply use skin photos to detect skin cancer.
+- There is a history to save the user's prediction history.
 
 #### Tech Stack
 
-- Client: Next Js, typescript
-- Server: Supabase, Vercel
+- Client: Express JS
+- Server: Google Cloud Run, Google Storage Bucket
 
 ### Repo
 
-[GitHub - alrescha79-cmd/project-srp-pati](https://github.com/alrescha79-cmd/project-srp-pati)
+[GitHub - alrescha79-cmd/backend-mlgc](https://github.com/alrescha79-cmd/backend-mlgc.git)
