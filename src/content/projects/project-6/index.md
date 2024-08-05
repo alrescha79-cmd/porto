@@ -11,8 +11,7 @@ tags:
 repoUrl: https://github.com/ENTS-H112/mira-dashboard
 demoUrl: https://dashboard-abwswzd4sa-et.a.run.app/
 ---
-
-![alt text](<../../../../public/admin-mira.png>)
+![Admin Mira](../../../../public/adminmiramockup.png)
 
 #### Description
 

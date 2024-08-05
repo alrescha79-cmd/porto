@@ -1,5 +1,5 @@
 ---
-title: "MIRA - Medical Imaging Revolution Application"
+title: "MIRA - Mitra Radiologi"
 summary: "Efficient API for patient data management and radiology result access."
 date: "May 30 2024"
 draft: false
@@ -13,7 +13,7 @@ repoUrl: https://github.com/ENTS-H112/mira-backend
 demoUrl: https://mira-backend-abwswzd4sa-et.a.run.app/
 ---
 
-![alt text](<../../../../public/Mira Pitch.png>)
+![MIRA - Mitra Radiologi](<../../../../public/Mira Pitch.png>)
 
 ### Description
 
