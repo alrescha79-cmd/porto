@@ -49,6 +49,7 @@ export const cardData = [
 ]
 
 export const certificateData = [
+    // top certificate
     {
         id: 2,
         name: "Google Cybersecurity",
@@ -105,6 +106,7 @@ export const certificateData = [
         date: "July 12, 2024",
         link: "#",
     },
+    // Coursera certificates
     {
         id: 5,
         name: "IT Security: Defense against the digital dark arts",
@@ -185,6 +187,7 @@ export const certificateData = [
         date: "July, 19 2024",
         link: "https://coursera.org/verify/TRTPM29FRJ55",
     },
+    // Dicoding certificates
     {
         id: 10,
         name: "Belajar Dasar Git dengan GitHub",
@@ -265,6 +268,7 @@ export const certificateData = [
         date: "Oct, 26 2022",
         link: "https://www.dicoding.com/certificates/81P28G8LYPOY",
     },
+    // Codepolitan certificates
     {
         id: 48,
         name: "Belajar Dasar HTML",
@@ -313,6 +317,63 @@ export const certificateData = [
         date: "Aug, 2 2024",
         link: "https://codepolitan.com/c/JHPNC8W",
     },
+    {
+        id: 53,
+        name: "Belajar JavaScript Asynchronous",
+        provider: "Codepolitan",
+        image: "certificates/codepolitan7.png",
+        date: "Aug, 4 2024",
+        link: "https://codepolitan.com/c/GF1BV5A",
+    },
+    {
+        id: 54,
+        name: "Belajar Ajax dan Web API",
+        provider: "Codepolitan",
+        image: "certificates/codepolitan8.png",
+        date: "Aug, 4 2024",
+        link: "https://codepolitan.com/c/C90DLBK",
+    },
+    {
+        id: 55,
+        name: "Belajar Konsep OOP di Javascript",
+        provider: "Codepolitan",
+        image: "certificates/codepolitan9.png",
+        date: "Aug, 5 2024",
+        link: "https://codepolitan.com/c/OYVIIZT",
+    },
+    {
+        id: 56,
+        name: "Belajar React JS",
+        provider: "Codepolitan",
+        image: "certificates/codepolitan10.png",
+        date: "Aug, 5 2024",
+        link: "https://codepolitan.com/c/2D8HXWT",
+    },
+    {
+        id: 57,
+        name: "React.js 101 - Membuat dan Menggunakan Komponen dalam Aplikasi Berbasis React.js",
+        provider: "Codepolitan",
+        image: "certificates/codepolitan11.png",
+        date: "Aug, 7 2024",
+        link: "https://codepolitan.com/c/32S5K1B",
+    },
+    {
+        id: 58,
+        name: "React.js State - Mengelola Perubahan Tampilan dengan Data bersama Event Handler",
+        provider: "Codepolitan",
+        image: "certificates/codepolitan12.png",
+        date: "Aug, 7 2024",
+        link: "https://codepolitan.com/c/IPQW1NH",
+    },
+    {
+        id: 59,
+        name: "React.js State Management - Panduan Menggunakan State yg Baik",
+        provider: "Codepolitan",
+        image: "certificates/codepolitan13.png",
+        date: "Aug, 7 2024",
+        link: "https://codepolitan.com/c/EOWS7UD",
+    },
+    // Google Cloud Skills Boost certificates
     {
         id: 20,
         name: "Cloud Computing Fundamentals",

@@ -18,9 +18,10 @@ const Experience = () => {
                                     </svg>
                                 </div>
                                 <div className={`timeline-${index % 2 === 0 ? "start" : "end"} mb-10 ${index % 2 === 0 ? "md:text-end" : ""}`}>
-                                    <time className="font-mono italic">{item.DURATION}</time>
+                                    <time className="font-mono italic ">
+                                        {item.DURATION}</time>
                                     <div className="font-semibold text-xl mt-1 text-black dark:text-white">{item.COMPANY}</div>
-                                    <div className="text-base font-semibold text-black/80 dark:text-white/80 my-0.5">{item.ROLE}</div>
+                                    <div className="inline-block text-base font-semibold text-black/80 dark:text-white/80 my-0.5 dark:bg-white/5 bg-black/5 py-1 px-2 rounded-sm shadow-md">{item.ROLE}</div>
                                     <div className="text-base text-black/70 dark:text-white/70 mb-4">{item.DESCRIPTION}</div>
                                 </div>
                                 <hr />
