@@ -31,7 +31,7 @@ function CertificatePage() {
     const getPageNumbers = () => {
         const total = totalPages()
         const current = currentPage()
-        const delta = 2
+        const delta = 1
         const range = []
         const rangeWithDots = []
         let l

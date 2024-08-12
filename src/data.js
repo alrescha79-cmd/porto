@@ -187,6 +187,31 @@ export const certificateData = [
         date: "July, 19 2024",
         link: "https://coursera.org/verify/TRTPM29FRJ55",
     },
+    // Udemy certificates
+    {
+        id: 62,
+        name: "React Native Unveiled: From Basics to Mobile Mastery",
+        provider: "Udemy",
+        image: "certificates/Udemy React Native Unveiled: From Basics to Mobile Mastery.jpg",
+        date: "Aug 8, 2024",
+        link: "https://ude.my/UC-5bc1773d-ee4a-4337-a62c-596ae82bf238",
+    },
+    {
+        id: 63,
+        name: "User Experience Design - Learn UI UX App Design with Figma",
+        provider: "Udemy",
+        image: "certificates/Udemy User Experience Design - Learn UI UX App Design with Figma.jpg",
+        date: "Aug 12, 2024",
+        link: "https://ude.my/UC-0242cc0d-4e6b-4694-a902-ba22093f90d1",
+    },
+    {
+        id: 62,
+        name: "Cloud Computing and Amazon Web Services (AWS) Fundamentals",
+        provider: "Udemy",
+        image: "public/certificates/Udemy Cloud Computing and Amazon Web Services (AWS) Fundamentals.jpg",
+        date: "Aug 12, 2024",
+        link: "https://ude.my/UC-91de3e3a-79fe-463e-a5f5-53d3013a9ac5",
+    },
     // Dicoding certificates
     {
         id: 10,
@@ -267,6 +292,14 @@ export const certificateData = [
         image: "certificates/dicoding10.png",
         date: "Oct, 26 2022",
         link: "https://www.dicoding.com/certificates/81P28G8LYPOY",
+    },
+    {
+        id: 61,
+        name: "Belajar Dasar Manajemen Proyek",
+        provider: "Dicoding",
+        image: "certificates/dicoding11.png",
+        date: "Aug 9, 2024",
+        link: "https://www.dicoding.com/certificates/JLX17ERENX72",
     },
     // Codepolitan certificates
     {
