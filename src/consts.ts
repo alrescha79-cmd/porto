@@ -3,7 +3,7 @@ import type { Site, Page, Links, Socials, Experience } from "./types"
 // Global
 export const SITE: Site = {
   TITLE: "Anggun Caksono",
-  DESCRIPTION: "Saya adalah Full Stack developer yang berfokus pada pengembangan aplikasi web dan saat ini sedang menjalani program studi independen di Bangkit Academy 2024.",
+  DESCRIPTION: "An enthusiastic Informatics Engineering student and experienced Fullstack Developer, I'm an alum of Bangkit Academy 2024 with skills in web, mobile app development, and cloud computing. Proficient in React, Node.js, Google Cloud Platform, and Agile methodologies, I was also selected for Bangkit’s Entrepreneur Track, where I gained hands-on startup experience. Open to opportunities in software development and cloud technology, I am ready to contribute my technical expertise to innovative projects.",
   AUTHOR: "Anggun Caksono",
 }
 
