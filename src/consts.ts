@@ -84,8 +84,8 @@ export const EXPERIENCE: Experience = [
   {
     COMPANY: "Internship at PT. WINNICODE GARUDA TEKNOLOGI",
     ROLE: "Full Stack Developer",
-    DURATION: "July, 2024 - Present",
-    DESCRIPTION: "I am currently working as a Full Stack Developer at PT. WINNICODE GARUDA TEKNOLOGI. My responsibilities include developing and maintaining web applications, designing and implementing APIs, and collaborating with other team members to deliver high-quality software solutions. I have experience with a wide range of technologies, including HTML, CSS, JavaScript, TypeScript, React, Node.js, Express, MongoDB, and Firebase."
+    DURATION: "August, 2024 - Present",
+    DESCRIPTION: "I am currently interned as a Full Stack Developer at PT. WINNICODE GARUDA TEKNOLOGI. In this role, I am responsible for developing web applications using a variety of technologies, including React, Node.js, Express, and MongoDB. I am also responsible for setting up cloud infrastructure on Google Cloud Platform (GCP), and deploying applications using CI/CD pipelines."
   },
   {
     COMPANY: "MSIB Bangkit Academy 2024",

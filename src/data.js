@@ -47,7 +47,6 @@ export const cardData = [
         ]
     },
 ]
-
 export const certificateData = [
     // top certificate
     {
@@ -300,6 +299,30 @@ export const certificateData = [
         image: "certificates/dicoding11.png",
         date: "Aug 9, 2024",
         link: "https://www.dicoding.com/certificates/JLX17ERENX72",
+    },
+    {
+        id: 63,
+        name: "Belajar Dasar Data Science",
+        provider: "Dicoding",
+        image: "certificates/image.png",
+        date: "Sep 5, 2024",
+        link: "https://www.dicoding.com/certificates/QLZ97YEYMP5D",
+    },
+    {
+        id: 64,
+        name: "Belajar Dasar Structured Query Language (SQL)",
+        provider: "Dicoding",
+        image: "certificates/image2.png",
+        date: "Sep 5, 2024",
+        link: "https://www.dicoding.com/certificates/EYX4VNE4JZDL",
+    },
+    {
+        id: 65,
+        name: "Belajar Strategi Pengembangan Diri",
+        provider: "Dicoding",
+        image: "certificates/image3.png",
+        date: "Sep 12, 2024",
+        link: "https://www.dicoding.com/certificates/NVP7Q28QVZR0",
     },
     // Codepolitan certificates
     {
