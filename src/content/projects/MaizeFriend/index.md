@@ -14,7 +14,7 @@ repoUrl: https://github.com/alrescha79-cmd/MaizeFriend-ReactNative
 # demoUrl: https://srp-theta.vercel.app/
 ---
 
-![Maizefriend](<../../../../public/maizefriend.png>)
+![Maizefriend](<../../../../public/thumbnail-maizefriend.jpg>)
 
 ### Description
 
