@@ -22,20 +22,32 @@ export const cardData = [
         ]
     },
     {
-        title: "Database | Storage",
+        title: "Machine Learning",
         items: [
-            { name: "Firebase", image: "skills/firebase.svg", alt: "Firebase logo" },
-            { name: "MongoDB", image: "skills/mongo.svg", alt: "MongoDB logo" },
-            { name: "Supabase", image: "skills/supabase.svg", alt: "Supabase logo" },
-            { name: "MySQL", image: "skills/mysql.svg", alt: "MySQL logo" },
+            { name: "Python", image: "skills/python.svg", alt: "Python logo" },
+            { name: "Jupyter", image: "skills/j-note.svg", alt: "Jupyter logo" },
+            { name: "TensorFlow", image: "skills/tensorflow.svg", alt: "TensorFlow logo" },
+            { name: "Scikit-learn", image: "skills/sklearn.svg", alt: "Scikit-learn logo" },
+            { name: "Pandas", image: "skills/pandas.svg", alt: "Pandas logo" },
+            { name: "Numpy", image: "skills/numpy.svg", alt: "Numpy logo" },
         ]
     },
     {
-        title: "Cloud Computing",
+        title: "Cloud & DevOps",
         items: [
             { name: "Google Cloud Platform", image: "skills/gcp.svg", alt: "GCP logo" },
             { name: "Alibaba Cloud", image: "skills/alibaba.svg", alt: "ALIBABA logo" },
             { name: "Amazon Web Services", image: "skills/aws.svg", alt: "AWS logo" },
+            { name: "Docker", image: "skills/docker.svg", alt: "Docker logo" },
+            { name: "Kubernetes", image: "skills/kubernetes.svg", alt: "Kubernetes logo" },
+            { name: "GitHub Actions", image: "skills/github.svg", alt: "GitHub Actions logo" },
+        ]
+    },
+    {
+        title: "Mobile Development",
+        items: [
+            { name: "React Native", image: "skills/react.svg", alt: "React Native logo" },
+            { name: "Kotlin Multiplatform", image: "skills/kotlin.svg", alt: "Kotlin logo" },
         ]
     },
     {
@@ -44,6 +56,15 @@ export const cardData = [
             { name: "Figma", image: "skills/figma.svg", alt: "Figma logo" },
             { name: "Lunacy", image: "skills/lunacy.svg", alt: "Lunacy logo" },
             { name: "Adobe XD", image: "skills/xd.svg", alt: "Adobe XD logo" },
+        ]
+    },
+    {
+        title: "Database | Storage",
+        items: [
+            { name: "Firebase", image: "skills/firebase.svg", alt: "Firebase logo" },
+            { name: "MongoDB", image: "skills/mongo.svg", alt: "MongoDB logo" },
+            { name: "Supabase", image: "skills/supabase.svg", alt: "Supabase logo" },
+            { name: "MySQL", image: "skills/mysql.svg", alt: "MySQL logo" },
         ]
     },
 ]
