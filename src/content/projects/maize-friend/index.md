@@ -14,7 +14,7 @@ repoUrl: https://github.com/alrescha79-cmd/MaizeFriend-ReactNative
 # demoUrl: https://srp-theta.vercel.app/
 ---
 
-![Maizefriend](<../../../../public/thumbnail-maizefriend.jpg>)
+![Maizefriend](<../../../../public/thumbnail-maizefriend.png>)
 
 ### Description
 
@@ -27,7 +27,8 @@ MaizeFriend is a cross-platform app that uses Convolutional Neural Networks (CNN
 - Model: Tensorflow, Keras
 - Server: Google Cloud Run
 
-### Repo
+### Link
 
 - Mobile App [GitHub - alrescha79-cmd/MaizeFriend-ReactNative](https://github.com/alrescha79-cmd/MaizeFriend-ReactNative)
+- Prototype [Figma - MaizeFriend/prototype](https://www.figma.com/proto/bnQ6h4Cs4ijxnVD74ysv46/MaizeFriend?node-id=43-242&t=f5EPhvnakccDz0fq-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=103%3A1382)
 - Backend API [GitHub - alrescha79-cmd/flask-tf-api](https://github.com/alrescha79-cmd/flask-tf-api)

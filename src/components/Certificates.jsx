@@ -15,10 +15,14 @@ function CertificatePage() {
     }
 
     const filteredCertificates = () => {
-        if (selectedProviders().length === 0) {
-            return certificateData
+        let filtered = certificateData
+        if (selectedProviders().length > 0) {
+            filtered = certificateData.filter(cert => selectedProviders().includes(cert.provider))
         }
-        return certificateData.filter(cert => selectedProviders().includes(cert.provider))
+        const pinnedCertificates = filtered.filter(cert => cert.pinned)
+        const unpinnedCertificates = filtered.filter(cert => !cert.pinned)
+        const sortedUnpinnedCertificates = unpinnedCertificates.sort((a, b) => new Date(b.date) - new Date(a.date))
+        return [...pinnedCertificates, ...sortedUnpinnedCertificates]
     }
 
     const paginatedCertificates = () => {
@@ -62,7 +66,6 @@ function CertificatePage() {
         window.scrollTo({ top: 0, behavior: "smooth" })
     }
 
-
     return (
         <>
             <FilterCertificate onFilterChange={handleFilterChange} />
@@ -76,6 +79,7 @@ function CertificatePage() {
                         date={data.date}
                         name={data.name}
                         link={data.link}
+                        pinned={data.pinned}
                     />
                 ))}
             </div>

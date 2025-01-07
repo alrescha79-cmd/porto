@@ -1,6 +1,6 @@
 import { createSignal, createEffect } from "solid-js"
 
-const CertificateCard = ({ image, imageAlt, provider, date, name, link }) => {
+const CertificateCard = ({ image, imageAlt, provider, date, name, link, pinned }) => {
   const [selectedCertificate, setSelectedCertificate] = createSignal(null)
   const [loading, setLoading] = createSignal(true)
   const [modalLoading, setModalLoading] = createSignal(true)
@@ -30,7 +30,14 @@ const CertificateCard = ({ image, imageAlt, provider, date, name, link }) => {
     setSelectedCertificate(null)
   }
 
-  const certificate = { image, imageAlt, provider, date, name, link }
+  const certificate = { image, imageAlt, provider, date, name, link, pinned }
+  const dateFormatted = new Date(date).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  })
+
+
 
   return (
     <div className="max-w-sm mb-6 md:mb-0 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
@@ -44,13 +51,21 @@ const CertificateCard = ({ image, imageAlt, provider, date, name, link }) => {
               className={`w-72 h-64 m-auto mb-4 rounded-lg shadow-none transition duration-500 ease-in-out group-hover:shadow-lg`}
               alt={imageAlt}
             />
-            <div className="flex items-center mb-3">
+            <div className="flex items-center justify-between mb-3">
               <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold leading-5 text-white font-display mr-2 capitalize bg-sky-700">
                 {provider}
               </span>
-              <p className="ml-auto font-mono text-xs font-normal opacity-75">
-                {date}
-              </p>
+              <div className="flex flex-col"> 
+                <p className="ml-auto font-mono text-xs font-normal opacity-75">
+                  {dateFormatted}
+                </p>
+                {pinned && (
+                  <p className="ml-auto font-mono font-bold">
+                    📌
+                  </p>
+                )}
+                
+              </div>
             </div>
             <p className="flex items-center font-display h-11 max-w-[300px] text-base font-bold">
               <span className="link-underline link-underline-black">
