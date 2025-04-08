@@ -6,7 +6,6 @@ date: "Mar 18 2023"
 draft: false
 tags:
 - UI UX
-- Figma
 
 demoUrl: https://s.id/chatdos
 ---

@@ -4,7 +4,7 @@ summary: "Website multi fungsi, yang siap membantu berbagai kebutahan Anda secar
 date: "Mar 15 2022"
 draft: false
 tags:
-- TailwindCSS
+- FullStack
 
 demoUrl: https://alrescha79-cmd.github.io/multitools/
 repoUrl: https://github.com/alrescha79-cmd/multitools

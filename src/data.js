@@ -132,6 +132,15 @@ export const certificateData = [
         date: "July 12, 2024",
         link: "#",
     },
+    {
+        id: 76,
+        name: "Machine Learning Intermediate",
+        provider: "IDCamp",
+        image: "certificates/idcamp.png",
+        date: "April 07, 2025",
+        link: "https://drive.google.com/file/d/1W2jgnt_g0W5Uvv5xPHg0EWvK_AA2Kni8/edit",
+        pinned: true,
+    },
     // Coursera certificates
     {
         id: 5,
@@ -349,6 +358,14 @@ export const certificateData = [
         image: "certificates/dicoding15.png",
         date: "Dec 16, 2024",
         link: "https://www.dicoding.com/certificates/0LZ04LNMRP65",
+    },
+    {
+        id: 75,
+        name: "Belajar Pengembangan Machine Learning",
+        provider: "Dicoding",
+        image: "certificates/dicoding16.png",
+        date: "Feb 24, 2025",
+        link: "https://www.dicoding.com/certificates/2VX3K5VYJXYQ",
     },
     
     // Codepolitan certificates

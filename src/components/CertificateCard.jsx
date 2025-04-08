@@ -87,7 +87,7 @@ const CertificateCard = ({ image, imageAlt, provider, date, name, link, pinned }
                       {selectedCertificate().provider}
                     </span>
                     <p className="ml-auto font-mono text-xs opacity-75">
-                      {selectedCertificate().date}
+                      {selectedCertificate().dateFormatted}
                     </p>
                   </div>
                   <h3 className="font-bold text-lg mt-1 mb-2">{selectedCertificate().name}</h3>

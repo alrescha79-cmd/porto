@@ -5,7 +5,6 @@ date: "April 14 2024"
 draft: false
 tags:
 - Backend
-- Express
 
 repoUrl: https://github.com/alrescha79-cmd/bookshelf-api.git
 ---

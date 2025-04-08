@@ -3,17 +3,21 @@ title: "Terms and Conditions"
 date: "04/04/2024"
 ---
 
-Welcome to cakson.my.id By accessing this website, we assume you accept these terms and conditions. Do not continue to use cakson.my.id if you do not agree to take all of the terms and conditions stated on this page.
+Welcome to cakson.my.id. By accessing or using this website, you agree to comply with and be bound by the following Terms and Conditions. If you do not agree with any part of these terms, please do not use this website.
+
+### Use of Website
+
+This website is intended to showcase personal projects, portfolios, and related information. All content is provided for informational purposes only.
 
 ### Restrictions
 
 #### You are specifically restricted from all of the following
 
-- Publishing this website material in other media
-- Sell, sublicense and/or commercialize the materials of this website
-- Use this website in any way that could or might damage this website
-- Engage in data mining, data retrieval, data extraction or any other similar activity in relation to this website
+- Republishing any content from this website on other platforms without prior permission.
+- Selling, sublicensing, or commercializing any material from this website.
+- Using this website in a way that could harm or impair the functionality or accessibility of the site.
+- Performing data mining, scraping, or any similar data collection activity.
 
-#### Privacy Policy
+#### Intellectual Property
 
-We value your privacy and we are committed to protecting your personal information. Our Privacy Policy explains what information we collect, how we use it, and how we protect it. By accessing or using our website, you agree to our Privacy Policy. Please read our Privacy Policy carefully.
+All content, including text, images, and code, is the intellectual property of the website owner unless otherwise stated.

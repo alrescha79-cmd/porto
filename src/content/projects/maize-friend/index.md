@@ -5,10 +5,6 @@ date: "Oct 6 2024"
 draft: false
 tags:
 - Mobile
-- Javascript
-- Python
-- React Native
-- FullStack
 
 repoUrl: https://github.com/alrescha79-cmd/MaizeFriend-ReactNative
 # demoUrl: https://srp-theta.vercel.app/

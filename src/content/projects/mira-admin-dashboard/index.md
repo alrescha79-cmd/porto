@@ -5,8 +5,6 @@ date: "April 20 2024"
 draft: false
 tags:
 - FrontEnd
-- React
-- Firebase
 
 repoUrl: https://github.com/ENTS-H112/mira-dashboard
 demoUrl: https://dashboard-abwswzd4sa-et.a.run.app/

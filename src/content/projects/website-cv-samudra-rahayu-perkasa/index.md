@@ -5,9 +5,6 @@ date: "June 30 2024"
 draft: false
 tags:
 - FullStack
-- TypeScript
-- Next Js
-- Supabase
 
 repoUrl: https://github.com/alrescha79-cmd/project-srp-pati
 demoUrl: https://srp-theta.vercel.app/

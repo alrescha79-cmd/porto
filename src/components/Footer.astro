@@ -58,6 +58,13 @@ import Container from "../components/Container.astro"
             <div class="text-sm mt-2">
               &copy; 2024 | All rights reserved
             </div>
+            <div class="text-sm mt-2">
+              Last updated: {new Date().toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </div>
           </div>
   
           <div class="order-1 sm:order-2 flex justify-center sm:justify-end">

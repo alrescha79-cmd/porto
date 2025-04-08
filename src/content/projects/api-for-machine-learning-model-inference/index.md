@@ -5,7 +5,6 @@ date: "May 16 2024"
 draft: false
 tags:
 - Backend
-- Express
 
 repoUrl: https://github.com/alrescha79-cmd/backend-mlgc.git
 

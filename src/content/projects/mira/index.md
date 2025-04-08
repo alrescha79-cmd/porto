@@ -4,10 +4,9 @@ summary: "Efficient API for patient data management and radiology result access.
 date: "May 30 2024"
 draft: false
 tags:
+- Mobile
 - Backend
-- Javascript
-- Express
-- Firebase
+- FullStack
 
 repoUrl: https://github.com/ENTS-H112/mira-backend
 demoUrl: https://mira-backend-abwswzd4sa-et.a.run.app/

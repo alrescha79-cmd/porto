@@ -4,10 +4,6 @@ summary: "Developed a modern news portal featuring a dynamic frontend (Astro, Re
 date: "Aug 20 2024"
 draft: false
 tags:
-- Javascript
-- React
-- Astro
-- Express
 - FullStack
 
 repoUrl: https://github.com/alrescha79-cmd/MaizeFriend-ReactNative

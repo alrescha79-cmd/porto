@@ -3,7 +3,7 @@ import type { Site, Page, Links, Socials, Experience } from "./types"
 // Global
 export const SITE: Site = {
   TITLE: "Anggun Caksono",
-  DESCRIPTION: "An enthusiastic Informatics Engineering student and experienced Fullstack Developer, I'm an alum of Bangkit Academy 2024 with skills in web, mobile app development, and cloud computing. Proficient in React, Node.js, Google Cloud Platform, and Agile methodologies, I was also selected for Bangkit’s Entrepreneur Track, where I gained hands-on startup experience. Open to opportunities in software development and cloud technology, I am ready to contribute my technical expertise to innovative projects.",
+  DESCRIPTION: "I am an enthusiastic Informatics Engineering student, Fullstack Developer, and Machine Learning enthusiast. An alum of Bangkit Academy 2024 (Cloud Computing path), I gained valuable experience through the Entrepreneur Track, sharpening my startup mindset. I have strong skills in web and mobile app development, cloud computing, and machine learning, and I'm proficient in React, Node.js, Google Cloud Platform, and Agile methodologies. I’m always open to opportunities in software development, cloud technology, and ML-related projects.",
   AUTHOR: "Anggun Caksono",
 }
 
@@ -62,8 +62,8 @@ export const SOCIALS: Socials = [
   { 
     NAME: "Email",
     ICON: "email", 
-    TEXT: "caksonoanggun@gmail.com",
-    HREF: "mailto:caksonoanggun@gmail.com",
+    TEXT: "anggun@cakson.my.id",
+    HREF: "mailto:anggun@cakson.my.id",
   },
   { 
     NAME: "Github",
