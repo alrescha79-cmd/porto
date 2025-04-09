@@ -10,7 +10,7 @@ tags:
 demoUrl: https://s.id/chatdos
 ---
 
-![!\[ChatDos\] ()](<../../../../public/Thumbnail chatdos.png>)
+![!\[ChatDos\] ()](<../../../../public/projects/Thumbnail chatdos.png>)
 
 ## ChatDos
 

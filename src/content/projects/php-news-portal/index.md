@@ -8,7 +8,7 @@ tags:
 
 repoUrl: https://github.com/alrescha79-cmd/portal-berita-php
 ---
-![alt text](<../../../../public/thumbnail Berita.png>)
+![alt text](<../../../../public/projects/thumbnail Berita.png>)
 
 ### Description
 

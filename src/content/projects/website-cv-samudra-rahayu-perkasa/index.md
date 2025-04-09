@@ -10,7 +10,7 @@ repoUrl: https://github.com/alrescha79-cmd/project-srp-pati
 demoUrl: https://srp-theta.vercel.app/
 ---
 
-![Website CV. Samudra Rahayu Perkasa](<../../../../public/srpmockup.png>)
+![Website CV. Samudra Rahayu Perkasa](<../../../../public/projects/srpmockup.png>)
 
 ### Description
 

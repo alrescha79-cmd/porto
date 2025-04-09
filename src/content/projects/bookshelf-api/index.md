@@ -9,7 +9,7 @@ tags:
 repoUrl: https://github.com/alrescha79-cmd/bookshelf-api.git
 ---
 
-![Bookshelf Api](<../../../../public/bookshelf.png>)
+![Bookshelf Api](<../../../../public/projects/bookshelf.png>)
 
 ### Description
 

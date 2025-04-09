@@ -12,7 +12,7 @@ repoUrl: https://github.com/ENTS-H112/mira-backend
 demoUrl: https://mira-backend-abwswzd4sa-et.a.run.app/
 ---
 
-![MIRA - Mitra Radiologi](<../../../../public/Mira Pitch.png>)
+![MIRA - Mitra Radiologi](<../../../../public/projects/Mira Pitch.png>)
 
 ### Description
 

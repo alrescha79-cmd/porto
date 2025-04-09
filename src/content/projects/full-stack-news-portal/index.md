@@ -6,11 +6,11 @@ draft: false
 tags:
 - FullStack
 
-repoUrl: https://github.com/alrescha79-cmd/MaizeFriend-ReactNative
+repoUrl: https://github.com/alrescha79-cmd/portal-berita
 # demoUrl: https://srp-theta.vercel.app/
 ---
 
-![Maizefriend](<../../../../public/portal-berita.png>)
+![Maizefriend](<../../../../public/projects/portal-berita.png>)
 
 ### Description
 

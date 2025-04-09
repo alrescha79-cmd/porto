@@ -10,7 +10,7 @@ repoUrl: https://github.com/alrescha79-cmd/backend-mlgc.git
 
 ---
 
-![API for machine learning model inference](<../../../../public/mlgc.png>)
+![API for machine learning model inference](<../../../../public/projects/mlgc.png>)
 
 ### Description
 
