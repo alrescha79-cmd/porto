@@ -12,7 +12,7 @@ export default function ReferenceLetter() {
                         <div className="flex flex-col space-y-2">
                             <div className="flex flex-col space-y-1">
                                 <div className="font-semibold text-black dark:text-white">To whom it may concern,</div>
-                                <div className="text-black dark:text-white">
+                                <div className="text-black dark:text-white text-justify">
                                     <p>I am writing this in reference to <span className="font-semibold">Anggun Caksono</span>.</p>
                                     <br />
                                     <p>During the Developer Handal (<a href="https://www.devhandal.id/" target="_blank" rel="noopener noreferrer" className="font-semibold underline">DevHandal</a>) organized by <a href="https://www.codepolitan.com/" target="_blank" rel="noopener noreferrer" className="font-semibold underline">CODEPOLITAN</a> and <a href="https://www.alibabacloud.com/" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Alibaba Cloud</a>, Anggun Caksono showed dedication and skill in completing all tasks and effectively
