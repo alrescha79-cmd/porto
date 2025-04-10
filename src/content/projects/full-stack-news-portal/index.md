@@ -12,15 +12,66 @@ repoUrl: https://github.com/alrescha79-cmd/portal-berita
 
 ![Maizefriend](<../../../../public/projects/portal-berita.png>)
 
-### Description
+### **Portal Berita**
 
-This project involved developing a comprehensive news portal from scratch. The frontend, built with Astro, React, and Tailwind CSS, offers a clean and intuitive user experience. The backend, powered by Node.js and Express.js, handles data management, user authentication, and content management. Firebase was utilized for real-time database, authentication, and hosting, providing a scalable and reliable infrastructure. Key features include personalized news feeds, real-time updates, and a robust admin dashboard for content management.
+**Description**  
+This project was developed as the final deliverable for the **Independent Internship Program at Winnicode Garuda Teknologi**, under the **Web Developer Department**. The **Portal Berita** (News Portal) is a full-featured web application designed to deliver real-time news updates with a modern, user-friendly interface.
 
-#### Tech Stack
+**Key Features:**
 
-- Frontend: Astro, React & TailwindCSS
-- Backend: Node.js, Express.js & Firebase
+- **Dynamic User Interface:** Built with **Astro** and **SCSS**, providing a visually appealing and interactive user experience.
+- **API Integration:** Fetches and displays up-to-date news articles through seamless API integration.
+- **Content Management:** Supports categorization, filtering, and organization of news articles for easy navigation.
+- **Responsive Design:** Optimized for various devices, ensuring a smooth experience on desktops, tablets, and smartphones.
+- **Search and Filter Options:** Allows users to search for news articles and filter them by category for faster access to relevant content.
+- **Dark/Light Mode:** Offers a customizable viewing experience with dark and light mode options.
 
-### Repo
+**Technologies Used:**
+
+- **Frontend:**
+  - **Astro:** A cutting-edge framework for fast and optimized web pages.
+  - **React:** For building interactive user interfaces.
+  - **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+  - **SCSS & CSS:** For modern and maintainable styling.
+  - **HTML:** For semantic structure and content presentation.
+- **Backend:**
+  - **JavaScript & TypeScript:** For robust logic and type-safe development.
+  - **Express.js:** A minimal and flexible Node.js web application framework for building APIs.
+  - **Firebase:** A platform for building mobile and web applications, providing backend services.
+- **Deployment:**
+  - **Docker:** Used for containerization to simplify deployment processes.
+  - Hosted on platforms like **Vercel** or **Netlify** for scalability.
+- **Version Control & CI/CD:**
+  - Managed using **Git** and **GitHub Actions** for automated build and deployment pipelines.
+
+**Contributions:**
+
+- Architected and developed the frontend using **Astro** and **SCSS** for a sleek design.
+- Implemented backend logic using **JavaScript** and **TypeScript**, ensuring scalability and maintainability.
+- Designed and integrated APIs to fetch real-time news content dynamically.
+- Deployed the application using **Docker** for streamlined and efficient deployment.
+- Developed search and filter functionalities to enhance the user experience.
+
+**Challenges Overcome:**
+
+- Optimized performance for seamless loading, even on slower network connections.
+- Integrated complex APIs for dynamic content fetching and processing.
+- Delivered a consistent user experience across multiple devices with responsive designs.
+
+**Achievements:**
+
+- Successfully deployed the application for real-time usage.
+- Delivered complete documentation to simplify future development and maintenance.
+- Received positive feedback from mentors and users for the project’s quality and usability.
+
+**Technology Breakdown:**
+
+- **JavaScript (54.5%)**: Core language for application logic.
+- **Astro (30.3%)**: Framework for the frontend interface.
+- **TypeScript (12.8%)**: Ensures type safety and reduces errors in development.
+- **SCSS, CSS, HTML (2.2%)**: Provides styling and page structure.
+- **Dockerfile (0.2%)**: Facilitates containerization for deployment.
+
+### **Repository Link:**
 
 - [GitHub - alrescha79-cmd/portal-berita](https://github.com/alrescha79-cmd/portal-berita)
