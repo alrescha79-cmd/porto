@@ -75,6 +75,10 @@ article {
   @apply transition-all duration-300 ease-in-out;
 }
 
+strong {
+  @apply font-semibold text-black/75 dark:text-white/85;
+}
+
 /** Light theme particles on home page */
 @keyframes animateParticle {
   from {

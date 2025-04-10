@@ -101,11 +101,11 @@ const CertificateCard = ({ image, imageAlt, provider, date, name, link, pinned }
                       href={selectedCertificate().link}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-full py-2 text-center text-white bg-sky-700 rounded-lg shadow-md hover:bg-sky-800"
+                      className="w-full font-bold py-2 text-center text-white dark:text-black bg-black rounded-lg shadow-md hover:bg-black/90 dark:bg-white dark:hover:bg-white/80 transition duration-300 ease-in-out"
                     >
                       View Certificate
                     </a>
-                    <button className="btn w-full" onClick={closeModal}>Close</button>
+                    <button className="w-full font-bold py-2 text-center text-black border-2 border-black rounded-lg shadow-md hover:bg-black/5 dark:text-white dark:border-white dark:hover:bg-white/10 transition duration-300 ease-in-out" onClick={closeModal}>Close</button>
                   </div>
                 </>
               )}
