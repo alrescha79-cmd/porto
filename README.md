@@ -68,6 +68,10 @@ Follow these instructions to set up the project locally:
 
 5. Open your browser and visit `http://localhost:4321` to view the website.
 
+## **Lighthouse Report**
+
+![porto](public/perform.png)
+
 ## **Project Structure**
 
 ```plaintext
@@ -129,4 +133,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - Thanks to the open-source community for their amazing tools and libraries.
 - Special thanks to [Astro](https://astro.build/) and [React](https://reactjs.org/) for their incredible frameworks.
-- Icons and images from [FontAwesome](https://fontawesome.com/) and [Unsplash](https://unsplash.com/).
