@@ -9,7 +9,7 @@ function InputField({ id, name, label, placeholder, handleChange, type }) {
                 id={id}
                 name={name}
                 required
-                className="block bg-neutral-100 dark:bg-neutral-800 px-2.5 pb-2.5 pt-4 w-full text-base rounded-md peer"
+                className="block border-2 bg-neutral-100 dark:bg-neutral-800 px-2.5 pb-2.5 pt-4 w-full text-base rounded-md peer shadow-md focus:outline-none focus:ring-0 focus:border-black/70 dark:border-white/20 dark:focus:border-white/80"
                 placeholder={placeholder}
                 onChange={handleChange}
             />
@@ -32,7 +32,7 @@ function TextAreaField({ id, name, label, placeholder, handleChange }) {
                 name={name}
                 rows={6}
                 required
-                className="block bg-neutral-100 dark:bg-neutral-800 px-2.5 pb-2.5 pt-4 w-full text-base rounded-md peer"
+                className="block border-2 bg-neutral-100 dark:bg-neutral-800 px-2.5 pb-2.5 pt-4 w-full text-base rounded-md peer shadow-md focus:outline-none focus:ring-0 focus:border-black/70 dark:focus:border-white/80 dark:border-white/20"
                 placeholder={placeholder}
                 onChange={handleChange}
             />
