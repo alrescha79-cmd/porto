@@ -1,6 +1,6 @@
 /** @jsxImportSource solid-js */
 import { createSignal, Show } from "solid-js"
-import ContactForm from "@components/ContactForm"
+import ContactForm from "../components/ContactForm"
 
 export default function ChatButton() {
     const [show, setShow] = createSignal(false)

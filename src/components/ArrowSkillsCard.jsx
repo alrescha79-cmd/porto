@@ -1,5 +1,3 @@
-import React from "react"
-
 const ArrowSkillsCard = ({ title, items }) => {
   return (
     <div className="p-4 gap-3 flex flex-col items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
