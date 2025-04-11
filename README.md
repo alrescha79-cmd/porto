@@ -24,10 +24,10 @@ This repository contains the source code for my **Personal Portfolio Website**, 
 
 ### **Development Tools**
 
-- JavaScript (51.1%)
-- Astro (36.8%)
-- TypeScript (10.5%)
-- CSS (1.6%)
+- JavaScript
+- Astro
+- TypeScript
+- CSS
 
 ## **Getting Started**
 
