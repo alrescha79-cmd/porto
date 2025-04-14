@@ -482,7 +482,7 @@ export const certificateData = [
         link: "https://codepolitan.com/c/4RBDB2Z",
     },
     {
-        id: 71,
+        id: 77,
         name: "React.js - Belajar Lebih Dalam Tentang Component dan Jenisnya",
         provider: "Codepolitan",
         image: "certificates/codepolitan15.png",
@@ -490,7 +490,7 @@ export const certificateData = [
         link: "https://codepolitan.com/c/XL5H2WE",
     },
     {
-        id: 72,
+        id: 78,
         name: "React.js - Bagaimana React.js Bekerja di Balik Layar",
         provider: "Codepolitan",
         image: "certificates/codepolitan16.png",
@@ -498,7 +498,7 @@ export const certificateData = [
         link: "https://codepolitan.com/c/UYHCNPR",
     },
     {
-        id: 73,
+        id: 79,
         name: "React.js - Belajar Hook Effect dan Data Fetching",
         provider: "Codepolitan",
         image: "certificates/codepolitan17.png",

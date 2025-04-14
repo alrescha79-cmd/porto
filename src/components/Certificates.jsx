@@ -1,4 +1,4 @@
-import { createSignal } from "solid-js"
+import { createSignal, onMount } from "solid-js"
 import CertificateCard from "../components/CertificateCard"
 import { certificateData } from "../data"
 import FilterCertificate from "./FilterCertificate"
@@ -8,6 +8,16 @@ const ITEMS_PER_PAGE = 10
 function CertificatePage() {
     const [selectedProviders, setSelectedProviders] = createSignal([])
     const [currentPage, setCurrentPage] = createSignal(1)
+
+    onMount(() => {
+        const hasReloaded = sessionStorage.getItem("cert_reload")
+        if (!hasReloaded) {
+            sessionStorage.setItem("cert_reload", "true")
+            location.reload()
+        } else {
+            sessionStorage.removeItem("cert_reload")
+        }
+    })
 
     const handleFilterChange = (updatedProviders) => {
         setSelectedProviders(updatedProviders)
