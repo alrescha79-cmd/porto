@@ -5,9 +5,9 @@ export default function ChatButton() {
     const [show, setShow] = createSignal(false)
 
     return (
-        <div class="fixed bottom-[72px] md:bottom-0 right-0 m-2 p-2 md:m-4 md:p-4 z-50 rounded-lg shadow-lg flex flex-col items-end gap-2 animated bg-none">
+        <div class="fixed bottom-[76px] md:bottom-0 right-0 m-2 p-2 md:m-4 md:p-4 z-50 rounded-lg flex flex-col items-end gap-2 animated bg-none">
             <Show when={show()}>
-                <div class="text-right bg-neutral-500/30 backdrop-blur-sm border-neutral-500/20 border-2  rounded-lg p-4 w-80 dark:bg-neutral-800/10 dark:border-neutral-600/20">
+                <div class="text-right bg-neutral-500/30 backdrop-blur-sm border-2 border-black/25  rounded-lg p-4 w-80 dark:bg-neutral-800/20 dark:border-white/25">
                     <h2 class="text-lg text-center font-semibold text-neutral-800 dark:text-neutral-200">
                         Contact Us
                     </h2>
