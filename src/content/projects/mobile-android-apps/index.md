@@ -10,7 +10,7 @@ repoUrl: https://github.com/alrescha79-cmd/android-submission
 # demoUrl: https://srp-theta.vercel.app/
 ---
 
-![Mobile](<../../../../public/projects/mobile.png>)
+![Mobile](<../../../assets/projects/mobile.png>)
 
 ### **Android Submission - Simple Android Application**  
 

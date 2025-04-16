@@ -9,7 +9,7 @@ tags:
 repoUrl: https://github.com/alrescha79-cmd/flask-tf-api
 ---
 
-![Maizefriend](<../../../../public/projects/maizefriend-api.png>)
+![Maizefriend](<../../../assets/projects/maizefriend-api.png>)
 
 ### **Flask-TF-API: Corn Leaf Disease Prediction**
 

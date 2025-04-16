@@ -9,7 +9,7 @@ tags:
 repoUrl: https://github.com/alrescha79-cmd/analisis-sentimen
 ---
 
-![Sentiment Analysis](../../../../public/projects/analisis-sentimen.png)
+![Sentiment Analysis](../../../assets/projects/analisis-sentimen.png)
 
 ### **Project Description**
 

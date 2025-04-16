@@ -11,7 +11,7 @@ tags:
 repoUrl: https://github.com/alrescha79-cmd/sistem-pendukung-keputusan
 ---
 
-![alt text](<../../../../public/projects/SPK SAW.png>)
+![alt text](<../../../assets/projects/SPK SAW.png>)
 
 ### Description
 

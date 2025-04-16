@@ -9,7 +9,7 @@ tags:
 repoUrl: https://github.com/alrescha79-cmd/ML-clustering-classsification
 ---
 
-![Sentiment Analysis](../../../../public/projects/ml.png)
+![Sentiment Analysis](<../../../assets/projects/ml.png>)
 
 ### **Project Description**
 

@@ -9,7 +9,7 @@ tags:
 repoUrl: https://github.com/alrescha79-cmd/garbage-classification
 ---
 
-![Sentiment Analysis](../../../../public/projects/garbage.png)
+![Sentiment Analysis](../../../assets/projects/garbage.png)
 
 ### **Project Description**
 

@@ -9,7 +9,7 @@ tags:
 repoUrl: https://github.com/alrescha79-cmd/MaizeFriend-ReactNative
 ---
 
-![Maizefriend](<../../../../public/projects/thumbnail-maizefriend.png>)
+![Maizefriend](<../../../assets/projects/thumbnail-maizefriend.png>)
 
 ### **Project Description**
 

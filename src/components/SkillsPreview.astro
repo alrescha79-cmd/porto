@@ -21,7 +21,7 @@ import { cardData } from "../data"
     <ul class="space-y-4">
       {cardData.map((data) => (
         <li title={data.title}>
-          <ArrowSkillsCard title={data.title} items={data.items} />
+          <ArrowSkillsCard title={data.title} items={data.items} client:idle/>
         </li>
       ))}
     </ul>

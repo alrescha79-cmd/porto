@@ -10,7 +10,7 @@ repoUrl: https://github.com/alrescha79-cmd/project-srp-pati
 demoUrl: https://srp-theta.vercel.app/
 ---
 
-![Website CV. Samudra Rahayu Perkasa](<../../../../public/projects/srpmockup.png>)
+![Website CV. Samudra Rahayu Perkasa](../../../assets/projects/srpmockup.png)
 
 **Description:**  
 This project is a comprehensive solution built using **TypeScript** as the core language, focusing on delivering a scalable, efficient, and maintainable web application. Developed with cutting-edge technologies, the **Project SRP Pati** aims to provide seamless functionality and exceptional user experience.

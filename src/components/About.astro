@@ -1,9 +1,20 @@
+---
+import { Image } from "astro:assets"
+import myPhoto from "../assets/poto.png"
+---
+
 <section class="animate">
   <article>
     <div class="flex items-center justify-between">
       <p class="font-semibold text-black dark:text-white">About Me</p>
       <div>
-        <img src="poto.png" alt="Anggun Caksono" width="50" height="50" />
+        <Image
+          src={myPhoto}
+          alt="Anggun Caksono"
+          width={50}
+          height={50}
+          class="rounded-full"
+        />
       </div>
     </div>
     <div class="text-black/80 dark:text-white/85 text-justify">

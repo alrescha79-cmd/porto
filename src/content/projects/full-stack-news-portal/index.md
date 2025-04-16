@@ -10,7 +10,7 @@ repoUrl: https://github.com/alrescha79-cmd/portal-berita
 # demoUrl: https://srp-theta.vercel.app/
 ---
 
-![Maizefriend](<../../../../public/projects/portal-berita.png>)
+![Maizefriend](<../../../assets/projects/portal-berita.png>)
 
 ### **Portal Berita**
 
