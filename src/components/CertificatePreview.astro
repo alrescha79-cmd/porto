@@ -1,5 +1,5 @@
 ---
-import ArrowCertificateCard from "../components/ArrowCertificateCard"
+import ArrowCertificateCard from "../components/ArrowCertificateCard.astro"
 import { certificateData } from "../data"
 
 // Get only pinned certificates
@@ -15,7 +15,7 @@ const certificatesToShow = pinnedCertificates.length > 0
       .slice(0, 5)
 ---
 
-<section class="animate ">
+<section class="animate">
   <div class="space-y-4">
     <div class="flex justify-between">
       <p class="font-semibold text-black dark:text-white">Top Certificates</p>
@@ -34,7 +34,6 @@ const certificatesToShow = pinnedCertificates.length > 0
       {
         certificatesToShow.map((data) => (
           <ArrowCertificateCard
-            client:load
             date={data.date}
             image={data.image}
             imageAlt={data.name}

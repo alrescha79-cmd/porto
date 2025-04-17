@@ -1,62 +1,61 @@
 ---
 import { Image } from "astro:assets"
 
-const { image, provider, date, name, link, pinned } = Astro.props
-
-const dateFormatted = new Date(date).toLocaleDateString("en-US", {
-  month: "long",
-  day: "numeric",
-  year: "numeric",
-})
+const { image, imageAlt, provider, date, name, link } = Astro.props
 
 const modalId = `modal-${name.replace(/\s+/g, "-").toLowerCase()}`
 ---
 
 <div
-  class="certificate-card max-w-sm mb-6 md:mb-0 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out cursor-pointer"
+  class="certificate-card mb-4 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out cursor-pointer"
   data-modal-id={modalId}
 >
-  <div id="certificate-content" class="w-full text-left block card-content hidden">
-    <Image
-      src={image}
-      alt={name}
-      width={288}
-      height={256}
-      quality={50}      
-      class="w-72 h-64 m-auto mb-4 rounded-lg shadow-none transition duration-500 ease-in-out group-hover:shadow-lg"
-      loading="lazy"
-    />
-    <div class="flex items-center justify-between mb-3">
-      <span
-        class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold leading-5 text-white font-display mr-2 capitalize bg-sky-700"
-      >
-        {provider}
-      </span>
-      <div class="flex flex-col">
-        <p class="ml-auto font-mono text-xs font-normal opacity-75">
-          {dateFormatted}
-        </p>
-        {pinned && <p class="ml-auto font-mono font-bold">📌</p>}
+  <div
+    id="certificate-content"
+    class="w-full text-left block card-content hidden"
+  >
+    <div class="w-full flex flex-col items-center md:items-start">
+      <div class="flex justify-between w-full">
+        <div
+          class="text-xs font-normal opacity-75 px-2 rounded-full content-center bg-black/5 dark:bg-white/10"
+        >
+          {date}
+        </div>
+        <div class="px-2 py-0.5 rounded-full text-sm text-white bg-sky-700">
+          {provider}
+        </div>
       </div>
     </div>
-    <p
-      class="flex items-center font-display h-11 max-w-[300px] text-base font-bold"
-    >
-      <span class="link-underline link-underline-black">
-        {name.length > 65 ? `${name.slice(0, 65)}...` : name}
-      </span>
-    </p>
-  </div>
-
-  <div id="skeleton-loading" class="skeleton-card">
-    <div class="w-72 h-64 m-auto mb-4 rounded-lg bg-gray-300 dark:bg-gray-700 skeleton"></div>
-    <div class="flex items-center mb-3">
-      <span class="inline-flex items-center px-3 py-0.5 rounded-full h-5 w-20 text-xs font-bold leading-5 bg-gray-300 dark:bg-gray-700 skeleton"></span>
-      <p class="ml-auto font-mono text-xs font-normal w-20 h-4 bg-gray-300 dark:bg-gray-700 skeleton"></p>
+    <div class="flex flex-col md:flex-row md:gap-4 items-center w-full">
+      <div class="flex my-1 text-base font-bold w-full">
+        <span class="link-underline link-underline-black">
+          {name}
+        </span>
+      </div>
     </div>
-    <div class="h-11 w-full bg-gray-300 dark:bg-gray-700 rounded skeleton"></div>
   </div>
 
+  <!-- Skeleton loading -->
+  <div id="skeleton-loading" class="skeleton-card">
+    <div class="w-full flex flex-col items-center md:items-start">
+      <div class="flex justify-between w-full">
+        <div
+          class="text-xs font-normal h-6 w-24 rounded-full bg-gray-300 dark:bg-gray-700 skeleton"
+        >
+        </div>
+        <div
+          class="h-6 w-24 rounded-full bg-gray-300 dark:bg-gray-700 skeleton"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row md:gap-4 items-center w-full mt-2">
+      <div class="h-6 w-full bg-gray-300 dark:bg-gray-700 rounded skeleton">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal structure -->
   <dialog
     id={modalId}
     class="modal fixed inset-0 z-50 bg-black/50 backdrop-blur-sm p-0 max-w-none max-h-none w-full h-full flex items-center justify-center"
@@ -71,12 +70,14 @@ const modalId = `modal-${name.replace(/\s+/g, "-").toLowerCase()}`
           >
             {provider}
           </span>
-          <p class="ml-auto font-mono text-xs opacity-75">{dateFormatted}</p>
+          <p class="ml-auto font-mono text-xs opacity-75">
+            {date}
+          </p>
         </div>
         <h3 class="font-bold text-lg mt-1 mb-2">{name}</h3>
         <Image
           src={image}
-          alt={name}
+          alt={imageAlt || name}
           width={380}
           height={420}
           quality={100}
@@ -98,7 +99,8 @@ const modalId = `modal-${name.replace(/\s+/g, "-").toLowerCase()}`
           </button>
         </div>
       </div>
-      
+
+      <!-- Modal skeleton loading -->
       <div id="modal-skeleton" class="modal-skeleton">
         <div class="flex items-center">
           <span
@@ -131,4 +133,5 @@ const modalId = `modal-${name.replace(/\s+/g, "-").toLowerCase()}`
   </dialog>
 </div>
 
+<!-- Import the styles and scripts -->
 <script src="../js/certificate-card.js"></script>
