@@ -1,15 +1,25 @@
 ---
-import CertificatePage from "../../components/Certificates"
 import PageLayout from "../../layouts/PageLayout.astro"
 import { CERTIFICATIONS } from "../../consts"
+import { certificateData } from "../../data"
+import CertificateList from "../../components/CertificateList.astro"
+const filtered = certificateData
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0))
+
 ---
 
 <PageLayout
   title={CERTIFICATIONS.TITLE}
   description={CERTIFICATIONS.DESCRIPTION}
 >
-
   <div class="animate pt-24 md:pt-36 pb-5">
-    <CertificatePage client:load />
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">
+      {CERTIFICATIONS.TITLE}
+    </h1>
+    <p class="text-lg text-center mb-8">
+      {CERTIFICATIONS.DESCRIPTION}
+    </p>
+    <CertificateList certificates={filtered} />
   </div>
 </PageLayout>

@@ -1,0 +1,157 @@
+---
+import { Image } from "astro:assets"
+
+const { image, provider, date, name, link, pinned } = Astro.props
+
+const dateFormatted = new Date(date).toLocaleDateString("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+})
+
+// Generate a unique ID for this certificate's modal
+const modalId = `modal-${name.replace(/\s+/g, "-").toLowerCase()}`
+---
+
+<div
+  class="certificate-card max-w-sm mb-6 md:mb-0 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out cursor-pointer"
+  data-modal-id={modalId}
+>
+  <div class="w-full text-left block card-content">
+    <Image
+      src={image}
+      alt={name}
+      width={288}
+      height={256}
+      class="w-72 h-64 m-auto mb-4 rounded-lg shadow-none transition duration-500 ease-in-out group-hover:shadow-lg"
+      loading="lazy"
+    />
+    <div class="flex items-center justify-between mb-3">
+      <span
+        class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold leading-5 text-white font-display mr-2 capitalize bg-sky-700"
+      >
+        {provider}
+      </span>
+      <div class="flex flex-col">
+        <p class="ml-auto font-mono text-xs font-normal opacity-75">
+          {dateFormatted}
+        </p>
+        {pinned && <p class="ml-auto font-mono font-bold">📌</p>}
+      </div>
+    </div>
+    <p
+      class="flex items-center font-display h-11 max-w-[300px] text-base font-bold"
+    >
+      <span class="link-underline link-underline-black">
+        {name.length > 65 ? `${name.slice(0, 65)}...` : name}
+      </span>
+    </p>
+  </div>
+
+  <!-- Modal structure using standard HTML dialog -->
+  <dialog
+    id={modalId}
+    class="modal fixed inset-0 z-50 bg-black/50 backdrop-blur-sm p-0 max-w-none max-h-none w-full h-full flex items-center justify-center"
+  >
+    <div
+      class="modal-content bg-white dark:bg-black border rounded-lg shadow-lg w-[90%] max-w-lg p-6 relative"
+    >
+      <div class="flex items-center">
+        <span
+          class="inline-flex items-center rounded-full px-2 text-xs leading-5 text-white font-display mr-2 capitalize bg-sky-700"
+        >
+          {provider}
+        </span>
+        <p class="ml-auto font-mono text-xs opacity-75">{dateFormatted}</p>
+      </div>
+      <h3 class="font-bold text-lg mt-1 mb-2">{name}</h3>
+      <Image
+        src={image}
+        alt={name}
+        width={380}
+        height={420}
+        class="w-[380px] md:w-[420px] m-auto mb-4 rounded-lg shadow-none transition duration-500 ease-in-out group-hover:shadow-lg"
+      />
+      <div class="flex flex-col w-full gap-2">
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+          class="w-full font-bold py-2 text-center text-white dark:text-black bg-black rounded-lg shadow-md hover:bg-black/90 dark:bg-white dark:hover:bg-white/80 transition duration-300 ease-in-out"
+        >
+          View Certificate
+        </a>
+        <button
+          class="w-full font-bold py-2 text-center text-black border-2 border-black rounded-lg shadow-md hover:bg-black/5 dark:text-white dark:border-white dark:hover:bg-white/10 transition duration-300 ease-in-out close-modal-btn"
+        >
+          Close
+        </button>
+      </div>
+      <!-- <button
+        class="absolute top-2 right-2 text-black dark:text-white text-xl font-bold close-modal-btn"
+        aria-label="Close modal"
+      >
+        &times
+      </button> -->
+    </div>
+  </dialog>
+</div>
+
+<script>
+  // Function to set up modal functionality
+  function setupModals() {
+    // Get all certificate cards
+    document.querySelectorAll(".certificate-card").forEach((card) => {
+      const modalId = card.getAttribute("data-modal-id")
+      const modal = document.getElementById(modalId)
+
+      if (!modal) return
+
+      // Add click event to the card to open modal
+      card.addEventListener("click", () => {
+        modal.showModal()
+      })
+
+      // Add click event to all close buttons in this modal
+      modal.querySelectorAll(".close-modal-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation()
+          modal.close()
+        })
+      })
+
+      // Close modal when clicking outside content area
+      modal.addEventListener("click", (e) => {
+        const modalContent = modal.querySelector(".modal-content")
+        if (modalContent) {
+          const rect = modalContent.getBoundingClientRect()
+          if (
+            e.clientX < rect.left ||
+            e.clientX > rect.right ||
+            e.clientY < rect.top ||
+            e.clientY > rect.bottom
+          ) {
+            modal.close()
+          }
+        }
+      })
+
+      // Prevent clicks on modal content from closing the modal
+      modal.querySelector(".modal-content")?.addEventListener("click", (e) => {
+        e.stopPropagation()
+      })
+    })
+  }
+
+  // Run the setup on page load
+  document.addEventListener("astro:page-load", setupModals)
+  document.addEventListener("DOMContentLoaded", setupModals)
+
+  // Also run it immediately if the DOM is already loaded
+  if (
+    document.readyState === "interactive" ||
+    document.readyState === "complete"
+  ) {
+    setupModals()
+  }
+</script>

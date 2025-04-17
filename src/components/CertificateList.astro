@@ -1,0 +1,10 @@
+---
+import CertificateCard from "./CertificateCard.astro"
+const { certificates } = Astro.props;
+---
+
+<div
+  class="animate md:px-4 flex flex-wrap justify-center items-center border-b-current w-full gap-2 md:w-11/12 mx-auto mt-12"
+>
+  {certificates.map((cert) => <CertificateCard {...cert} />)}
+</div>

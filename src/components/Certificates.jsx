@@ -1,7 +1,7 @@
 import { createSignal, onMount } from "solid-js"
-import CertificateCard from "../components/CertificateCard"
 import { certificateData } from "../data"
 import FilterCertificate from "./FilterCertificate"
+import CertificateList from "./CertificateList.astro"
 
 const ITEMS_PER_PAGE = 10
 
@@ -27,48 +27,48 @@ function CertificatePage() {
     const filteredCertificates = () => {
         let filtered = certificateData
         if (selectedProviders().length > 0) {
-            filtered = certificateData.filter(cert => selectedProviders().includes(cert.provider))
+            filtered = certificateData.filter(cert =>
+                selectedProviders().includes(cert.provider)
+            )
         }
-        const pinnedCertificates = filtered.filter(cert => cert.pinned)
-        const unpinnedCertificates = filtered.filter(cert => !cert.pinned)
-        const sortedUnpinnedCertificates = unpinnedCertificates.sort((a, b) => new Date(b.date) - new Date(a.date))
-        return [...pinnedCertificates, ...sortedUnpinnedCertificates]
+        const pinned = filtered.filter(cert => cert.pinned)
+        const unpinned = filtered.filter(cert => !cert.pinned)
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+        return [...pinned, ...unpinned]
     }
 
     const paginatedCertificates = () => {
-        const startIndex = (currentPage() - 1) * ITEMS_PER_PAGE
-        return filteredCertificates().slice(startIndex, startIndex + ITEMS_PER_PAGE)
+        const start = (currentPage() - 1) * ITEMS_PER_PAGE
+        return filteredCertificates().slice(start, start + ITEMS_PER_PAGE)
     }
 
-    const totalPages = () => Math.ceil(filteredCertificates().length / ITEMS_PER_PAGE)
+    const totalPages = () =>
+        Math.ceil(filteredCertificates().length / ITEMS_PER_PAGE)
 
     const getPageNumbers = () => {
         const total = totalPages()
         const current = currentPage()
         const delta = 1
         const range = []
-        const rangeWithDots = []
-        let l
 
         for (let i = 1; i <= total; i++) {
-            if (i === 1 || i === total || i >= current - delta && i <= current + delta) {
+            if (i === 1 || i === total || (i >= current - delta && i <= current + delta)) {
                 range.push(i)
             }
         }
 
+        const finalRange = []
+        let last
+
         for (let i of range) {
-            if (l) {
-                if (i - l === 2) {
-                    rangeWithDots.push(l + 1)
-                } else if (i - l !== 1) {
-                    rangeWithDots.push("...")
-                }
+            if (last && i - last > 1) {
+                finalRange.push("...")
             }
-            rangeWithDots.push(i)
-            l = i
+            finalRange.push(i)
+            last = i
         }
 
-        return rangeWithDots
+        return finalRange
     }
 
     const handlePageChange = (newPage) => {
@@ -79,25 +79,15 @@ function CertificatePage() {
     return (
         <>
             <FilterCertificate onFilterChange={handleFilterChange} />
-            <div className="animate md:px-4 flex flex-wrap justify-center items-center border-b-current w-full gap-2 md:w-11/12 mx-auto">
-                {paginatedCertificates().map((data) => (
-                    <CertificateCard
-                        key={data.id}
-                        image={data.image}
-                        imageAlt={data.name}
-                        provider={data.provider}
-                        date={data.date}
-                        name={data.name}
-                        link={data.link}
-                        pinned={data.pinned}
-                    />
-                ))}
-            </div>
+
+            <CertificateList certificates={paginatedCertificates()} />
+
             <div className="w-full md:w-10/12 mx-auto mt-4 mb-1">
                 <h1 className="md:text-xl text-base font-bold text-center">
                     Showing {paginatedCertificates().length} of {filteredCertificates().length} Certificates
                 </h1>
             </div>
+
             <div className="w-full md:w-10/12 mx-auto py-4">
                 <div className="flex justify-center gap-2">
                     <div className="join">
@@ -108,21 +98,21 @@ function CertificatePage() {
                         >
                             « Prev
                         </button>
-                        {getPageNumbers().map((page, index) =>
+
+                        {getPageNumbers().map((page, i) =>
                             page === "..." ? (
-                                <button key={index} className="join-item btn btn-disabled">
-                                    ...
-                                </button>
+                                <button key={i} className="join-item btn btn-disabled">...</button>
                             ) : (
                                 <button
-                                    key={index}
-                                    className={`join-item btn-outline btn ${currentPage() === page ? "btn-active" : ""}`}
+                                    key={i}
+                                    className={`join-item btn btn-outline ${currentPage() === page ? "btn-active" : ""}`}
                                     onClick={() => handlePageChange(page)}
                                 >
                                     {page}
                                 </button>
                             )
                         )}
+
                         <button
                             className="join-item btn btn-outline"
                             disabled={currentPage() === totalPages()}

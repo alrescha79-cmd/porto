@@ -1,6 +1,18 @@
 ---
 import ArrowCertificateCard from "../components/ArrowCertificateCard"
 import { certificateData } from "../data"
+
+// Get only pinned certificates
+const pinnedCertificates = certificateData
+  .filter(cert => cert.pinned)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+// If no pinned certificates, fallback to the first 5 by date
+const certificatesToShow = pinnedCertificates.length > 0 
+  ? pinnedCertificates 
+  : certificateData
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 5)
 ---
 
 <section class="animate ">
@@ -20,7 +32,7 @@ import { certificateData } from "../data"
     </div>
     <ul class="space-y-4 md:mb-4">
       {
-        certificateData.slice(0, 5).map((data) => (
+        certificatesToShow.map((data) => (
           <ArrowCertificateCard
             client:load
             date={data.date}
