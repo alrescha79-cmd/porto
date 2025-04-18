@@ -2,6 +2,7 @@
 import { SITE, SOCIALS } from "../consts"
 import Container from "../components/Container.astro"
 import { Image } from "astro:assets"
+import logoImg from "../assets/logo.png"
 ---
 
 <footer class="relative bg-white dark:bg-black pb-[72px] md:pb-8">
@@ -61,11 +62,13 @@ import { Image } from "astro:assets"
                 <use href="/brand.svg#brand"/>
               </svg> -->
               <Image
-                src="/logo.webp"
+                src={logoImg}
                 alt="Logo"
                 class="rounded-full"
                 width={32}
                 height={32}
+                quality={50}
+                format="avif"
               />
               {SITE.TITLE}
             </a>
@@ -107,15 +110,24 @@ import { Image } from "astro:assets"
                 Privacy
               </a>
             </div>
-            <div class="text-sm mt-2">&copy{new Date().getFullYear()} | All rights reserved</div>
             <div class="text-sm mt-2">
-              Last updated: {
-                new Date().toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })
-              }
+              &copy{new Date().getFullYear()} | All rights reserved
+            </div>
+            <div class="text-sm mt-2">
+              Last updated: <a
+                href="https://github.com/alrescha79-cmd/porto"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+              >
+                {
+                  new Date().toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })
+                }
+              </a>
             </div>
           </div>
 
