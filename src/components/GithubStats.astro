@@ -1,4 +1,6 @@
-
+---
+import { Image } from "astro:assets"
+---
 
 <section class="animate">
   <div class="space-y-4 mb-4">
@@ -17,51 +19,133 @@
       </a>
     </div>
     <div class="flex gap-2">
-      <img
-        src="https://visitor-badge.laobi.icu/badge?page_id=alrescha79-cmd.alrescha79-cmd&left_color=aqua"
+      <Image
+        src="https://visitor-badge.laobi.icu/badge?page_id=alrescha79-cmd.alrescha79-cmd&label=Profile%20Views&left_color=gray&right_color=green"
         alt="visitor-badge"
+        width={100}
+        height={20}
       />
-      <img
-        src="https://visitcount.itsvg.in/api?id=alrescha79-cmd&icon=1&color=6)"
-        alt="profile-view"
+      <Image
+        src="https://badges.pufler.dev/repos/alrescha79-cmd"
+        alt="repo-badge"
+        width={100}
+        height={20}
+      />
+      <Image
+        src="https://badges.pufler.dev/commits/monthly/alrescha79-cmd"
+        alt="commits-badge"
+        width={100}
+        height={20}
       />
     </div>
   </div>
   <div class="flex flex-col gap-2 mb-4">
-    <img
-      src="https://streak-stats.demolab.com?user=alrescha79-cmd&locale=en&mode=daily&theme=dark&hide_border=false&border_radius=5&order=3"
-      height="175"
+    <Image
+      src="https://streak-stats.demolab.com?user=alrescha79-cmd&theme=microsoft-dark"
       alt="streak graph"
+      width={725}
+      height={175}
+      class="dark:block hidden"
     />
-    <img
-      src="https://github-readme-stats.vercel.app/api?username=alrescha79-cmd&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dark&locale=en&hide_border=false&order=1"
-      height="175"
+    <Image
+      src="https://streak-stats.demolab.com?user=alrescha79-cmd&locale=en&mode=daily&theme=whatsapp-light&hide_border=false&border_radius=5&order=3"
+      alt="streak graph light"
+      width={725}
+      height={175}
+      class="block dark:hidden"
+    />
+    
+    <Image
+      src="https://github-readme-stats.vercel.app/api?username=alrescha79-cmd&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=chartreuse-dark&locale=en&hide_border=false&order=1"
       alt="stats graph"
+      height={175}
+      width={725}
+      class="dark:block hidden"
     />
-    <img
-      src="https://github-readme-stats.vercel.app/api/top-langs?username=alrescha79-cmd&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=25&theme=dark&hide_border=false&order=2"
-      height="400"
+    <Image
+      src="https://github-readme-stats.vercel.app/api?username=alrescha79-cmd&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=light&locale=en&hide_border=false&order=1"
+      alt="stats graph light"
+      height={175}
+      width={725}
+      class="block dark:hidden"
+    />
+    <Image
+      src="https://github-readme-stats.vercel.app/api/top-langs?username=alrescha79-cmd&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=25&theme=chartreuse-dark&hide_border=false&order=2"
       alt="languages graph"
+      width={725}
+      height={400}
+      class="dark:block hidden"
     />
-    <img
-      src="https://github-readme-activity-graph.vercel.app/graph?username=alrescha79-cmd&radius=16&theme=react&area=true&order=5"
-      height="400"
-      alt="activity-graph graph"
+    <Image
+      src="https://github-readme-stats.vercel.app/api/top-langs?username=alrescha79-cmd&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=25&theme=light&hide_border=false&order=2"
+      alt="languages graph light"
+      width={725}
+      height={400}
+      class="block dark:hidden"
     />
-    <img
+    <Image
+      src="https://github-readme-activity-graph.vercel.app/graph?username=alrescha79-cmd&bg_color=000000&color=ffffff&line=333333&point=fffafa&area=true&radius=16"
+      alt="activity-graph graph dark"
+      width={725}
+      height={400}
+      class="dark:block hidden border rounded-lg"
+    />
+    <Image
+      src="https://github-readme-activity-graph.vercel.app/graph?username=alrescha79-cmd&bg_color=fffafa&color=000000&line=cccccc&point=000000&area=true&radius=16"
+      alt="activity-graph graph light"
+      width={725}
+      height={400}
+      class="block dark:hidden border rounded-lg"
+    />
+    <Image
       src="https://github-profile-trophy.vercel.app?username=alrescha79-cmd&theme=nord&column=-1&row=1&margin-w=8&margin-h=8&no-bg=true&no-frame=false&order=4"
-      height="150"
       alt="trophy graph"
+      width={725}
+      height={150}
+    />
+    <Image
+      src="https://raw.githubusercontent.com/alrescha79-cmd/alrescha79-cmd/output/snake-dark.svg"
+      alt="Snake animation dark"
+      width={725}
+      height={150}
+      class="dark:block hidden border rounded-lg"
+    />
+    <Image
+      src="https://raw.githubusercontent.com/alrescha79-cmd/alrescha79-cmd/output/snake-light.svg"
+      alt="Snake animation light"
+      width={725}
+      height={150}
+      class="block dark:hidden border rounded-lg"
     />
   </div>
 </section>
-<div class="space-y-6 ani">
+<div class="space-y-6 animated">
+  <p class="font-semibold text-black dark:text-white">
+    Spotify Playing Now
+  </p>
+  <Image
+    class="w-full"
+    src="https://spotify-github-profile.kittinanx.com/api/view.svg?uid=4la0onkb7z65yks3gmr6yzj3o&redirect=true][https://spotify-github-profile.kittinanx.com/api/view.svg?uid=4la0onkb7z65yks3gmr6yzj3o&cover_image=true&theme=default&show_offline=true&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=true)"
+    alt="spotify dark"
+    width={725}
+    height={150}
+  />
   <p class="font-semibold text-black dark:text-white">
     Spotify Recently Played
   </p>
-  <img
-    class="w-full"
-    src="https://spotify-recently-played-readme.vercel.app/api?user=4la0onkb7z65yks3gmr6yzj3o"
-    alt="spotify"
+  <Image
+    class="w-full dark:block hidden"
+    src="https://spotify-recently-played-readme.vercel.app/api?user=4la0onkb7z65yks3gmr6yzj3o&theme=dark"
+    alt="spotify dark"
+    width={725}
+    height={150}
   />
+  <Image
+    class="w-full block dark:hidden"
+    src="https://spotify-recently-played-readme.vercel.app/api?user=4la0onkb7z65yks3gmr6yzj3o&theme=light"
+    alt="spotify light"
+    width={725}
+    height={150}
+  />
+  
 </div>
