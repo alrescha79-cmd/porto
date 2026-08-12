@@ -1,0 +1,40 @@
+---
+interface Item {
+  name: string
+  image?: string
+  alt?: string
+}
+
+type Props = {
+  title: string
+  items: Item[]
+}
+
+const { title, items } = Astro.props
+---
+
+<div class="skills-card w-full max-w-[350px] mx-auto md:mx-0 bg-white dark:bg-neutral-900/60 border border-black/15 dark:border-white/15 rounded-xl shadow-sm overflow-hidden">
+  <div class="card-content">
+    <h3 class="text-lg font-bold text-black dark:text-white text-center bg-black/5 dark:bg-white/10 py-3 px-4 border-b border-black/10 dark:border-white/10">
+      {title}
+    </h3>
+    <div class="p-4">
+      <ul role="list" class="divide-y divide-black/10 dark:divide-white/10">
+        {items.map((item) => (
+          <li class="py-2.5 first:pt-0 last:pb-0">
+            <div class="flex items-center gap-3">
+              <div class="flex-shrink-0">
+                <img class="size-7 rounded-full object-cover" src={item.image} alt={item.alt || item.name} loading="lazy" />
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-semibold text-black/90 dark:text-white/90 truncate">
+                  {item.name}
+                </p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content"
-import ArrowCard from "../components/ArrowCard"
+import ArrowCard from "../components/ArrowCard.astro"
 
 const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
@@ -29,7 +29,7 @@ const projects = (await getCollection("projects"))
         {
           projects.map((project) => (
             <li>
-              <ArrowCard entry={project} client:idle/>
+              <ArrowCard entry={project} />
             </li>
           ))
         }

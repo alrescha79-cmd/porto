@@ -1,0 +1,200 @@
+---
+const { uid } = Astro.props
+---
+
+<div data-contact-form class="w-full" data-uid={uid}>
+  <div class="contact-alert alert hidden mb-4 rounded-xl transition duration-220 ease-out text-sm"></div>
+
+  <form class="contact-form space-y-4 mt-6">
+    <div class="relative">
+      <input
+        type="text"
+        id={`name-${uid}`}
+        name="from_name"
+        required
+        placeholder=" "
+        class="block border border-black/20 dark:border-white/20 bg-neutral-100/80 dark:bg-neutral-800/80 px-3.5 pb-2.5 pt-4 w-full text-sm rounded-xl peer focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all duration-220 ease-out"
+      />
+      <label
+        for={`name-${uid}`}
+        class="absolute text-xs text-gray-500 dark:text-gray-400 duration-200 transform -translate-y-3 scale-90 top-3.5 z-10 origin-[0] bg-neutral-100 dark:bg-neutral-800 px-1.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-sm peer-focus:scale-90 peer-focus:-translate-y-3 peer-focus:text-xs start-2.5 cursor-text rounded-md font-medium"
+      >
+        Full Name
+      </label>
+    </div>
+
+    <div class="relative">
+      <input
+        type="email"
+        id={`email-${uid}`}
+        name="from_email"
+        required
+        placeholder=" "
+        class="block border border-black/20 dark:border-white/20 bg-neutral-100/80 dark:bg-neutral-800/80 px-3.5 pb-2.5 pt-4 w-full text-sm rounded-xl peer focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all duration-220 ease-out"
+      />
+      <label
+        for={`email-${uid}`}
+        class="absolute text-xs text-gray-500 dark:text-gray-400 duration-200 transform -translate-y-3 scale-90 top-3.5 z-10 origin-[0] bg-neutral-100 dark:bg-neutral-800 px-1.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-sm peer-focus:scale-90 peer-focus:-translate-y-3 peer-focus:text-xs start-2.5 cursor-text rounded-md font-medium"
+      >
+        Email Address
+      </label>
+    </div>
+
+    <div class="relative">
+      <textarea
+        id={`message-${uid}`}
+        name="message"
+        rows="5"
+        required
+        placeholder=" "
+        class="block border border-black/20 dark:border-white/20 bg-neutral-100/80 dark:bg-neutral-800/80 px-3.5 pb-2.5 pt-4 w-full text-sm rounded-xl peer focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all duration-220 ease-out"
+      ></textarea>
+      <label
+        for={`message-${uid}`}
+        class="absolute text-xs text-gray-500 dark:text-gray-400 duration-200 transform -translate-y-3 scale-90 top-3.5 z-10 origin-[0] bg-neutral-100 dark:bg-neutral-800 px-1.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-sm peer-focus:scale-90 peer-focus:-translate-y-3 peer-focus:text-xs start-2.5 cursor-text rounded-md font-medium"
+      >
+        Your Message
+      </label>
+    </div>
+
+    <button
+      type="submit"
+      class="flex items-center justify-center text-white dark:text-black bg-black dark:bg-white hover:opacity-90 font-semibold rounded-xl text-sm px-4 py-3 w-full cursor-pointer transition-all duration-220 ease-out active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
+    >
+      <span class="contact-label">Send message</span>
+      <span class="contact-loading loading loading-dots loading-sm ml-2 hidden"></span>
+    </button>
+  </form>
+</div>
+
+<script>
+  const ENDPOINT = import.meta.env.PUBLIC_APPS_SCRIPT_URL || ""
+  const SECRET = import.meta.env.PUBLIC_CONTACT_SECRET || ""
+
+  const b64url = (bytes: Uint8Array) => {
+    let bin = ""
+    bytes.forEach((byte) => (bin += String.fromCharCode(byte)))
+    return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "")
+  }
+
+  const sha256Hex = async (input: string) => {
+    const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(input))
+    return Array.from(new Uint8Array(digest)).map((byte) => byte.toString(16).padStart(2, "0")).join("")
+  }
+
+  const hmacHex = async (secret: string, value: string) => {
+    const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"])
+    const signature = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(value))
+    return Array.from(new Uint8Array(signature)).map((byte) => byte.toString(16).padStart(2, "0")).join("")
+  }
+
+  const getClientIds = async (): Promise<{ ipHash?: string; fpHash?: string }> => {
+    try {
+      const controller = new AbortController()
+      const timer = setTimeout(() => controller.abort(), 1500)
+      const res = await fetch("https://api.ipify.org?format=json", { signal: controller.signal })
+      clearTimeout(timer)
+      const { ip } = (await res.json()) as { ip: string }
+      if (ip) return { ipHash: await sha256Hex(ip) }
+    } catch {
+      // ipify blocked -> fall back to device fingerprint
+    }
+    const fingerprint = [
+      navigator.userAgent,
+      `${screen.width}x${screen.height}`,
+      Intl.DateTimeFormat().resolvedOptions().timeZone,
+      navigator.language,
+      String(navigator.hardwareConcurrency || 0),
+    ].join("|")
+    return { fpHash: await sha256Hex(fingerprint) }
+  }
+
+  const initContactForms = () => {
+    const wrappers = Array.from(document.querySelectorAll<HTMLElement>("[data-contact-form]"))
+
+    wrappers.forEach((wrapper) => {
+      if (wrapper.dataset.inited) return
+      wrapper.dataset.inited = "true"
+
+      const form = wrapper.querySelector<HTMLFormElement>(".contact-form")!
+      const alertBox = wrapper.querySelector<HTMLElement>(".contact-alert")!
+      const submit = wrapper.querySelector<HTMLButtonElement>("button[type=\"submit\"]")!
+      const label = wrapper.querySelector<HTMLElement>(".contact-label")!
+      const loading = wrapper.querySelector<HTMLElement>(".contact-loading")!
+      let alertTimer: ReturnType<typeof setTimeout> | undefined
+
+      const showAlert = (type: "success" | "error", message: string) => {
+        alertBox.textContent = message
+        alertBox.className = `alert ${type === "success" ? "alert-success" : "alert-error"} mb-4 transition duration-300 ease-in-out`
+        clearTimeout(alertTimer)
+        alertTimer = setTimeout(() => alertBox.classList.add("hidden"), 3000)
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault()
+        if (!ENDPOINT || !SECRET) {
+          showAlert("error", "Contact form is not configured yet.")
+          return
+        }
+        submit.disabled = true
+        label.textContent = "Sending"
+        loading.classList.remove("hidden")
+
+        const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>
+
+        try {
+          const { ipHash, fpHash } = await getClientIds()
+          const payload = {
+            requestId: crypto.randomUUID(),
+            nonce: crypto.randomUUID(),
+            timestamp: Date.now(),
+            origin: window.location.origin,
+            name: data.from_name,
+            email: data.from_email,
+            message: data.message,
+            subject: `Contact from ${data.from_name}`,
+            ipHash: ipHash || "",
+            fpHash: fpHash || "",
+            userAgent: navigator.userAgent,
+          }
+          const encoded = b64url(new TextEncoder().encode(JSON.stringify(payload)))
+          const signature = await hmacHex(SECRET, encoded)
+
+          const res = await fetch(ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain" },
+            body: JSON.stringify({ payload: encoded, signature }),
+          })
+          const raw = await res.text()
+          let result: { status?: string; reason?: string } = {}
+          try {
+            result = JSON.parse(raw)
+          } catch {
+            // ignore malformed response, fall through to error alert
+          }
+
+          if (result.status === "sent") {
+            showAlert("success", "Your message has been sent successfully! We will get back to you soon.")
+            form.reset()
+          } else if (result.reason === "rate_limited") {
+            showAlert("error", "You have reached the daily limit of 3 messages. Please try again tomorrow.")
+          } else {
+            showAlert("error", "Something went wrong! Please try again.")
+          }
+        } catch {
+          showAlert("error", "Something went wrong! Please try again.")
+        } finally {
+          submit.disabled = false
+          label.textContent = "Send"
+          loading.classList.add("hidden")
+        }
+      })
+    })
+  }
+
+  const win = window as unknown as Record<string, unknown>
+  if (!win.__contactInited) {
+    win.__contactInited = true
+    document.addEventListener("astro:page-load", initContactForms)
+  }
+</script>

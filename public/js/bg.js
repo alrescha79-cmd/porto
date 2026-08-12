@@ -20,10 +20,12 @@
   }
 
   function initBG() {
+    let particles1 = document.getElementById('particles1');
+    if (!particles1 && !document.getElementById('stars1')) return;
+
     let particlesSmall = generateParticles(700);
     let particlesMedium = generateParticles(200);
     let particlesLarge = generateParticles(100);
-    let particles1 = document.getElementById('particles1');
     let particles2 = document.getElementById('particles2');
     let particles3 = document.getElementById('particles3');
 

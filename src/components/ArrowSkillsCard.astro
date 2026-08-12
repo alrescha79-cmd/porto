@@ -1,0 +1,27 @@
+---
+interface Item {
+  name: string
+}
+
+type Props = {
+  title: string
+  items: Item[]
+}
+
+const { title, items } = Astro.props
+---
+
+<div class="p-4 gap-3 flex flex-col items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
+  <div class="w-full flex flex-col">
+    <p class="flex my-1 text-base font-bold w-full">
+      <span class="link-underline link-underline-black">
+        {title}
+      </span>
+    </p>
+    <ul class="flex flex-wrap gap-2">
+      {items.map((item) => (
+        <li class="text-xs uppercase py-0.5 px-2 rounded-full bg-black/5 dark:bg-white/20 text-black/75 dark:text-white/75">{item.name}</li>
+      ))}
+    </ul>
+  </div>
+</div>

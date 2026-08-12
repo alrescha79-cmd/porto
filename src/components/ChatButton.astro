@@ -1,0 +1,58 @@
+---
+import ContactForm from "./ContactForm.astro"
+---
+
+<div class="fixed bottom-[104px] md:bottom-8 right-4 z-50 flex flex-col items-end gap-3">
+  <div
+    id="chat-panel"
+    class="hidden bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md border border-black/20 dark:border-white/20 rounded-xl p-5 w-80 sm:w-96 shadow-2xl transition-all duration-220 ease-out"
+  >
+    <div class="text-left mb-2">
+      <h2 class="text-base font-bold text-black dark:text-white">
+        Send a Message
+      </h2>
+      <p class="text-xs text-black/70 dark:text-white/70 mt-0.5">
+        Have a question or project proposal? Fill out the form below and I'll get back to you.
+      </p>
+    </div>
+    <ContactForm uid="chat" />
+  </div>
+
+  <button
+    id="chat-toggle"
+    class="chat-attention bg-black dark:bg-white text-white dark:text-black rounded-full p-3 shadow-xl hover:scale-105 transition-all duration-220 ease-out flex items-center justify-center cursor-pointer active:scale-95 border border-white/20 dark:border-black/20"
+    aria-label="Toggle Contact Form"
+    aria-expanded="false"
+  >
+    <svg id="chat-icon" class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z"/>
+    </svg>
+    <svg id="close-icon" class="h-6 w-6 fill-current hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+  const initChat = () => {
+    const toggle = document.getElementById("chat-toggle")
+    const panel = document.getElementById("chat-panel")
+    const chatIcon = document.getElementById("chat-icon")
+    const closeIcon = document.getElementById("close-icon")
+    if (!toggle || !panel || !chatIcon || !closeIcon) return
+
+    toggle.onclick = () => {
+      toggle.classList.remove("chat-attention")
+      const open = panel.classList.toggle("hidden") === false
+      toggle.setAttribute("aria-expanded", String(open))
+      chatIcon.classList.toggle("hidden", open)
+      closeIcon.classList.toggle("hidden", !open)
+    }
+  }
+
+  const win = window as unknown as Record<string, unknown>
+  if (!win.__chatInited) {
+    win.__chatInited = true
+    document.addEventListener("astro:page-load", initChat)
+  }
+</script>

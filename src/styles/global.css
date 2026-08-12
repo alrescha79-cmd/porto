@@ -1,6 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
+/* Hallmark · genre: editorial · macrostructure: portfolio · designed-as-app */
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+}
+
+@theme {
+  --font-sans: "Atkinson", ui-sans-serif, system-ui, sans-serif;
+}
 
 @layer base {
   @font-face {
@@ -10,7 +28,7 @@
     font-style: normal;
     font-display: swap;
   }
-  
+
   @font-face {
     font-family: "Atkinson";
     src: url("/fonts/atkinson-bold.woff") format("woff");
@@ -22,10 +40,10 @@
 
 html {
   overflow-y: scroll;
+  overflow-x: clip;
   color-scheme: light;
   background-color: white;
   font-family: "Atkinson", sans-serif;
-  
 }
 
 html.dark {
@@ -38,6 +56,7 @@ body {
   @apply h-full w-full antialiased;
   @apply bg-white dark:bg-black;
   @apply text-black/75 dark:text-white/75;
+  overflow-x: clip;
 }
 
 body {
@@ -50,7 +69,7 @@ main {
 
 header {
   @apply border-b;
-  @apply transition-all duration-300 ease-in-out;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
 }
 
 header:not(.scrolled) {
@@ -72,7 +91,7 @@ article {
 }
 
 .blend {
-  @apply transition-all duration-300 ease-in-out;
+  transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
 }
 
 strong {
@@ -89,16 +108,24 @@ strong {
   }
 }
 
-/** styles for public /animation.js */
+/** styles for public /animate.js */
 .animate {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(12px);
+  transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out);
+  will-change: opacity, transform;
 }
 
 .animate.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    transform: none !important;
+    transition-duration: 150ms !important;
+  }
 }
 
 article img {
@@ -120,6 +147,32 @@ article img {
   }
   50% {
     opacity: 0.8;
+  }
+}
+.chat-attention {
+  --att-ring: rgba(0, 0, 0, 0.25);
+  animation: chatAttention 2.2s ease-in-out infinite;
+}
+html.dark .chat-attention {
+  --att-ring: rgba(255, 255, 255, 0.35);
+}
+@keyframes chatAttention {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--att-ring);
+  }
+  5%, 15% {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0);
+  }
+  30%, 90% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-attention {
+    animation: none;
   }
 }
 .modal-backdrop {

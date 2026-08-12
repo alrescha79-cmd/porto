@@ -1,0 +1,47 @@
+---
+import { formatDate } from "../lib/utils"
+import type { CollectionEntry } from "astro:content"
+
+type Props = {
+  entry: CollectionEntry<"projects">
+  pill?: boolean
+}
+
+const { entry, pill } = Astro.props
+---
+
+<a
+  href={`/${entry.collection}/${entry.id}`}
+  class="group p-4 gap-3 flex items-center border rounded-xl hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-all duration-220 ease-out active:scale-[0.99]"
+>
+  <div class="w-full">
+    <div class="flex flex-wrap items-center gap-2">
+      {pill && (
+        <div class="text-xs font-semibold uppercase px-2 py-0.5 rounded-full border border-black/15 dark:border-white/25">
+          Project
+        </div>
+      )}
+      <div class="text-xs font-mono opacity-60 uppercase">
+        {formatDate(entry.data.date)}
+      </div>
+    </div>
+    <div class="font-bold text-base mt-2 text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors duration-220 ease-out">
+      {entry.data.title}
+    </div>
+
+    <div class="text-sm opacity-75 line-clamp-2 mt-1">
+      {entry.data.summary}
+    </div>
+    <ul class="flex flex-wrap mt-3 gap-1.5">
+      {entry.data.tags.map((tag: string) => (
+        <li class="text-[11px] font-medium uppercase py-0.5 px-2 rounded-lg bg-black/5 dark:bg-white/15 text-black/75 dark:text-white/75">
+          {tag}
+        </li>
+      ))}
+    </ul>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-current shrink-0 transition-transform duration-220 ease-out group-hover:translate-x-1">
+    <line x1="5" y1="12" x2="19" y2="12" class="scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-220 ease-out" />
+    <polyline points="12 5 19 12 12 19" />
+  </svg>
+</a>

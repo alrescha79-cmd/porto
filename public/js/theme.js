@@ -50,17 +50,18 @@ function preloadTheme() {
   localStorage.theme = theme
 }
 
-window.onload = () => {
+window.addEventListener("load", () => {
   function initializeThemeButtons() {
-    const headerThemeButton = document.getElementById("header-theme-button")
-    const drawerThemeButton = document.getElementById("drawer-theme-button")
-    headerThemeButton?.addEventListener("click", changeTheme)
-    drawerThemeButton?.addEventListener("click", changeTheme)
+    const btn = document.getElementById("header-theme-button")
+    if (btn && !btn.dataset.inited) {
+      btn.dataset.inited = "true"
+      btn.addEventListener("click", changeTheme)
+    }
   } 
   
   document.addEventListener("astro:after-swap", initializeThemeButtons)
   initializeThemeButtons()
-}
+})
 
 document.addEventListener("astro:after-swap", preloadTheme)
 

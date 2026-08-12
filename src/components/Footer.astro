@@ -9,18 +9,35 @@ import logoImg from "../assets/logo.png"
   <div class="animate">
     <section class="py-5">
       <Container size="md">
-        <div class="flex items-center justify-center sm:justify-end">
+        <div class="flex items-center justify-between">
+          <a
+            href="/"
+            class="flex gap-2 w-fit items-center font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-220 ease-out"
+          >
+            <Image
+              src={logoImg}
+              alt="Anggun Caksono"
+              class="rounded-full bg-black"
+              width={28}
+              height={28}
+              quality={50}
+              format="avif"
+            />
+            <span class="font-bold text-sm">{SITE.TITLE}</span>
+          </a>
+
           <button
             id="back-to-top"
             aria-label="Back to top of page"
-            class="group flex w-fit p-1.5 gap-1.5 text-sm items-center border rounded hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out"
+            class="group flex w-fit px-3 py-1.5 gap-2 text-xs font-medium items-center border rounded-xl hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-all duration-220 ease-out active:scale-95 cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="none"
+              stroke="currentColor"
               stroke-width="2.5"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -31,117 +48,63 @@ import logoImg from "../assets/logo.png"
                 y1="12"
                 x2="5"
                 y2="12"
-                class="scale-x-0 group-hover:scale-x-100 translate-x-3 group-hover:translate-x-0 transition-all duration-300 ease-in-out"
+                class="scale-x-0 group-hover:scale-x-100 translate-x-3 group-hover:translate-x-0 transition-all duration-220 ease-out"
               ></line>
               <polyline
                 points="12 19 5 12 12 5"
-                class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out"
+                class="translate-x-1 group-hover:translate-x-0 transition-all duration-220 ease-out"
               ></polyline>
             </svg>
-            <div
-              class="w-full group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out"
+            <span
+              class="group-hover:text-black group-hover:dark:text-white transition-colors duration-220 ease-out"
             >
               Back to top
-            </div>
+            </span>
           </button>
         </div>
       </Container>
     </section>
 
     <section
-      class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/25"
+      class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/15"
     >
       <Container size="md">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div class="flex flex-col items-center sm:items-start">
-            <a
-              href="/"
-              class="flex gap-1 w-fit items-center font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
-            >
-              <!-- <svg class="size-6 fill-current">
-                <use href="/brand.svg#brand"/>
-              </svg> -->
-              <Image
-                src={logoImg}
-                alt="Logo"
-                class="rounded-full bg-black"
-                width={32}
-                height={32}
-                quality={50}
-                format="avif"
-              />
-              {SITE.TITLE}
-            </a>
-          </div>
-          <div class="flex gap-2 justify-center sm:justify-end items-center">
-            <span class="relative flex h-3 w-3">
-              <span
-                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300"
-              ></span>
-              <span
-                class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
-              ></span>
-            </span>
-            All systems normal
-          </div>
-        </div>
-      </Container>
-    </section>
-
-    <section
-      class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/25"
-    >
-      <Container size="md">
-        <div class="h-full grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="h-full grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div
-            class="order-2 sm:order-1 flex flex-col items-center justify-center sm:items-start"
+            class="order-2 sm:order-1 flex flex-col items-center sm:items-start text-xs text-black/60 dark:text-white/60 space-y-1"
           >
-            <div class="legal">
+            <div class="legal space-x-2">
               <a
                 href="/legal/terms"
-                class="text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+                class="hover:text-black dark:hover:text-white transition-colors duration-220 ease-out"
               >
                 Terms
-              </a> |
+              </a>
+              <span>·</span>
               <a
                 href="/legal/privacy"
-                class="text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+                class="hover:text-black dark:hover:text-white transition-colors duration-220 ease-out"
               >
                 Privacy
               </a>
             </div>
-            <div class="text-sm mt-2">
-              &copy{new Date().getFullYear()} | All rights reserved
-            </div>
-            <div class="text-sm mt-2">
-              Last updated: <a
-                href="https://github.com/alrescha79-cmd/porto"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="underline hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
-              >
-                {
-                  new Date().toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })
-                }
-              </a>
+            <div>
+              &copy; {new Date().getFullYear()} {SITE.AUTHOR}. All rights reserved.
             </div>
           </div>
 
           <div class="order-1 sm:order-2 flex justify-center sm:justify-end">
-            <div class="flex flex-wrap gap-1 items-center justify-center">
+            <div class="flex flex-wrap gap-1.5 items-center justify-center">
               {
                 SOCIALS.map((SOCIAL) => (
                   <a
                     href={SOCIAL.HREF}
                     target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-                    class="group size-10 rounded-full p-2 items-center justify-center hover:bg-black/5 dark:hover:bg-white/20  blend"
+                    class="group size-9 rounded-full p-2 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/20 transition-all duration-220 ease-out"
                   >
-                    <svg class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white blend">
+                    <svg class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white transition-colors duration-220 ease-out">
                       <use href={`/social.svg#${SOCIAL.ICON}`} />
                     </svg>
                   </a>
@@ -164,11 +127,13 @@ import logoImg from "../assets/logo.png"
     })
   }
 
-  function inintializeBackToTop() {
+  function initializeBackToTop() {
     const backToTop = document.getElementById("back-to-top")
-    backToTop?.addEventListener("click", goBackToTop)
+    if (backToTop && !backToTop.dataset.inited) {
+      backToTop.dataset.inited = "true"
+      backToTop.addEventListener("click", goBackToTop)
+    }
   }
 
-  document.addEventListener("astro:after-swap", inintializeBackToTop)
-  inintializeBackToTop()
+  document.addEventListener("astro:page-load", initializeBackToTop)
 </script>

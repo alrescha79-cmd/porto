@@ -4,7 +4,7 @@ import { getCollection } from "astro:content"
 import PageLayout from "../../layouts/PageLayout.astro"
 import TopLayout from "../../layouts/TopLayout.astro"
 import BottomLayout from "../../layouts/BottomLayout.astro"
-import Projects from "../../components/Projects"
+import Projects from "../../components/Projects.astro"
 import { PROJECTS } from "../../consts"
 
 const projects = (await getCollection("projects"))
@@ -17,16 +17,18 @@ const tags = [...new Set(projects.flatMap(project => project.data.tags))]
 
 <PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
   <TopLayout>
-    <div class="animate page-heading">
-      {PROJECTS.TITLE}
-    </div>
-    <div class="animate ">
-      {PROJECTS.DESCRIPTION}
+    <div class="animate space-y-2">
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-black dark:text-white">
+        {PROJECTS.TITLE}
+      </h1>
+      <p class="text-sm md:text-base opacity-75">
+        {PROJECTS.DESCRIPTION}
+      </p>
     </div>
   </TopLayout>
   <BottomLayout>
     <div class="animate">
-      <Projects client:load tags={tags} data={projects} />
+      <Projects tags={tags} data={projects} />
     </div>
   </BottomLayout>
 </PageLayout>
