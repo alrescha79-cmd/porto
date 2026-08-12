@@ -3,41 +3,35 @@ import ContactForm from "./ContactForm.astro"
 import { SOCIALS } from "../consts"
 ---
 
-<div class="animate">
-  <p class="text-md">
-    I'm currently available for freelance work. If you have a project that you
-    want to get started, think you need my help with something or just fancy
-    saying hey, then get in touch.
+<div class="animate space-y-6">
+  <p class="text-sm md:text-base leading-relaxed text-black/80 dark:text-white/80">
+    Available for freelance contracts, full-stack positions, and technical consultations. Reach out using the form below or connect via email and social platforms.
   </p>
-  <div class="container border-b-current w-full">
+
+  <div class="w-full">
     <ContactForm uid="contact" />
   </div>
 
-  <section class="animate">
-    <div>
-      <p>Or, you can also reach me via email or on social media.</p>
-      <div class="grid grid-cols-4 gap-y-2 mt-4 auto-cols-min">
-        {
-          SOCIALS.map((social) => (
-            <>
-              <div class="col-span-1 flex items-center gap-1">
-                <span class="whitespace-nowrap truncate">{social.NAME}</span>
-              </div>
-              <div class="col-span-3 truncate">
-                <a
-                  href={social.HREF}
-                  target="_blank"
-                  class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend"
-                >
-                  <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                    {social.TEXT}
-                  </span>
-                </a>
-              </div>
-            </>
-          ))
-        }
-      </div>
+  <div class="pt-6 border-t border-black/10 dark:border-white/15 space-y-3">
+    <p class="text-xs font-semibold uppercase tracking-wider text-black/60 dark:text-white/60">
+      Direct Channels &amp; Profiles
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      {
+        SOCIALS.map((social) => (
+          <a
+            href={social.HREF}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 p-3 rounded-xl border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-220 ease-out active:scale-95 group"
+          >
+            <span class="text-xs font-bold text-black dark:text-white w-16">{social.NAME}</span>
+            <span class="text-xs text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white truncate">
+              {social.TEXT}
+            </span>
+          </a>
+        ))
+      }
     </div>
-  </section>
+  </div>
 </div>

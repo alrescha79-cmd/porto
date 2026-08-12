@@ -1,4 +1,4 @@
-export const ITEMS_PER_PAGE = 10
+export const ITEMS_PER_PAGE = 9
 
 export function getPageNumbers(total: number, current: number): (number | "...")[] {
   const delta = 1

@@ -8,91 +8,83 @@ import { Image } from "astro:assets"
 import logoImg from "../assets/logo.png"
 ---
 
-<header class="w-full backdrop:blur-md">
+<header class="w-full">
   <Container size="md">
     <div
-      class="z-50 fixed top-0 left-0 right-0 flex justify-evenly items-center p-4 w-full bg-white/90 dark:bg-black/90 transition-colors duration-300 ease-in-out backdrop:blur-md border-b-[1px]"
+      class="z-50 fixed top-0 left-0 right-0 flex justify-between md:justify-evenly items-center px-4 py-3 md:py-3.5 w-full bg-white/90 dark:bg-black/90 transition-colors duration-220 ease-out backdrop-blur-md border-b border-black/10 dark:border-white/15"
     >
       <div>
         <a
           href="/"
-          class="flex gap-1 w-fit items-center font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+          class="flex gap-2 w-fit items-center font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-220 ease-out"
         >
-          <!-- <svg class="size-6 fill-current">
-            <use href="/brand.svg#brand"></use>
-          </svg> -->
           <Image
-                src={logoImg}
-                alt="Logo"
-                class="rounded-full bg-black"
-                width={32}
-                height={32}
-                quality={50}
-                format="avif"
-              />
-          <div>
+            src={logoImg}
+            alt="Anggun Caksono"
+            class="rounded-full bg-black shrink-0"
+            width={32}
+            height={32}
+            quality={50}
+            format="avif"
+          />
+          <span class="font-bold text-sm md:text-base whitespace-nowrap">
             {SITE.TITLE}
-          </div>
+          </span>
         </a>
       </div>
-      <div>
-        <nav
-          class="fixed md:sticky bottom-2 rounded-full left-0 right-0 bg-primary-foreground w-11/12 md:w-full mx-auto md:mx-0 px-2 py-4 z-50 bg-neutral-200 dark:bg-neutral-800 md:bg-transparent md:dark:bg-transparent transition-colors duration-300 ease-in-out backdrop-blur-md shadow-md md:shadow-none"
-        >
-          <ul class="flex justify-evenly md:gap-4">
-            {
-              LINKS.map((LINK) => (
+
+      <!-- Desktop Nav (Inline Header) -->
+      <nav class="hidden md:flex items-center">
+        <ul class="flex items-center gap-1 lg:gap-2">
+          {
+            LINKS.map((LINK) => {
+              const isActive = pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
+              return (
                 <li>
                   <a
                     href={LINK.HREF}
                     class={cn(
-                      "h-12 md:h-8 md:py-0 rounded-badge px-3 py-2 text-base",
-                      "flex flex-col items-center justify-center",
-                      "transition-all duration-300 ease-in-out transform",
-                      pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
-                        ? "bg-black dark:bg-white text-white dark:text-black md:translate-y-0 scale-125 md:scale-100"
-                        : "hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white"
+                      "h-8 rounded-full px-3.5 py-1 text-sm font-medium",
+                      "flex items-center justify-center gap-1.5",
+                      "transition-all duration-220 ease-out",
+                      isActive
+                        ? "bg-black dark:bg-white text-white dark:text-black shadow-sm font-semibold"
+                        : "hover:bg-black/10 dark:hover:bg-white/15 text-black/75 dark:text-white/75 hover:text-black dark:hover:text-white"
                     )}
                   >
-                    <svg class="h-10 w-10 fill-current md:hidden">
-                      <use href={`/navicon.svg#${LINK.ICON}`} />
-                    </svg>
-                    <span class="text-xs md:text-base">{LINK.TEXT}</span>
+                    <span>{LINK.TEXT}</span>
                   </a>
                 </li>
-              ))
-            }
-          </ul>
-        </nav>
-      </div>
-      <div class="flex gap-4">
+              )
+            })
+          }
+        </ul>
+      </nav>
+
+      <div class="flex gap-2.5 items-center">
         <a
           href="/contact"
-          aria-label={`Get in touch with Me ${SITE.TITLE}`}
+          aria-label={`Get in touch with ${SITE.TITLE}`}
           class={cn(
-            "rounded-md px-2 flex items-center justify-center",
-            "hover:bg-black/5 dark:hover:bg-white/20",
-            "stroke-current hover:stroke-black hover:dark:stroke-white",
-            "border border-black/40 dark:border-white/60",
-            "transition-colors duration-300 ease-in-out",
+            "rounded-xl px-3 py-1.5 text-xs md:text-sm font-medium flex items-center justify-center",
+            "border border-black/25 dark:border-white/35",
+            "transition-all duration-220 ease-out active:scale-95",
             pathname === "/contact" || "/" + subpath?.[0] === "/contact"
-              ? "pointer-events-none  bg-black dark:bg-white text-white dark:text-black"
-              : ""
+              ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black font-semibold"
+              : "hover:bg-black/10 dark:hover:bg-white/20 hover:text-black dark:hover:text-white"
           )}
         >
-          Contact Now
+          Contact
         </a>
 
         <button
           id="header-theme-button"
-          aria-label={`Toggle light and dark theme`}
+          aria-label="Toggle light and dark theme"
           class={cn(
-            " md:flex",
-            "size-9 rounded-full p-2 items-center justify-center",
-            "bg-transparent hover:bg-black/5 dark:hover:bg-white/20",
-            "stroke-current hover:stroke-black hover:dark:stroke-white",
-            "border border-black/10 dark:border-white/25",
-            "transition-colors duration-300 ease-in-out"
+            "size-9 rounded-full p-2 flex items-center justify-center shrink-0 cursor-pointer",
+            "bg-transparent hover:bg-black/10 dark:hover:bg-white/20",
+            "stroke-current border border-black/15 dark:border-white/25",
+            "transition-all duration-220 ease-out active:scale-90"
           )}
         >
           <svg class="size-full block dark:hidden">
@@ -105,4 +97,35 @@ import logoImg from "../assets/logo.png"
       </div>
     </div>
   </Container>
+
+  <!-- Mobile Floating Bottom Nav (Dock) -->
+  <nav
+    class="md:hidden fixed bottom-3 left-0 right-0 w-[92%] max-w-sm mx-auto p-1.5 z-50 rounded-full bg-neutral-200/90 dark:bg-neutral-800/90 backdrop-blur-md shadow-xl border border-black/15 dark:border-white/20 transition-all duration-220 ease-out"
+  >
+    <ul class="flex justify-evenly items-center">
+      {
+        LINKS.map((LINK) => {
+          const isActive = pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
+          return (
+            <li class="flex-1 text-center">
+              <a
+                href={LINK.HREF}
+                class={cn(
+                  "py-1.5 px-2 rounded-full flex flex-col items-center justify-center transition-all duration-220 ease-out",
+                  isActive
+                    ? "bg-black dark:bg-white text-white dark:text-black shadow-md font-semibold scale-105"
+                    : "hover:bg-black/10 dark:hover:bg-white/15 text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white"
+                )}
+              >
+                <svg class="size-5 fill-current">
+                  <use href={`/navicon.svg#${LINK.ICON}`} />
+                </svg>
+                <span class="text-[10px] leading-tight font-medium mt-0.5">{LINK.TEXT}</span>
+              </a>
+            </li>
+          )
+        })
+      }
+    </ul>
+  </nav>
 </header>

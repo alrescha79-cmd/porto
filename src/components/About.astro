@@ -4,49 +4,27 @@ import myPhoto from "../assets/poto.png"
 ---
 
 <section class="animate">
-  <article>
-    <div class="flex items-center justify-between">
-      <p class="font-semibold text-black dark:text-white">About Me</p>
-      <div>
-        <Image
-          src={myPhoto}
-          alt="Anggun Caksono"
-          width={50}
-          height={50}
-          class="rounded-full"
-        />
-      </div>
+  <div class="space-y-4">
+    <div class="flex items-center justify-between pb-2 border-b border-black/10 dark:border-white/15">
+      <h2 class="text-xl font-bold text-black dark:text-white">About Me</h2>
+      <Image
+        src={myPhoto}
+        alt="Anggun Caksono"
+        width={44}
+        height={44}
+        class="rounded-full border border-black/10 dark:border-white/20"
+      />
     </div>
-    <div class="text-black/80 dark:text-white/85 text-justify">
-    <p>
-      I am an enthusiastic Informatics Engineering student, Fullstack Developer, and Machine Learning enthusiast. An alum of Bangkit Academy 2024 (Cloud Computing path), I gained valuable experience through the Entrepreneur Track, sharpening my startup mindset. I have strong skills in web and mobile app development, cloud computing, and machine learning, and I'm proficient in React, Node.js, Google Cloud Platform, and Agile methodologies. I’m always open to opportunities in software development, cloud technology, and ML-related projects.
-    </p>
-    <p class="text-justify">Key skills:</p>
-    <ul>
-      <li>Frontend development: HTML, CSS, JavaScript, React, Next JS, Astro JS</li>
-      <li>Backend development: Node.js, Express, Golang, PHP</li>
-      <li>Mobile development: React Native, Kotlin</li>
-      <li>Machine Learning: TensorFlow, Keras, Scikit-learn</li>
-      <li>UI/UX Design: Figma, Adobe XD</li>
-      <li>Cloud Computing: Google Cloud Platform (GCP), Alibaba Cloud, Amazon Web Services (AWS)</li>
-      <li>Database: MySQL, MongoDB, Firebase, Supabase</li>
-      <li>Version control: Git</li>
-      <li>Methodology: Agile, Scrum</li>
-    </ul>
-    <p class="text-justify">Achievements:</p>
-    <p class="text-justify">
-      Selected to join MSIB at Bangkit Academy, Bangkit Academy 2024 Batch 1
-      program led by Google, GoTo, and Traveloka. Passed the Entrepreneur Track,
-      got the opportunity to start a startup and received incubation funds.
-    </p>
-    <p class="text-justify">
-      Selected and passed the intermediate class at IDCamp2024 on the Machine Learning Engineering, and gained hands-on experience in various ML projects.
-    </p>
-    <p class="text-justify font-bold">
-      Currently looking for opportunities to apply fullstack development and
-      cloud computing skills in innovative projects. Open to internship opportunities, freelance projects, or challenging
-      entry-level positions in software development or cloud technology.
-    </p>
+    <div class="text-sm md:text-base leading-relaxed space-y-3 text-black/80 dark:text-white/85">
+      <p>
+        I am an Informatics Engineering student and full-stack software developer based in Indonesia. As a Cloud Computing alumnus of Bangkit Academy 2024 (led by Google, GoTo, &amp; Traveloka), I completed the Entrepreneur Track and received incubation funding for MIRA — a radiology PACS technology initiative on GCP.
+      </p>
+      <p>
+        My core focus spans full-stack web engineering (Astro, TypeScript, Node.js, Go), cloud infrastructure setup (GCP, AWS, Firebase), and machine learning applications (TensorFlow, Scikit-learn via IDCamp 2024 ML Track).
+      </p>
+      <p class="font-medium text-black dark:text-white pt-1">
+        Currently available for full-stack engineering, cloud architecture, and freelance project opportunities.
+      </p>
+    </div>
   </div>
-  </article>
 </section>

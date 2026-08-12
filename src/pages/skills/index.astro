@@ -9,12 +9,14 @@ import Skills from "../../components/Skills.astro"
 
 <PageLayout title={SKILLS.TITLE} description={SKILLS.DESCRIPTION}>
   <TopLayout>
-    <div class="animate page-heading">
-      {SKILLS.TITLE}
+    <div class="animate space-y-2">
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-black dark:text-white">
+        {SKILLS.TITLE}
+      </h1>
+      <p class="text-sm md:text-base opacity-75">
+        {SKILLS.DESCRIPTION}
+      </p>
     </div>
-    <p class="animate">
-      {SKILLS.DESCRIPTION}
-    </p>
   </TopLayout>
   <BottomLayout>
     <div class="animate">

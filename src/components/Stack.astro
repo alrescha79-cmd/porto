@@ -8,22 +8,12 @@ const stack = [
     href: "https://astro.build",
   },
   {
-    text: "React JS",
-    icon: "react",
-    href: "https://reactjs.org",
-  },
-  {
-    text: "Javascript",
-    icon: "javascript",
-    href: "https://www.javascript.com",
-  },
-  {
-    text: "Typescript",
+    text: "TypeScript",
     icon: "typescript",
     href: "https://www.typescriptlang.org",
   },
   {
-    text: "Tailwind",
+    text: "Tailwind CSS",
     icon: "tailwind",
     href: "https://tailwindcss.com",
   },
@@ -31,28 +21,16 @@ const stack = [
 ---
 
 <section class="animate">
-  <div class="space-y-4">
-    <p class="font-semibold text-black dark:text-white">Website build with</p>
-    <div class="flex flex-wrap items-center gap-2 mt-5">
+  <div class="space-y-3">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-black/60 dark:text-white/60">
+      Built With
+    </h2>
+    <div class="flex flex-wrap items-center gap-2 pt-1">
       {
         stack.map((item) => (
           <StackCard text={item.text} icon={item.icon} href={item.href} />
         ))
       }
-    </div>
-    <div>
-      Performing reactivity and statefulness, special guest
-      <a
-        href="https://www.solidjs.com/"
-        target="_blank"
-        class="w-fit group underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend"
-      >
-        <span
-          class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend"
-        >
-          SolidJS
-        </span>
-      </a>
     </div>
   </div>
 </section>
