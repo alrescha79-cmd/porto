@@ -1,0 +1,93 @@
+---
+import type { CollectionEntry } from "astro:content"
+import ArrowCard from "./ArrowCard.astro"
+
+type Props = {
+  tags: string[]
+  data: CollectionEntry<"projects">[]
+}
+
+const { tags, data } = Astro.props
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+  <div class="col-span-3 sm:col-span-1">
+    <div class="sticky top-24">
+      <div class="text-sm font-semibold uppercase mb-2 text-black dark:text-white">Filter</div>
+      <ul class="flex flex-wrap sm:flex-col gap-1.5">
+        {tags.map((tag) => (
+          <li>
+            <button
+              data-project-filter={tag}
+              class="w-full px-2 py-1 rounded whitespace-nowrap overflow-hidden overflow-ellipsis flex gap-2 items-center bg-black/5 dark:bg-white/10 hover:bg-black/10 hover:dark:bg-white/15 transition-colors duration-300 ease-in-out"
+            >
+              <svg class="size-5 fill-black/50 dark:fill-white/50 transition-colors duration-300 ease-in-out group-open:fill-black dark:group-open:fill-white">
+                <use href="/ui.svg#square" class="filter-square block" />
+                <use href="/ui.svg#square-check" class="filter-check hidden" />
+              </svg>
+              {tag}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <div class="col-span-3 sm:col-span-2">
+    <div class="flex flex-col">
+      <div id="projects-count" class="text-sm uppercase mb-2">
+        SHOWING {data.length} OF {data.length} PROJECTS
+      </div>
+      <ul class="flex flex-col gap-3">
+        {
+          data.map((project) => (
+            <li data-project-tags={project.data.tags.map((t) => t.toLowerCase()).join(" ")}>
+              <ArrowCard entry={project} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  const filterButtons = Array.from(document.querySelectorAll<HTMLElement>("[data-project-filter]"))
+  const listItems = Array.from(document.querySelectorAll<HTMLElement>("[data-project-tags]"))
+  const counter = document.getElementById("projects-count")!
+  const selected = new Set<string>()
+
+  function render() {
+    let visible = 0
+    listItems.forEach((li) => {
+      const tags = li.getAttribute("data-project-tags")!.split(" ")
+      const show = Array.from(selected).every((tag) => tags.includes(tag))
+      li.classList.toggle("hidden", !show)
+      if (show) visible++
+    })
+
+    counter.textContent = `SHOWING ${visible} OF ${listItems.length} PROJECTS`
+
+    filterButtons.forEach((btn) => {
+      const tag = btn.dataset.projectFilter!
+      const active = selected.has(tag)
+      const square = btn.querySelector(".filter-square")!
+      const check = btn.querySelector(".filter-check")!
+      square.classList.toggle("hidden", active)
+      check.classList.toggle("hidden", !active)
+      btn.classList.toggle("text-black", active)
+      btn.classList.toggle("dark:text-white", active)
+    })
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tag = btn.dataset.projectFilter!
+      if (selected.has(tag)) {
+        selected.delete(tag)
+      } else {
+        selected.add(tag)
+      }
+      render()
+    })
+  })
+</script>

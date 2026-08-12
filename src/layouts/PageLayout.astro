@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro"
 import Drawer from "../components/Drawer.astro"
 const { title, description } = Astro.props
 import { SITE } from "../consts"
-import ChatButton from "../components/ChatButton"
+import ChatButton from "../components/ChatButton.astro"
 ---
 
 <!doctype html>
@@ -20,7 +20,7 @@ import ChatButton from "../components/ChatButton"
     <main>
       <slot />
     </main>
-    <ChatButton client:load/>
+    <ChatButton />
     <Footer />
   </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-import ArrowSkillsCard from "./ArrowSkillsCard"
+import ArrowSkillsCard from "./ArrowSkillsCard.astro"
 import { cardData } from "../data"
 ---
 
@@ -21,7 +21,7 @@ import { cardData } from "../data"
     <ul class="space-y-4">
       {cardData.map((data) => (
         <li title={data.title}>
-          <ArrowSkillsCard title={data.title} items={data.items} client:idle/>
+          <ArrowSkillsCard title={data.title} items={data.items} />
         </li>
       ))}
     </ul>

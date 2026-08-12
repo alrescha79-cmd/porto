@@ -1,0 +1,173 @@
+---
+import CertificateCard from "./CertificateCard.astro"
+import type { ImageMetadata } from "astro"
+
+interface Certificate {
+  image: ImageMetadata
+  provider: string
+  date: string
+  name: string
+  link: string
+  pinned?: boolean
+}
+
+type Props = {
+  certificates: Certificate[]
+}
+
+const { certificates } = Astro.props
+const providers = [...new Set(certificates.map((cert) => cert.provider))]
+---
+
+<div class="md:w-8/12 mx-auto mb-8 w-10/12">
+  <div class="flex flex-col md:flex-row items-center w-full">
+    <div class="flex flex-col items-start w-full">
+      <h2 class="text-2xl font-bold dark:text-white text-black">Certificates</h2>
+      <p class="text-base font-normal dark:text-white text-black">
+        Here are some of the certificates I have earned.
+      </p>
+    </div>
+  </div>
+  <div class="w-full mt-4 sticky top-0 bg-white dark:bg-black z-10">
+    <label class="text-lg font-bold text-black dark:text-white">
+      Filter by Provider
+    </label>
+    <div class="flex flex-col flex-wrap md:flex-row gap-1 md:gap-2 w-full">
+      {providers.map((provider) => (
+        <button
+          data-cert-filter={provider}
+          class="px-2 py-1 rounded whitespace-nowrap overflow-hidden overflow-ellipsis flex gap-2 items-center bg-black/5 dark:bg-white/10 hover:bg-black/10 hover:dark:bg-white/15 transition-colors duration-300 ease-in-out"
+        >
+          <svg class="size-5 fill-black/50 dark:fill-white/50 transition-colors duration-300 ease-in-out">
+            <use href="/ui.svg#square" class="filter-square block" />
+            <use href="/ui.svg#square-check" class="filter-check hidden" />
+          </svg>
+          {provider}
+        </button>
+      ))}
+    </div>
+  </div>
+</div>
+
+<div
+  class="animate md:px-4 flex flex-wrap justify-center items-center border-b-current w-full gap-2 md:w-11/12 mx-auto mt-12"
+>
+  {
+    certificates.map((cert) => (
+      <div data-cert-card data-provider={cert.provider}>
+        <CertificateCard
+          image={cert.image}
+          provider={cert.provider}
+          date={cert.date}
+          name={cert.name}
+          link={cert.link}
+          pinned={cert.pinned}
+        />
+      </div>
+    ))
+  }
+</div>
+
+<div class="w-full md:w-10/12 mx-auto mt-4 mb-1">
+  <h1 id="cert-count" class="md:text-xl text-base font-bold text-center">
+    Showing {certificates.length} of {certificates.length} Certificates
+  </h1>
+</div>
+
+<div class="w-full md:w-10/12 mx-auto py-4">
+  <div class="flex justify-center gap-2">
+    <div id="cert-pager" class="join"></div>
+  </div>
+</div>
+
+<script>
+  import { ITEMS_PER_PAGE, clampPage, getPageNumbers } from "../lib/pager"
+
+  const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-cert-card]"))
+  const filterButtons = Array.from(document.querySelectorAll<HTMLElement>("[data-cert-filter]"))
+  const counter = document.getElementById("cert-count")!
+  const pager = document.getElementById("cert-pager")!
+  const selectedProviders = new Set<string>()
+  let page = 1
+
+  function filtered() {
+    if (selectedProviders.size === 0) return cards
+    return cards.filter((card) => selectedProviders.has(card.dataset.provider!))
+  }
+
+  function renderCards() {
+    const items = filtered()
+    const total = Math.max(1, Math.ceil(items.length / ITEMS_PER_PAGE))
+    page = clampPage(page, total)
+    const start = (page - 1) * ITEMS_PER_PAGE
+
+    cards.forEach((card) => {
+      const matches =
+        selectedProviders.size === 0 || selectedProviders.has(card.dataset.provider!)
+      const idx = items.indexOf(card)
+      const inPage = idx >= start && idx < start + ITEMS_PER_PAGE
+      card.classList.toggle("hidden", !(matches && inPage))
+    })
+
+    const shown = Math.min(ITEMS_PER_PAGE, items.length - start)
+    counter.textContent = `Showing ${shown} of ${items.length} Certificates`
+    renderPager(total)
+    renderFilters()
+  }
+
+  function renderFilters() {
+    filterButtons.forEach((btn) => {
+      const active = selectedProviders.has(btn.dataset.certFilter!)
+      const square = btn.querySelector(".filter-square")!
+      const check = btn.querySelector(".filter-check")!
+      square.classList.toggle("hidden", active)
+      check.classList.toggle("hidden", !active)
+      btn.classList.toggle("text-black", active)
+      btn.classList.toggle("dark:text-white", active)
+    })
+  }
+
+  function renderPager(total: number) {
+    const numbers = getPageNumbers(total, page)
+    let html = `<button class="join-item btn btn-outline" data-pager="prev" ${page === 1 ? "disabled" : ""}>« Prev</button>`
+    for (const n of numbers) {
+      if (n === "...") {
+        html += `<button class="join-item btn btn-disabled">...</button>`
+      } else {
+        html += `<button class="join-item btn btn-outline ${page === n ? "btn-active" : ""}" data-pager="page" data-page="${n}">${n}</button>`
+      }
+    }
+    html += `<button class="join-item btn btn-outline" data-pager="next" ${page === total ? "disabled" : ""}>Next »</button>`
+    pager.innerHTML = html
+
+    pager.querySelectorAll("button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const action = btn.dataset.pager
+        if (action === "prev") {
+          page -= 1
+        } else if (action === "next") {
+          page += 1
+        } else {
+          page = Number(btn.dataset.page)
+        }
+        renderCards()
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      })
+    })
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const provider = btn.dataset.certFilter!
+      if (selectedProviders.has(provider)) {
+        selectedProviders.delete(provider)
+      } else {
+        selectedProviders.add(provider)
+      }
+      page = 1
+      renderCards()
+    })
+  })
+
+  renderCards()
+</script>

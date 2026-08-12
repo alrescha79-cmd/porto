@@ -1,0 +1,10 @@
+---
+import Card from "./Card.astro"
+import { cardData } from "../data"
+---
+
+<div class="flex flex-wrap gap-4 justify-center">
+  {cardData.map((card) => (
+    <Card title={card.title} items={card.items} />
+  ))}
+</div>

@@ -2,7 +2,7 @@
 import PageLayout from "../../layouts/PageLayout.astro"
 import { CERTIFICATIONS } from "../../consts"
 import { certificateData } from "../../data"
-import CertificateList from "../../components/CertificateList.astro"
+import Certificates from "../../components/Certificates.astro"
 const filtered = certificateData
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   .sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0))
@@ -20,6 +20,6 @@ const filtered = certificateData
     <p class="text-lg text-center mb-8">
       {CERTIFICATIONS.DESCRIPTION}
     </p>
-    <CertificateList certificates={filtered} />
+    <Certificates certificates={filtered} />
   </div>
 </PageLayout>

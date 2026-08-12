@@ -1,0 +1,80 @@
+---
+interface Item {
+  name: string
+  image?: string
+  alt?: string
+}
+
+type Props = {
+  title: string
+  items: Item[]
+}
+
+const { title, items } = Astro.props
+---
+
+<div class="skills-card w-[350px] mx-auto md:mx-0 bg-white border border-gray-200 rounded-lg shadow dark:bg-black/15 dark:border-neutral-700">
+  <!-- Skeleton loading state -->
+  <div class="skeleton-card">
+    <h5 class="text-2xl font-bold text-center py-4 bg-gray-300 dark:bg-gray-700 skeleton">
+      &nbsp;
+    </h5>
+    <div class="flow-root p-4">
+      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-500">
+        {items.map(() => (
+          <li class="py-3 sm:py-4">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <div class="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-700 skeleton"></div>
+              </div>
+              <div class="flex-1 min-w-0 ms-4">
+                <p class="text-xl font-medium h-6 bg-gray-300 dark:bg-gray-700 rounded-md skeleton">
+                  &nbsp;
+                </p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Actual content -->
+  <div class="card-content hidden">
+    <h5 class="text-2xl font-bold text-gray-900 dark:text-white text-center bg-black/10 dark:bg-white/10 py-4">
+      {title}
+    </h5>
+    <div class="flow-root p-4">
+      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-500">
+        {items.map((item) => (
+          <li class="py-3 sm:py-4">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <img class="w-8 h-8 rounded-full" src={item.image} alt={item.alt || item.name} />
+              </div>
+              <div class="flex-1 min-w-0 ms-4">
+                <p class="text-xl font-semibold text-black/90 dark:text-white/90">
+                  {item.name}
+                </p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Simulate loading then reveal content
+  setTimeout(() => {
+    document.querySelectorAll(".skills-card").forEach((card) => {
+      const content = card.querySelector(".card-content")
+      const skeleton = card.querySelector(".skeleton-card")
+      if (content && skeleton) {
+        skeleton.classList.add("hidden")
+        content.classList.remove("hidden")
+      }
+    })
+  }, 750)
+</script>

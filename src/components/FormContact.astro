@@ -1,5 +1,5 @@
 ---
-import ContactForm from "./ContactForm"
+import ContactForm from "./ContactForm.astro"
 import { SOCIALS } from "../consts"
 ---
 
@@ -10,7 +10,7 @@ import { SOCIALS } from "../consts"
     saying hey, then get in touch.
   </p>
   <div class="container border-b-current w-full">
-    <ContactForm client:load />
+    <ContactForm uid="contact" />
   </div>
 
   <section class="animate">
