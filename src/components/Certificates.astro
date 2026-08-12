@@ -78,6 +78,7 @@ const providers = [...new Set(certificates.map((cert) => cert.provider))]
 
 <script>
   import { ITEMS_PER_PAGE, clampPage, getPageNumbers } from "../lib/pager"
+  import { toggleFilterButton } from "../lib/filter"
 
   function initCertificatesView() {
     const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-cert-card]"))
@@ -116,17 +117,7 @@ const providers = [...new Set(certificates.map((cert) => cert.provider))]
 
     function renderFilters() {
       filterButtons.forEach((btn) => {
-        const active = selectedProviders.has(btn.dataset.certFilter!)
-        const square = btn.querySelector(".filter-square")
-        const check = btn.querySelector(".filter-check")
-        if (square && check) {
-          square.classList.toggle("hidden", active)
-          check.classList.toggle("hidden", !active)
-        }
-        btn.classList.toggle("bg-black", active)
-        btn.classList.toggle("text-white", active)
-        btn.classList.toggle("dark:bg-white", active)
-        btn.classList.toggle("dark:text-black", active)
+        toggleFilterButton(btn, selectedProviders.has(btn.dataset.certFilter!))
       })
     }
 

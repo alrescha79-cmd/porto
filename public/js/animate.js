@@ -1,11 +1,15 @@
+let observer = null
+
 function animate() {
-  const animateElements = document.querySelectorAll('.animate')
+  if (observer) observer.disconnect()
+
+  const animateElements = document.querySelectorAll('.animate:not(.show)')
   if (!('IntersectionObserver' in window)) {
     animateElements.forEach((el) => el.classList.add('show'))
     return
   }
 
-  const observer = new IntersectionObserver((entries) => {
+  observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
         setTimeout(() => {
@@ -21,3 +25,4 @@ function animate() {
 
 document.addEventListener("DOMContentLoaded", animate)
 document.addEventListener("astro:page-load", animate)
+document.addEventListener("astro:after-swap", animate)

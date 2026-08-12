@@ -6,6 +6,10 @@ import tailwindcss from "@tailwindcss/vite"
 export default defineConfig({
   site: "https://cakson.my.id",
   integrations: [mdx(), sitemap()],
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "hover",
+  },
   vite: {
     plugins: [tailwindcss()],
   },

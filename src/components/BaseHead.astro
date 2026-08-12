@@ -15,8 +15,8 @@ const { title, description, image = "/open-graph.jpg" } = Astro.props
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="logo.webp" />
- <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
+<link rel="icon" type="image/svg+xml" href="/logo.webp" />
+<link rel="shortcut icon" href="/logo.webp" type="image/x-icon">
 
 <meta name="generator" content={Astro.generator} />
 
@@ -59,11 +59,12 @@ const { title, description, image = "/open-graph.jpg" } = Astro.props
 
 <script>
   import type { TransitionBeforeSwapEvent } from "astro:transitions/client"
-  document.addEventListener("astro:before-swap", (e) =>
-    [
-      ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
-        "link[as=\"font\"]"
-      ),
-    ].forEach((link) => link.remove())
-  )
+  document.addEventListener("astro:before-swap", (e) => {
+    [...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
+      "link[as=\"font\"]"
+    )].forEach((link) => link.remove())
+  })
+  document.addEventListener("astro:after-swap", () => {
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  })
 </script>
