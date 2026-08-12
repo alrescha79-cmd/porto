@@ -3,7 +3,7 @@ import type { Site, Page, Links, Socials, Experience } from "./types"
 // Global
 export const SITE: Site = {
   TITLE: "Anggun Caksono",
-  DESCRIPTION: "Full-stack software engineer and Cloud Computing alumnus (Bangkit 2024 by Google, GoTo, Traveloka). Specialized in Astro, TypeScript, Node.js, GCP, and machine learning applications.",
+  DESCRIPTION: "Full-stack software engineer, Cloud Computing alumnus (Bangkit 2024), and Google Cloud Arcade Fasilitator. Specialized in Astro, TypeScript, Node.js, GCP, and machine learning applications.",
   AUTHOR: "Anggun Caksono",
 }
 
@@ -79,6 +79,12 @@ export const SOCIALS: Socials = [
 
 // Experience
 export const EXPERIENCE: Experience = [
+  {
+    COMPANY: "Google Cloud Arcade Fasilitator",
+    ROLE: "Fasilitator",
+    DURATION: "Jul 2025 – Present",
+    DESCRIPTION: "Guide participants through hands-on Google Cloud labs, helping them complete challenges and earn milestones. Assist with GCP console navigation, troubleshoot lab issues, and ensure learners grasp core cloud concepts across compute, storage, networking, and ML services."
+  },
   {
     COMPANY: "PT WINNICODE GARUDA TEKNOLOGI",
     ROLE: "Full-Stack Developer Intern",
