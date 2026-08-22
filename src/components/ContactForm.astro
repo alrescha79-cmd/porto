@@ -170,7 +170,7 @@ const { uid } = Astro.props
           try {
             result = JSON.parse(raw)
           } catch {
-            // ignore malformed response, fall through to error alert
+            console.warn("contact: malformed response", res.status, raw.slice(0, 200))
           }
 
           if (result.status === "sent") {
@@ -179,9 +179,11 @@ const { uid } = Astro.props
           } else if (result.reason === "rate_limited") {
             showAlert("error", "You have reached the daily limit of 3 messages. Please try again tomorrow.")
           } else {
+            console.warn("contact: rejected", res.status, raw.slice(0, 200))
             showAlert("error", "Something went wrong! Please try again.")
           }
-        } catch {
+        } catch (err) {
+          console.warn("contact: request failed", err)
           showAlert("error", "Something went wrong! Please try again.")
         } finally {
           submit.disabled = false
