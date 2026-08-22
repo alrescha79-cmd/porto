@@ -4,7 +4,7 @@
 
 ## **About the Project**
 
-This repository contains the source code for my **Personal Portfolio Website**, developed using **Astro JS** and **React JS**. The project is designed to be fast, responsive, and visually appealing, providing recruiters and visitors with a seamless experience while exploring my profile, projects, and contact information.
+This repository contains the source code for my **Personal Portfolio Website**, built with **Astro**, **TypeScript**, and **Tailwind CSS**. The project is designed to be fast, responsive, and visually appealing, providing recruiters and visitors with a seamless experience while exploring my profile, projects, and contact information.
 
 ## **Features**
 
@@ -17,10 +17,11 @@ This repository contains the source code for my **Personal Portfolio Website**, 
 
 ## **Tech Stack**
 
-- **Astro JS**: Framework for building fast, optimized web pages.
-- **React JS**: For creating interactive UI components.
-- **Vite**: Build tool for fast development and optimized production builds.
+- **Astro**: Framework for building fast, optimized web pages.
+- **TypeScript**: Typed superset of JavaScript for maintainable code.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
+- **daisyUI**: Accessible Tailwind component library.
+- **Vite**: Build tool for fast development and optimized production builds.
 
 ### **Development Tools**
 
@@ -28,6 +29,7 @@ This repository contains the source code for my **Personal Portfolio Website**, 
 - Astro
 - TypeScript
 - CSS
+- ESLint
 
 ## **Getting Started**
 
@@ -35,7 +37,7 @@ Follow these instructions to set up the project locally:
 
 ### **Prerequisites**
 
-- Node.js (v18 or later)
+- Node.js (v22 or later)
 - npm or yarn
 - Git
 - A code editor (e.g., Visual Studio Code)
@@ -78,17 +80,17 @@ Follow these instructions to set up the project locally:
 porto/
 ├── public/                # Static assets
 ├── src/                   # Source code
+│   ├── assets/            # Images and other assets
 │   ├── components/        # Reusable components
+│   ├── content/           # Projects and legal content collections
 │   ├── layouts/           # Layout components
+│   ├── lib/               # Utility functions
 │   ├── pages/             # Page components
-│   ├── styles/            # Global styles
-│   ├── utils/             # Utility functions
-│   └── assets/            # Images and other assets
+│   └── styles/            # Global styles
 ├── .gitignore             # Git ignore file
 ├── astro.config.mjs       # Astro configuration
 ├── package.json           # Project metadata and dependencies
-├── README.md              # Project documentation
-└── vite.config.js         # Vite configuration
+└── tsconfig.json          # TypeScript configuration
 ```
 
 ## **Contributing**

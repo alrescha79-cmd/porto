@@ -9,11 +9,13 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
-const { title, description, image = "/open-graph.jpg" } = Astro.props
+// ponytail: /logo.webp until a real 1200x630 OG card exists
+const { title, description, image = "/logo.webp" } = Astro.props
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
+<script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/logo.webp" />
 <link rel="shortcut icon" href="/logo.webp" type="image/x-icon">

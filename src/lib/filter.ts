@@ -9,4 +9,5 @@ export function toggleFilterButton(btn: HTMLElement, isActive: boolean): void {
   btn.classList.toggle("text-white", isActive)
   btn.classList.toggle("dark:bg-white", isActive)
   btn.classList.toggle("dark:text-black", isActive)
+  btn.setAttribute("aria-pressed", String(isActive))
 }

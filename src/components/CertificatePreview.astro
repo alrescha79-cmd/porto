@@ -1,18 +1,14 @@
 ---
 import ArrowCertificateCard from "../components/ArrowCertificateCard.astro"
-import { certificateData } from "../data"
+import { certificateData, sortedCertificates } from "../data"
 
-// Get only pinned certificates
-const pinnedCertificates = certificateData
-  .filter(cert => cert.pinned)
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+const sorted = sortedCertificates(certificateData)
 
-// If no pinned certificates, fallback to the first 5 by date
-const certificatesToShow = pinnedCertificates.length > 0 
-  ? pinnedCertificates 
-  : certificateData
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-      .slice(0, 5)
+// Pinned certificates first; fallback to the 5 most recent
+const pinnedCertificates = sorted.filter(cert => cert.pinned)
+const certificatesToShow = pinnedCertificates.length > 0
+  ? pinnedCertificates
+  : sorted.slice(0, 5)
 ---
 
 <section class="animate">
