@@ -9,56 +9,25 @@ const dateFormatted = new Date(date).toLocaleDateString("en-US", {
   year: "numeric",
 })
 
-const modalId = `modal-${name.replace(/\s+/g, "-").toLowerCase()}`
+const modalId = `modal-${name.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`
 ---
 
 <div
-  class="certificate-card mb-4 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out cursor-pointer"
+  class="certificate-card group p-4 rounded-xl border border-black/15 dark:border-white/20 hover:bg-black/5 hover:dark:bg-white/10 transition-all duration-220 ease-out cursor-pointer active:scale-[0.99]"
   data-modal-id={modalId}
 >
-  <div
-    id="certificate-content"
-    class="w-full text-left block card-content hidden"
-  >
-    <div class="w-full flex flex-col items-center md:items-start">
-      <div class="flex justify-between w-full">
-        <div
-          class="text-xs font-normal opacity-75 px-2 rounded-full content-center bg-black/5 dark:bg-white/10"
-        >
-          {date}
-        </div>
-        <div class="px-2 py-0.5 rounded-full text-sm text-white bg-sky-700">
-          {provider}
-        </div>
-      </div>
+  <div class="w-full flex flex-col items-start gap-2">
+    <div class="flex justify-between items-center w-full">
+      <span class="text-xs font-mono opacity-75 px-2.5 py-0.5 rounded-full bg-black/5 dark:bg-white/10">
+        {date}
+      </span>
+      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold leading-5 text-white capitalize bg-sky-700 dark:bg-sky-600">
+        {provider}
+      </span>
     </div>
-    <div class="flex flex-col md:flex-row md:gap-4 items-center w-full">
-      <div class="flex my-1 text-base font-bold w-full">
-        <span class="link-underline link-underline-black">
-          {name}
-        </span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Skeleton loading -->
-  <div id="skeleton-loading" class="skeleton-card">
-    <div class="w-full flex flex-col items-center md:items-start">
-      <div class="flex justify-between w-full">
-        <div
-          class="text-xs font-normal h-6 w-24 rounded-full bg-gray-300 dark:bg-gray-700 skeleton"
-        >
-        </div>
-        <div
-          class="h-6 w-24 rounded-full bg-gray-300 dark:bg-gray-700 skeleton"
-        >
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row md:gap-4 items-center w-full mt-2">
-      <div class="h-6 w-full bg-gray-300 dark:bg-gray-700 rounded skeleton">
-      </div>
-    </div>
+    <p class="text-sm md:text-base font-bold text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors duration-220 ease-out line-clamp-2">
+      {name}
+    </p>
   </div>
 
   <CertificateModal

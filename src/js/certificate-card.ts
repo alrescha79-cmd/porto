@@ -1,3 +1,14 @@
+const CLOSE_ANIMATION_MS = 220
+
+function closeModalWithAnimation(modal: HTMLDialogElement): void {
+  if (!modal.open || modal.classList.contains("modal-closing")) return
+  modal.classList.add("modal-closing")
+  setTimeout(() => {
+    modal.close()
+    modal.classList.remove("modal-closing")
+  }, CLOSE_ANIMATION_MS)
+}
+
 function setupModals(): void {
   document.querySelectorAll<HTMLElement>(".certificate-card").forEach((card) => {
     if (card.dataset.modalInited) return
@@ -10,21 +21,16 @@ function setupModals(): void {
 
     if (!modal) return
 
-    card.addEventListener("click", () => {
+    card.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement
+      if (target.closest("dialog")) return
       modal.showModal()
-      const modalContent = modal.querySelector<HTMLElement>("#modal-content-loaded")
-      const modalSkeleton = modal.querySelector<HTMLElement>("#modal-skeleton")
-
-      if (modalContent && modalSkeleton) {
-        modalContent.classList.remove("hidden")
-        modalSkeleton.classList.add("hidden")
-      }
     })
 
     modal.querySelectorAll(".close-modal-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation()
-        modal.close()
+        closeModalWithAnimation(modal)
       })
     })
 
@@ -38,32 +44,22 @@ function setupModals(): void {
           e.clientY < rect.top ||
           e.clientY > rect.bottom
         ) {
-          modal.close()
+          closeModalWithAnimation(modal)
         }
       }
     })
 
-    modal.querySelector(".modal-content")?.addEventListener("click", (e) => {
-      e.stopPropagation()
+    modal.addEventListener("cancel", (e) => {
+      e.preventDefault()
+      closeModalWithAnimation(modal)
     })
-  })
-}
-
-function revealContent(): void {
-  document.querySelectorAll<HTMLElement>(".certificate-card").forEach((card) => {
-    const content = card.querySelector<HTMLElement>("#certificate-content")
-    const skeleton = card.querySelector<HTMLElement>("#skeleton-loading")
-
-    if (content && skeleton) {
-      content.classList.remove("hidden")
-      skeleton.classList.add("hidden")
-    }
   })
 }
 
 function initCertificateCards(): void {
   setupModals()
-  revealContent()
 }
 
+document.addEventListener("DOMContentLoaded", initCertificateCards)
 document.addEventListener("astro:page-load", initCertificateCards)
+document.addEventListener("astro:after-swap", initCertificateCards)

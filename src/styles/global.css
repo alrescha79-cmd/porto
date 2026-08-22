@@ -44,6 +44,7 @@ html {
   color-scheme: light;
   background-color: white;
   font-family: "Atkinson", sans-serif;
+  scroll-behavior: smooth;
 }
 
 html.dark {
@@ -67,19 +68,20 @@ main {
   @apply flex flex-col flex-1 bg-white dark:bg-black;
 }
 
-header {
-  @apply border-b;
-  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+.header-bar {
+  transition: background-color var(--dur-short) var(--ease-out),
+              border-color var(--dur-short) var(--ease-out),
+              box-shadow var(--dur-short) var(--ease-out);
 }
 
-header:not(.scrolled) {
-  @apply bg-transparent border-transparent;
+.header-bar.header-scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
 }
 
-header.scrolled {
-  @apply bg-white/75 dark:bg-black/50;
-  @apply border-black/10 dark:border-white/25;
-  @apply backdrop-blur-sm saturate-200;
+html.dark .header-bar.header-scrolled {
+  background-color: rgba(0, 0, 0, 0.92);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
 }
 
 article {
@@ -98,6 +100,44 @@ strong {
   @apply font-semibold text-black/75 dark:text-white/85;
 }
 
+/* View Transitions */
+::view-transition-old(root) {
+  animation: 180ms var(--ease-in) both fadeOut;
+}
+
+::view-transition-new(root) {
+  animation: 240ms var(--ease-out) both fadeIn;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
+
 /** Light theme particles on home page */
 @keyframes animateParticle {
   from {
@@ -111,8 +151,8 @@ strong {
 /** styles for public /animate.js */
 .animate {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out);
+  transform: translateY(16px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
   will-change: opacity, transform;
 }
 
@@ -124,9 +164,26 @@ strong {
 @media (prefers-reduced-motion: reduce) {
   .animate {
     transform: none !important;
-    transition-duration: 150ms !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
+
+  .skills-card,
+  .skills-card-row {
+    transition-duration: 0.01ms !important;
+  }
+
+  .skills-card,
+  .skills-card-row img {
+    transform: none !important;
   }
 }
+
+/* Hallmark · genre: modern-minimal · macrostructure: Bento Grid · theme: site palette (sky accent)
+ * enrichment: none (typography + tool logos) · nav: shared layout (unchanged) · footer: shared layout (unchanged)
+ * skills page redesign — see src/pages/skills and src/components/{Skills,Card}.astro
+ */
+
 
 article img {
   padding-top: 20px;
@@ -135,20 +192,63 @@ article img {
   margin: 0 auto;
 }
 
-/* modal certificate card */
-
-.skeleton {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+/* modal certificate card animations */
+dialog.certificate-modal:not([open]) {
+  display: none;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.8;
+dialog.certificate-modal {
+  opacity: 0;
+  transform: scale(0.96) translateY(8px);
+  transition: opacity var(--dur-short) var(--ease-out),
+              transform var(--dur-short) var(--ease-out),
+              display var(--dur-short) allow-discrete,
+              overlay var(--dur-short) allow-discrete;
+}
+
+dialog.certificate-modal[open] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+@starting-style {
+  dialog.certificate-modal[open] {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
   }
 }
+
+dialog.certificate-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  transition: background-color var(--dur-short) var(--ease-out),
+              backdrop-filter var(--dur-short) var(--ease-out),
+              display var(--dur-short) allow-discrete,
+              overlay var(--dur-short) allow-discrete;
+}
+
+dialog.certificate-modal[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+@starting-style {
+  dialog.certificate-modal[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+  }
+}
+
+dialog.certificate-modal.modal-closing {
+  opacity: 0 !important;
+  transform: scale(0.96) translateY(8px) !important;
+}
+
+dialog.certificate-modal.modal-closing::backdrop {
+  background-color: rgba(0, 0, 0, 0) !important;
+  backdrop-filter: blur(0px) !important;
+}
+
 .chat-attention {
   --att-ring: rgba(0, 0, 0, 0.25);
   animation: chatAttention 2.2s ease-in-out infinite;
@@ -175,12 +275,4 @@ html.dark .chat-attention {
     animation: none;
   }
 }
-.modal-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: transparent;
-  z-index: -1;
-}
+

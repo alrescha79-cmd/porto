@@ -4,18 +4,29 @@ import TopLayout from "../../layouts/TopLayout.astro"
 import BottomLayout from "../../layouts/BottomLayout.astro"
 import { SKILLS } from "../../consts"
 import Skills from "../../components/Skills.astro"
+import { cardData } from "../../data"
 
+const disciplineCount = cardData.length
+const toolCount = cardData.reduce((total, card) => total + card.items.length, 0)
 ---
 
 <PageLayout title={SKILLS.TITLE} description={SKILLS.DESCRIPTION}>
   <TopLayout>
-    <div class="animate space-y-2">
-      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-black dark:text-white">
-        {SKILLS.TITLE}
-      </h1>
-      <p class="text-sm md:text-base opacity-75">
-        {SKILLS.DESCRIPTION}
-      </p>
+    <div class="animate">
+      <div class="md:grid md:grid-cols-12 md:items-end md:gap-6">
+        <h1 class="md:col-span-6 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-black dark:text-white">
+          {SKILLS.TITLE}
+        </h1>
+        <div class="md:col-span-5 md:col-start-8 mt-4 md:mt-0">
+          <p class="text-sm md:text-base text-black/75 dark:text-white/75 max-w-md leading-relaxed">
+            {SKILLS.DESCRIPTION}
+          </p>
+          <p class="mt-3 font-mono text-xs tracking-wide text-sky-700 dark:text-sky-600 tabular-nums">
+            {disciplineCount} disciplines · {toolCount} tools
+          </p>
+        </div>
+      </div>
+      <div class="mt-8 md:mt-10 border-t border-black/10 dark:border-white/15"></div>
     </div>
   </TopLayout>
   <BottomLayout>
@@ -24,5 +35,3 @@ import Skills from "../../components/Skills.astro"
     </div>
   </BottomLayout>
 </PageLayout>
-
-
