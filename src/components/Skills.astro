@@ -1,10 +1,31 @@
 ---
+/* Hallmark · genre: modern-minimal · macrostructure: Bento Grid · theme: Cobalt
+ * enrichment: none (typography + tool logos) · nav: shared layout (unchanged) · footer: shared layout (unchanged)
+ */
 import Card from "./Card.astro"
 import { cardData } from "../data"
+
+const spanByTitle: Record<string, string> = {
+  "Programming Language": "md:col-span-6",
+  "Framework | Library": "md:col-span-6",
+  "Cloud & DevOps": "md:col-span-7",
+  "Machine Learning": "md:col-span-5",
+  "Mobile Development": "md:col-span-4",
+  "Design | UI/UX": "md:col-span-4",
+  "Database | Storage": "md:col-span-4",
+}
+
+const featuredTitle = "Cloud & DevOps"
 ---
 
-<div class="flex flex-wrap gap-4 justify-center">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4">
   {cardData.map((card) => (
-    <Card title={card.title} items={card.items} />
+    <div class={spanByTitle[card.title] ?? "md:col-span-4"}>
+      <Card
+        title={card.title}
+        items={card.items}
+        featured={card.title === featuredTitle}
+      />
+    </div>
   ))}
 </div>

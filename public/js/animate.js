@@ -10,15 +10,16 @@ function animate() {
   }
 
   observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('show')
-        }, Math.min(index * 60, 300))
+        entry.target.classList.add('show')
         observer.unobserve(entry.target)
       }
     })
-  }, { threshold: 0.1 })
+  }, { 
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
+  })
 
   animateElements.forEach((el) => observer.observe(el))
 }

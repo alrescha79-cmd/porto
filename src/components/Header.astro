@@ -11,7 +11,7 @@ import logoImg from "../assets/logo.png"
 <header class="w-full">
   <Container size="md">
     <div
-      class="z-50 fixed top-0 left-0 right-0 flex justify-between md:justify-evenly items-center px-4 py-3 md:py-3.5 w-full bg-white/90 dark:bg-black/90 transition-colors duration-220 ease-out backdrop-blur-md border-b border-black/10 dark:border-white/15"
+      class="header-bar z-50 fixed top-0 left-0 right-0 flex justify-between md:justify-evenly items-center px-4 py-3 md:py-3.5 w-full bg-white/80 dark:bg-black/80 transition-all duration-220 ease-out backdrop-blur-md border-b border-black/10 dark:border-white/15"
     >
       <div>
         <a
@@ -129,3 +129,23 @@ import logoImg from "../assets/logo.png"
     </ul>
   </nav>
 </header>
+
+<script>
+  function updateHeaderOnScroll() {
+    const headerEl = document.querySelector(".header-bar")
+    if (!headerEl) return
+    if (window.scrollY > 20) {
+      headerEl.classList.add("header-scrolled")
+    } else {
+      headerEl.classList.remove("header-scrolled")
+    }
+  }
+
+  function initHeaderScroll() {
+    window.removeEventListener("scroll", updateHeaderOnScroll)
+    window.addEventListener("scroll", updateHeaderOnScroll, { passive: true })
+    updateHeaderOnScroll()
+  }
+
+  document.addEventListener("astro:page-load", initHeaderScroll)
+</script>

@@ -3,7 +3,6 @@ import "../styles/global.css"
 import BaseHead from "../components/BaseHead.astro"
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
-import { fade } from "astro:transitions"
 
 const { title, description } = Astro.props
 import { SITE } from "../consts"
@@ -17,7 +16,7 @@ import ChatButton from "../components/ChatButton.astro"
   </head>
   <body>
     <Header transition:persist />
-    <main transition:animate={fade({ duration: "150ms" })}>
+    <main class="page-content">
       <slot />
     </main>
     <ChatButton transition:persist />
