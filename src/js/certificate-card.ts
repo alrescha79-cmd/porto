@@ -21,10 +21,19 @@ function setupModals(): void {
 
     if (!modal) return
 
+    const openModal = () => modal.showModal()
+
     card.addEventListener("click", (e) => {
       const target = e.target as HTMLElement
       if (target.closest("dialog")) return
-      modal.showModal()
+      openModal()
+    })
+
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault()
+        openModal()
+      }
     })
 
     modal.querySelectorAll(".close-modal-btn").forEach((btn) => {

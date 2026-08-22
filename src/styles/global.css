@@ -149,14 +149,14 @@ strong {
 }
 
 /** styles for public /animate.js */
-.animate {
+.js .animate {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
   will-change: opacity, transform;
 }
 
-.animate.show {
+.js .animate.show {
   opacity: 1;
   transform: translateY(0);
 }

@@ -1,11 +1,9 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro"
 import { CERTIFICATIONS } from "../../consts"
-import { certificateData } from "../../data"
+import { certificateData, sortedCertificates } from "../../data"
 import Certificates from "../../components/Certificates.astro"
-const filtered = certificateData
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  .sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0))
+const filtered = sortedCertificates(certificateData)
 
 ---
 

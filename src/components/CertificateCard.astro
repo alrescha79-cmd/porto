@@ -16,6 +16,9 @@ const modalId = `modal-${name.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`
 <div
   class="certificate-card group flex flex-col justify-between h-full border p-4 rounded-2xl shadow-sm hover:shadow-md hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-all duration-220 ease-out cursor-pointer active:scale-[0.99]"
   data-modal-id={modalId}
+  role="button"
+  tabindex="0"
+  aria-haspopup="dialog"
 >
   <div class="w-full text-left flex flex-col h-full">
     <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-neutral-100 dark:bg-neutral-800/80 mb-3.5 border border-black/5 dark:border-white/5 flex items-center justify-center">

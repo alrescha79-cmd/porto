@@ -25,8 +25,15 @@ interface Certificate {
   provider: string
   image: ImageMetadata
   date: string
-  link: string
+  link?: string
   pinned?: boolean
+}
+
+export function sortedCertificates(list: Certificate[] = certificateData): Certificate[] {
+  return [...list].sort((a, b) => {
+    if (Boolean(a.pinned) !== Boolean(b.pinned)) return a.pinned ? -1 : 1
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
+  })
 }
 
 export const cardData: SkillCard[] = [
@@ -154,7 +161,6 @@ export const certificateData: Certificate[] = [
         provider: "Bangkit Academy",
         image: cert("tbi.png"),
         date: "2024-07-12",
-        link: "#",
     },
     {
         name: "Machine Learning Intermediate",
