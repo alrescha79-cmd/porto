@@ -5,58 +5,50 @@ import { Image } from "astro:assets"
 import logoImg from "../assets/logo.png"
 ---
 
-<footer class="relative bg-white dark:bg-black pb-[72px] md:pb-8">
+<footer class="relative bg-white dark:bg-black pb-[84px] md:pb-10 border-t border-black/[0.08] dark:border-white/[0.1]">
   <div class="animate">
-    <section class="py-5">
+    <section class="py-6">
       <Container size="md">
         <div class="flex items-center justify-between">
           <a
             href="/"
-            class="flex gap-2 w-fit items-center font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-220 ease-out"
+            class="flex gap-2.5 w-fit items-center font-semibold text-current hover:text-black dark:hover:text-white transition-all duration-200 ease-out group"
           >
-            <Image
-              src={logoImg}
-              alt="Anggun Caksono"
-              class="rounded-full bg-black"
-              width={28}
-              height={28}
-              quality={50}
-              format="avif"
-            />
-            <span class="font-bold text-sm">{SITE.TITLE}</span>
+            <div class="relative size-7 rounded-full overflow-hidden ring-1 ring-black/10 dark:ring-white/20 group-hover:scale-105 transition-transform duration-200 ease-out">
+              <Image
+                src={logoImg}
+                alt="Anggun Caksono"
+                class="rounded-full bg-black object-cover"
+                width={28}
+                height={28}
+                quality={60}
+                format="avif"
+              />
+            </div>
+            <span class="font-bold text-sm tracking-tight text-black dark:text-white">{SITE.TITLE}</span>
           </a>
 
           <button
             id="back-to-top"
             aria-label="Back to top of page"
-            class="group flex w-fit px-3 py-1.5 gap-2 text-xs font-medium items-center border rounded-xl hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-all duration-220 ease-out active:scale-95 cursor-pointer"
+            class="group flex w-fit px-3 py-1.5 gap-2 text-xs font-semibold items-center border rounded-full hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-all duration-200 ease-out active:scale-95 cursor-pointer text-black/75 dark:text-white/75"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="14"
+              height="14"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="stroke-current group-hover:stroke-black group-hover:dark:stroke-white rotate-90"
+              class="stroke-current group-hover:stroke-black group-hover:dark:stroke-white transition-transform duration-200 ease-out group-hover:-translate-y-0.5"
             >
-              <line
-                x1="19"
-                y1="12"
-                x2="5"
-                y2="12"
-                class="scale-x-0 group-hover:scale-x-100 translate-x-3 group-hover:translate-x-0 transition-all duration-220 ease-out"
-              ></line>
-              <polyline
-                points="12 19 5 12 12 5"
-                class="translate-x-1 group-hover:translate-x-0 transition-all duration-220 ease-out"
-              ></polyline>
+              <polyline points="18 15 12 9 6 15"></polyline>
             </svg>
             <span
-              class="group-hover:text-black group-hover:dark:text-white transition-colors duration-220 ease-out"
+              class="group-hover:text-black group-hover:dark:text-white transition-colors duration-200 ease-out"
             >
               Back to top
             </span>
@@ -66,24 +58,24 @@ import logoImg from "../assets/logo.png"
     </section>
 
     <section
-      class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/15"
+      class="py-4 overflow-hidden whitespace-nowrap border-t border-black/[0.06] dark:border-white/[0.08]"
     >
       <Container size="md">
-        <div class="h-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="h-full grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
           <div
             class="order-2 sm:order-1 flex flex-col items-center sm:items-start text-xs text-black/60 dark:text-white/60 space-y-1"
           >
             <div class="legal space-x-2">
               <a
                 href="/legal/terms"
-                class="hover:text-black dark:hover:text-white transition-colors duration-220 ease-out"
+                class="hover:text-black dark:hover:text-white transition-colors duration-200 ease-out"
               >
                 Terms
               </a>
               <span>·</span>
               <a
                 href="/legal/privacy"
-                class="hover:text-black dark:hover:text-white transition-colors duration-220 ease-out"
+                class="hover:text-black dark:hover:text-white transition-colors duration-200 ease-out"
               >
                 Privacy
               </a>
@@ -102,9 +94,9 @@ import logoImg from "../assets/logo.png"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-                    class="group size-9 rounded-full p-2 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/20 transition-all duration-220 ease-out"
+                    class="group size-8.5 rounded-full p-2 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/15 border border-transparent hover:border-black/10 dark:hover:border-white/15 transition-all duration-200 ease-out"
                   >
-                    <svg class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white transition-colors duration-220 ease-out">
+                    <svg class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white transition-colors duration-200 ease-out">
                       <use href={`/social.svg#${SOCIAL.ICON}`} />
                     </svg>
                   </a>

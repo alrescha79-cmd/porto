@@ -5,27 +5,29 @@ import myPhoto from "../assets/poto.png"
 
 <section class="animate">
   <div class="space-y-4">
-    <div class="flex items-center justify-between pb-2 border-b border-black/10 dark:border-white/15">
-      <h2 class="text-xl font-bold text-black dark:text-white">About Me</h2>
-      <Image
-        src={myPhoto}
-        alt="Anggun Caksono"
-        width={44}
-        height={44}
-        class="rounded-full border border-black/10 dark:border-white/20"
-      />
+    <div class="flex items-center justify-between pb-3 border-b border-black/[0.08] dark:border-white/[0.12]">
+      <h2 class="text-xl font-bold tracking-tight text-black dark:text-white">About Me</h2>
+      <div class="relative size-11 rounded-full overflow-hidden ring-1 ring-black/15 dark:ring-white/20 hover:scale-105 transition-transform duration-200 ease-out">
+        <Image
+          src={myPhoto}
+          alt="Anggun Caksono"
+          width={44}
+          height={44}
+          class="rounded-full object-cover"
+        />
+      </div>
     </div>
-    <div class="text-sm md:text-base leading-relaxed space-y-3 text-black/80 dark:text-white/85">
+    <div class="text-sm md:text-base leading-relaxed space-y-3.5 text-black/80 dark:text-white/80">
       <p>
-        I am an Informatics Engineering student, full-stack software developer, and Google Cloud Arcade Fasilitator based in Indonesia. As a Cloud Computing alumnus of Bangkit Academy 2024 (led by Google, GoTo, &amp; Traveloka), I completed the Entrepreneur Track and received incubation funding for MIRA — a radiology PACS technology initiative on GCP.
+        I am an Informatics Engineering student, full-stack software developer, and Google Cloud Arcade Fasilitator based in Indonesia. As a Cloud Computing alumnus of Bangkit Academy 2024 (led by Google, GoTo, and Traveloka), I completed the Entrepreneur Track and received incubation funding for MIRA, a radiology PACS technology initiative deployed on GCP.
       </p>
       <p>
-        As a Google Cloud Arcade Fasilitator, I help participants work through hands-on GCP labs — troubleshooting lab issues, guiding console navigation, and supporting them to complete challenges and unlock milestones across compute, storage, networking, and machine learning services.
+        As a Google Cloud Arcade Fasilitator, I help participants work through hands-on GCP labs, troubleshooting environment challenges, guiding console navigation, and supporting them across compute, storage, networking, and machine learning tracks.
       </p>
       <p>
         My core focus spans full-stack web engineering (Astro, TypeScript, Node.js, Go), cloud infrastructure setup (GCP, AWS, Firebase), and machine learning applications (TensorFlow, Scikit-learn via IDCamp 2024 ML Track).
       </p>
-      <p class="font-medium text-black dark:text-white pt-1">
+      <p class="font-semibold text-black dark:text-white pt-1">
         Currently available for full-stack engineering, cloud architecture, and freelance project opportunities.
       </p>
     </div>

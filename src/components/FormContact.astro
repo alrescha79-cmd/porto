@@ -12,8 +12,8 @@ import { SOCIALS } from "../consts"
     <ContactForm uid="contact" />
   </div>
 
-  <div class="pt-6 border-t border-black/10 dark:border-white/15 space-y-3">
-    <p class="text-xs font-semibold uppercase tracking-wider text-black/60 dark:text-white/60">
+  <div class="pt-6 border-t border-black/[0.08] dark:border-white/[0.12] space-y-3.5">
+    <p class="text-xs font-bold uppercase tracking-wider text-black/60 dark:text-white/60">
       Direct Channels &amp; Profiles
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -23,9 +23,9 @@ import { SOCIALS } from "../consts"
             href={social.HREF}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-2 p-3 rounded-xl border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-220 ease-out active:scale-95 group"
+            class="flex items-center gap-2.5 p-3.5 rounded-2xl border border-black/[0.08] dark:border-white/[0.12] bg-white dark:bg-neutral-900/40 hover:bg-black/[0.02] hover:dark:bg-white/[0.04] hover:border-black/20 dark:hover:border-white/25 transition-all duration-200 ease-out active:scale-95 group shadow-xs hover:shadow-sm"
           >
-            <span class="text-xs font-bold text-black dark:text-white w-16">{social.NAME}</span>
+            <span class="text-xs font-bold text-black dark:text-white w-16 uppercase tracking-wider">{social.NAME}</span>
             <span class="text-xs text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white truncate">
               {social.TEXT}
             </span>

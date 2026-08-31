@@ -82,31 +82,31 @@ export const EXPERIENCE: Experience = [
   {
     COMPANY: "Google Cloud Arcade Fasilitator",
     ROLE: "Fasilitator",
-    DURATION: "Jul 2025 – Present",
+    DURATION: "Jul 2025 - Present",
     DESCRIPTION: "Guide participants through hands-on Google Cloud labs, helping them complete challenges and earn milestones. Assist with GCP console navigation, troubleshoot lab issues, and ensure learners grasp core cloud concepts across compute, storage, networking, and ML services."
   },
   {
     COMPANY: "PT WINNICODE GARUDA TEKNOLOGI",
     ROLE: "Full-Stack Developer Intern",
-    DURATION: "Aug 2024 – Dec 2024",
+    DURATION: "Aug 2024 - Dec 2024",
     DESCRIPTION: "Engineered a full-stack news portal with Astro, React, Tailwind CSS, Node.js, Express, and Firebase. Implemented content management dashboard, authentication, real-time database, and hosting."
   },
   {
     COMPANY: "Bangkit Academy 2024 (Google, GoTo, Traveloka)",
     ROLE: "Cloud Computing Path & Entrepreneurship Track",
-    DURATION: "Feb 2024 – Jul 2024",
+    DURATION: "Feb 2024 - Jul 2024",
     DESCRIPTION: "Completed intensive Google-led cloud architecture program. Gained expertise in GCP infrastructure, containerization, microservices, and Agile product development."
   },
   {
     COMPANY: "MIRA (Mitra Radiologi Capstone Startup)",
     ROLE: "Cloud Architect & Lead Backend Developer",
-    DURATION: "May 2024 – Jul 2024",
+    DURATION: "May 2024 - Jul 2024",
     DESCRIPTION: "Architected GCP cloud infrastructure and CI/CD deployment pipelines for a PACS radiology integration capstone. Developed Express.js REST APIs, Firebase auth/DB services, and React admin dashboard. Secured incubator funding from Google."
   },
   {
     COMPANY: "Freelance Software Engineering",
     ROLE: "Full-Stack Developer",
-    DURATION: "Nov 2022 – Present",
+    DURATION: "Nov 2022 - Present",
     DESCRIPTION: "Delivered web applications for clients using TypeScript, Node.js, Go, PHP/Laravel, MongoDB, PostgreSQL, and cloud deployments."
   },
 ]

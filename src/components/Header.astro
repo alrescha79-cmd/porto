@@ -11,23 +11,25 @@ import logoImg from "../assets/logo.png"
 <header class="w-full">
   <Container size="md">
     <div
-      class="header-bar z-50 fixed top-0 left-0 right-0 flex justify-between md:justify-evenly items-center px-4 py-3 md:py-3.5 w-full bg-white/80 dark:bg-black/80 transition-all duration-220 ease-out backdrop-blur-md border-b border-black/10 dark:border-white/15"
+      class="header-bar z-50 fixed top-0 left-0 right-0 flex justify-between md:justify-evenly items-center px-4 py-3 md:py-3.5 w-full bg-white/75 dark:bg-black/75 transition-all duration-200 ease-out backdrop-blur-md border-b border-black/[0.08] dark:border-white/[0.12]"
     >
       <div>
         <a
           href="/"
-          class="flex gap-2 w-fit items-center font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-220 ease-out"
+          class="flex gap-2.5 w-fit items-center font-semibold text-current hover:text-black dark:hover:text-white transition-all duration-200 ease-out group"
         >
-          <Image
-            src={logoImg}
-            alt="Anggun Caksono"
-            class="rounded-full bg-black shrink-0"
-            width={32}
-            height={32}
-            quality={50}
-            format="avif"
-          />
-          <span class="font-bold text-sm md:text-base whitespace-nowrap">
+          <div class="relative size-8 rounded-full overflow-hidden ring-1 ring-black/10 dark:ring-white/20 group-hover:scale-105 transition-transform duration-200 ease-out">
+            <Image
+              src={logoImg}
+              alt="Anggun Caksono"
+              class="rounded-full bg-black shrink-0 object-cover"
+              width={32}
+              height={32}
+              quality={60}
+              format="avif"
+            />
+          </div>
+          <span class="font-bold text-sm md:text-base whitespace-nowrap tracking-tight text-black dark:text-white">
             {SITE.TITLE}
           </span>
         </a>
@@ -35,7 +37,7 @@ import logoImg from "../assets/logo.png"
 
       <!-- Desktop Nav (Inline Header) -->
       <nav class="hidden md:flex items-center">
-        <ul class="flex items-center gap-1 lg:gap-2">
+        <ul class="flex items-center gap-1.5 p-1 rounded-full bg-black/[0.03] dark:bg-white/[0.06] border border-black/[0.06] dark:border-white/[0.1]">
           {
             LINKS.map((LINK) => {
               const isActive = pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
@@ -44,12 +46,12 @@ import logoImg from "../assets/logo.png"
                   <a
                     href={LINK.HREF}
                     class={cn(
-                      "h-8 rounded-full px-3.5 py-1 text-sm font-medium",
+                      "h-8 rounded-full px-4 py-1 text-xs font-semibold tracking-wide",
                       "flex items-center justify-center gap-1.5",
-                      "transition-all duration-220 ease-out",
+                      "transition-all duration-200 ease-out",
                       isActive
-                        ? "bg-black dark:bg-white text-white dark:text-black shadow-sm font-semibold"
-                        : "hover:bg-black/10 dark:hover:bg-white/15 text-black/75 dark:text-white/75 hover:text-black dark:hover:text-white"
+                        ? "bg-black dark:bg-white text-white dark:text-black shadow-sm"
+                        : "hover:bg-black/10 dark:hover:bg-white/15 text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white"
                     )}
                   >
                     <span>{LINK.TEXT}</span>
@@ -61,17 +63,17 @@ import logoImg from "../assets/logo.png"
         </ul>
       </nav>
 
-      <div class="flex gap-2.5 items-center">
+      <div class="flex gap-2 items-center">
         <a
           href="/contact"
           aria-label={`Get in touch with ${SITE.TITLE}`}
           class={cn(
-            "rounded-xl px-3 py-1.5 text-xs md:text-sm font-medium flex items-center justify-center",
-            "border border-black/25 dark:border-white/35",
-            "transition-all duration-220 ease-out active:scale-95",
+            "rounded-full px-3.5 py-1.5 text-xs font-semibold flex items-center justify-center",
+            "border border-black/20 dark:border-white/25 shadow-xs",
+            "transition-all duration-200 ease-out active:scale-95",
             pathname === "/contact" || "/" + subpath?.[0] === "/contact"
-              ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black font-semibold"
-              : "hover:bg-black/10 dark:hover:bg-white/20 hover:text-black dark:hover:text-white"
+              ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black"
+              : "hover:bg-black/10 dark:hover:bg-white/20 text-black/80 dark:text-white/80 hover:text-black dark:hover:text-white"
           )}
         >
           Contact
@@ -82,15 +84,15 @@ import logoImg from "../assets/logo.png"
           aria-label="Toggle light and dark theme"
           class={cn(
             "size-9 rounded-full p-2 flex items-center justify-center shrink-0 cursor-pointer",
-            "bg-transparent hover:bg-black/10 dark:hover:bg-white/20",
-            "stroke-current border border-black/15 dark:border-white/25",
-            "transition-all duration-220 ease-out active:scale-90"
+            "bg-black/[0.03] dark:bg-white/[0.06] hover:bg-black/10 dark:hover:bg-white/20",
+            "stroke-current border border-black/15 dark:border-white/20",
+            "transition-all duration-200 ease-out active:scale-90"
           )}
         >
-          <svg class="size-full block dark:hidden">
+          <svg class="size-full block dark:hidden transition-transform duration-300 hover:rotate-45">
             <use href="/ui.svg#sun"></use>
           </svg>
-          <svg class="size-full hidden dark:block">
+          <svg class="size-full hidden dark:block transition-transform duration-300 hover:-rotate-12">
             <use href="/ui.svg#moon"></use>
           </svg>
         </button>
@@ -100,9 +102,9 @@ import logoImg from "../assets/logo.png"
 
   <!-- Mobile Floating Bottom Nav (Dock) -->
   <nav
-    class="md:hidden fixed bottom-3 left-0 right-0 w-[92%] max-w-sm mx-auto p-1.5 z-50 rounded-full bg-neutral-200/90 dark:bg-neutral-800/90 backdrop-blur-md shadow-xl border border-black/15 dark:border-white/20 transition-all duration-220 ease-out"
+    class="md:hidden fixed bottom-4 left-0 right-0 w-[92%] max-w-sm mx-auto p-1.5 z-50 rounded-full bg-white/85 dark:bg-neutral-900/85 backdrop-blur-lg shadow-2xl border border-black/10 dark:border-white/15 transition-all duration-200 ease-out"
   >
-    <ul class="flex justify-evenly items-center">
+    <ul class="flex justify-evenly items-center gap-1">
       {
         LINKS.map((LINK) => {
           const isActive = pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
@@ -111,13 +113,13 @@ import logoImg from "../assets/logo.png"
               <a
                 href={LINK.HREF}
                 class={cn(
-                  "py-1.5 px-2 rounded-full flex flex-col items-center justify-center transition-all duration-220 ease-out",
+                  "py-2 px-2 rounded-full flex flex-col items-center justify-center transition-all duration-200 ease-out active:scale-95",
                   isActive
-                    ? "bg-black dark:bg-white text-white dark:text-black shadow-md font-semibold scale-105"
-                    : "hover:bg-black/10 dark:hover:bg-white/15 text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white"
+                    ? "bg-black dark:bg-white text-white dark:text-black shadow-md font-semibold"
+                    : "hover:bg-black/5 dark:hover:bg-white/10 text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white"
                 )}
               >
-                <svg class="size-5 fill-current">
+                <svg class="size-4.5 fill-current">
                   <use href={`/navicon.svg#${LINK.ICON}`} />
                 </svg>
                 <span class="text-[10px] leading-tight font-medium mt-0.5">{LINK.TEXT}</span>

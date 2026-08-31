@@ -3,27 +3,25 @@ import ArrowSkillsCard from "./ArrowSkillsCard.astro"
 import { cardData } from "../data"
 ---
 
-<section class="animate">
-  <div class="space-y-4">
-    <div class="flex justify-between">
-      <p class="font-semibold text-black dark:text-white">My Skills</p>
-      <a
-        href="/skills"
-        class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend"
-      >
-        <span
-          class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend"
-        >
-          All My Skills
-        </span>
-      </a>
-    </div>
-    <ul class="space-y-4">
-      {cardData.map((data) => (
-        <li title={data.title}>
-          <ArrowSkillsCard title={data.title} items={data.items} />
-        </li>
-      ))}
-    </ul>
+<section class="animate space-y-4">
+  <div class="flex justify-between items-center pb-3 border-b border-black/[0.08] dark:border-white/[0.12]">
+    <h2 class="text-xl font-bold tracking-tight text-black dark:text-white">Technical Skills</h2>
+    <a
+      href="/skills"
+      class="group flex gap-1.5 items-center text-xs font-semibold uppercase tracking-wider text-black/75 dark:text-white/75 hover:text-black dark:hover:text-white transition-colors duration-200"
+    >
+      <span>All Skills</span>
+      <svg class="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
   </div>
+  <ul class="space-y-3">
+    {cardData.slice(0, 4).map((data) => (
+      <li title={data.title}>
+        <ArrowSkillsCard title={data.title} items={data.items} />
+      </li>
+    ))}
+  </ul>
 </section>

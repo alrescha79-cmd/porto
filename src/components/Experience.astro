@@ -3,25 +3,27 @@ import { EXPERIENCE } from "../consts"
 ---
 
 <section class="animate space-y-4">
-  <div class="pb-2 border-b border-black/10 dark:border-white/15">
-    <h2 class="text-xl font-bold text-black dark:text-white">Experience</h2>
+  <div class="pb-3 border-b border-black/[0.08] dark:border-white/[0.12]">
+    <h2 class="text-xl font-bold tracking-tight text-black dark:text-white">Experience</h2>
   </div>
-  <div>
+  <div class="pt-2">
     <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
       {EXPERIENCE.map((item, index) => (
         <li>
           {index !== 0 && <hr class="bg-black/10 dark:bg-white/15" />}
-          <div class="timeline-middle text-black/80 dark:text-white/80">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24">
-              <path fill="currentColor" d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"></path>
-            </svg>
+          <div class="timeline-middle text-black/80 dark:text-white/80 p-1">
+            <div class="size-6 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center ring-1 ring-black/10 dark:ring-white/20">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
           </div>
           <div class={`timeline-${index % 2 === 0 ? "start" : "end"} mb-8 ${index % 2 === 0 ? "md:text-end" : ""}`}>
-            <time class="font-mono text-xs opacity-60">
+            <time class="font-mono text-xs text-black/50 dark:text-white/50 uppercase tracking-wider">
               {item.DURATION}
             </time>
             <h3 class="font-bold text-base md:text-lg mt-0.5 text-black dark:text-white">{item.COMPANY}</h3>
-            <div class="inline-block text-xs font-semibold text-black/80 dark:text-white/80 my-1 bg-black/5 dark:bg-white/10 py-1 px-2.5 rounded-xl border border-black/10 dark:border-white/15">{item.ROLE}</div>
+            <div class="inline-block text-xs font-semibold text-black/85 dark:text-white/85 my-1.5 bg-black/[0.04] dark:bg-white/[0.08] py-1 px-3 rounded-full border border-black/[0.08] dark:border-white/[0.12]">{item.ROLE}</div>
             <p class="text-xs md:text-sm text-black/75 dark:text-white/75 leading-relaxed mt-1">{item.DESCRIPTION}</p>
           </div>
           <hr class="bg-black/10 dark:bg-white/15" />
