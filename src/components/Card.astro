@@ -16,24 +16,24 @@ const twoColumns = items.length >= 4
 ---
 
 <div
-  class="skills-card flex flex-col h-full rounded-xl border bg-white dark:bg-neutral-900 border-black/15 dark:border-white/20 p-5 shadow-sm transition-shadow duration-220 ease-out hover:shadow-md"
+  class="skills-card flex flex-col h-full rounded-2xl border bg-white dark:bg-neutral-900/50 border-black/[0.08] dark:border-white/[0.12] p-5 shadow-xs transition-all duration-200 ease-out hover:border-black/20 dark:hover:border-white/25 hover:shadow-md"
 >
-  <div class="flex items-baseline justify-between gap-3 mb-4 pb-3 border-b border-black/10 dark:border-white/15">
+  <div class="flex items-baseline justify-between gap-3 mb-4 pb-3 border-b border-black/[0.08] dark:border-white/[0.12]">
     <h2
       class:list={[
-        "font-mono text-[11px] uppercase tracking-[0.14em] text-black/60 dark:text-white/60",
+        "font-mono text-[11px] uppercase tracking-[0.14em] text-black/60 dark:text-white/60 font-semibold",
         featured && "text-black dark:text-white",
       ]}
     >
       {featured && (
         <span
-          class="inline-block size-1.5 rounded-full bg-sky-700 dark:bg-sky-600 mr-2 align-baseline"
+          class="inline-block size-2 rounded-full bg-sky-600 dark:bg-sky-500 mr-2 align-baseline animate-pulse"
           aria-hidden="true"
         ></span>
       )}
       {title}
     </h2>
-    <span class="font-mono text-[11px] text-black/40 dark:text-white/40 tabular-nums">
+    <span class="font-mono text-xs text-black/40 dark:text-white/40 tabular-nums">
       {items.length}
     </span>
   </div>
@@ -47,18 +47,18 @@ const twoColumns = items.length >= 4
     {items.map((item) => (
       <li>
         <div
-          class="skills-card-row group/row flex items-center gap-2.5 rounded-lg px-2 py-1.5 -mx-2 transition-colors duration-150 ease-out hover:bg-black/5 dark:hover:bg-white/10"
+          class="skills-card-row group/row flex items-center gap-2.5 rounded-xl px-2.5 py-1.5 -mx-1.5 transition-colors duration-150 ease-out hover:bg-black/[0.04] dark:hover:bg-white/[0.08]"
         >
           {item.image && (
             <img
               src={`/${item.image}`}
               alt=""
               loading="lazy"
-              class="size-5 shrink-0 object-contain transition-transform duration-150 ease-out motion-safe:group-hover/row:scale-110"
+              class="size-5 shrink-0 object-contain transition-transform duration-150 ease-out motion-safe:group-hover/row:scale-115"
             />
           )}
           <span
-            class="text-sm leading-tight text-black/75 dark:text-white/75 transition-colors duration-150 ease-out group-hover/row:text-black dark:group-hover/row:text-white truncate"
+            class="text-xs sm:text-sm font-medium leading-tight text-black/75 dark:text-white/75 transition-colors duration-150 ease-out group-hover/row:text-black dark:group-hover/row:text-white truncate"
           >
             {item.name}
           </span>

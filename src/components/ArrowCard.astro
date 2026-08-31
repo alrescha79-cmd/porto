@@ -12,36 +12,37 @@ const { entry, pill } = Astro.props
 
 <a
   href={`/${entry.collection}/${entry.id}`}
-  class="group p-4 gap-3 flex items-center border rounded-xl hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-all duration-220 ease-out active:scale-[0.99]"
+  class="group p-4 sm:p-5 gap-4 flex items-center border rounded-2xl bg-white dark:bg-neutral-900/40 hover:bg-black/[0.02] hover:dark:bg-white/[0.04] border-black/[0.08] dark:border-white/[0.12] hover:border-black/20 dark:hover:border-white/25 transition-all duration-200 ease-out active:scale-[0.99] shadow-xs hover:shadow-md"
 >
   <div class="w-full">
     <div class="flex flex-wrap items-center gap-2">
       {pill && (
-        <div class="text-xs font-semibold uppercase px-2 py-0.5 rounded-full border border-black/15 dark:border-white/25">
+        <div class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 text-black/80 dark:text-white/80">
           Project
         </div>
       )}
-      <div class="text-xs font-mono opacity-60 uppercase">
+      <div class="text-xs font-mono text-black/50 dark:text-white/50 uppercase">
         {formatDate(entry.data.date)}
       </div>
     </div>
-    <div class="font-bold text-base mt-2 text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors duration-220 ease-out">
+    <div class="font-bold text-base sm:text-lg mt-2 text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors duration-200 ease-out">
       {entry.data.title}
     </div>
 
-    <div class="text-sm opacity-75 line-clamp-2 mt-1">
+    <div class="text-xs sm:text-sm text-black/70 dark:text-white/70 line-clamp-2 mt-1 leading-relaxed">
       {entry.data.summary}
     </div>
-    <ul class="flex flex-wrap mt-3 gap-1.5">
+    <ul class="flex flex-wrap mt-3.5 gap-1.5">
       {entry.data.tags.map((tag: string) => (
-        <li class="text-[11px] font-medium uppercase py-0.5 px-2 rounded-lg bg-black/5 dark:bg-white/15 text-black/75 dark:text-white/75">
+        <li class="text-[11px] font-medium uppercase py-0.5 px-2.5 rounded-md bg-black/[0.04] dark:bg-white/[0.08] border border-black/[0.06] dark:border-white/[0.08] text-black/75 dark:text-white/75">
           {tag}
         </li>
       ))}
     </ul>
   </div>
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-current shrink-0 transition-transform duration-220 ease-out group-hover:translate-x-1">
-    <line x1="5" y1="12" x2="19" y2="12" class="scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-220 ease-out" />
-    <polyline points="12 5 19 12 12 19" />
-  </svg>
+  <div class="size-8 rounded-full flex items-center justify-center shrink-0 border border-black/10 dark:border-white/15 group-hover:border-black/30 dark:group-hover:border-white/40 group-hover:bg-black/5 dark:group-hover:bg-white/10 transition-all duration-200 ease-out">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-current transition-transform duration-200 ease-out group-hover:translate-x-0.5">
+      <polyline points="9 18 15 12 9 6" />
+    </svg>
+  </div>
 </a>

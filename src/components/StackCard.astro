@@ -8,11 +8,11 @@ type Props = {
 const { text, icon, href } = Astro.props
 ---
 
-<a href={href} target="_blank" rel="noopener noreferrer" class="w-fit px-3 py-1.5 group rounded-xl border flex gap-2 items-center border-black/15 dark:border-white/20 hover:bg-black/5 hover:dark:bg-white/10 transition-all duration-220 ease-out active:scale-95">
-  <svg height={18} width={18}>
+<a href={href} target="_blank" rel="noopener noreferrer" class="w-fit px-3.5 py-1.5 group rounded-full border flex gap-2 items-center border-black/[0.08] dark:border-white/[0.12] bg-black/[0.02] dark:bg-white/[0.04] hover:bg-black/5 hover:dark:bg-white/10 hover:border-black/20 dark:hover:border-white/25 transition-all duration-200 ease-out active:scale-95 shadow-xs">
+  <svg height={16} width={16} class="shrink-0 transition-transform duration-200 group-hover:scale-110">
     <use href={`/stack.svg#${icon}`}></use>
   </svg>
-  <span class="text-xs md:text-sm font-medium text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white transition-colors duration-220 ease-out">
+  <span class="text-xs md:text-sm font-semibold text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white transition-colors duration-200 ease-out">
     {text}
   </span>
 </a>

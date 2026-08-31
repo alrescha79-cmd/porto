@@ -13,7 +13,7 @@ const modalId = `modal-${name.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`
 ---
 
 <div
-  class="certificate-card group p-4 rounded-xl border border-black/15 dark:border-white/20 hover:bg-black/5 hover:dark:bg-white/10 transition-all duration-220 ease-out cursor-pointer active:scale-[0.99]"
+  class="certificate-card group p-4 sm:p-5 rounded-2xl border border-black/[0.08] dark:border-white/[0.12] bg-white dark:bg-neutral-900/40 hover:bg-black/[0.02] hover:dark:bg-white/[0.04] hover:border-black/20 dark:hover:border-white/25 transition-all duration-200 ease-out cursor-pointer active:scale-[0.99] shadow-xs hover:shadow-md"
   data-modal-id={modalId}
   role="button"
   tabindex="0"
@@ -21,14 +21,14 @@ const modalId = `modal-${name.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`
 >
   <div class="w-full flex flex-col items-start gap-2">
     <div class="flex justify-between items-center w-full">
-      <span class="text-xs font-mono opacity-75 px-2.5 py-0.5 rounded-full bg-black/5 dark:bg-white/10">
+      <span class="text-xs font-mono text-black/60 dark:text-white/60 px-2.5 py-0.5 rounded-full bg-black/5 dark:bg-white/10">
         {date}
       </span>
-      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold leading-5 text-white capitalize bg-sky-700 dark:bg-sky-600">
+      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold leading-5 text-white capitalize bg-sky-700 dark:bg-sky-600 shadow-xs">
         {provider}
       </span>
     </div>
-    <p class="text-sm md:text-base font-bold text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors duration-220 ease-out line-clamp-2">
+    <p class="text-sm md:text-base font-bold text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors duration-200 ease-out line-clamp-2 mt-1">
       {name}
     </p>
   </div>
