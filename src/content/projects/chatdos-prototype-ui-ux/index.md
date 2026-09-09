@@ -1,7 +1,8 @@
 ---
 title: "ChatDos Prototype"
-summary: "ChatDos is a mobile application designed to streamline communication between
-students, lecturers, and the entire university community."
+summary: >-
+  ChatDos is a mobile application designed to streamline communication between students,
+  lecturers, and the entire university community.
 date: "Mar 18 2023"
 draft: false
 tags:

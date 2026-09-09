@@ -1,8 +1,8 @@
 ---
 title: "Decision Support System for New Factory Establishment"
-summary: "Description:
-This Decision Support System (DSS) empowers you to choose the optimal location
-for your new factory using the Simple Additive Weighting (SAW) method."
+summary: >-
+  Description: This Decision Support System (DSS) empowers you to choose the optimal
+  location for your new factory using the Simple Additive Weighting (SAW) method.
 date: "Mar 17 2023"
 draft: false
 tags:
