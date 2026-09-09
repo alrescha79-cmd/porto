@@ -35,10 +35,8 @@ content:
         type: boolean
       - name: tags
         label: Tags
-        type: list
-        field:
-          name: tag
-          type: string
+        type: string
+        list: true
         required: true
       - name: demoUrl
         label: Demo URL
