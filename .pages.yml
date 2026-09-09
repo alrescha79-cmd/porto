@@ -46,6 +46,14 @@ content:
       - name: repoUrl
         label: Repository URL
         type: string
+      - name: coverImage
+        label: Cover image
+        type: image
+        options:
+          media: project_images
+          path: projects
+          extensions: [png, jpg, jpeg, webp, avif]
+          rename: safe
       - name: body
         label: Content
         type: rich-text
