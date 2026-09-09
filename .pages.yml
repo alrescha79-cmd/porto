@@ -1,0 +1,61 @@
+media:
+  - name: project_images
+    label: Project images
+    input: public/projects
+    output: /projects
+    categories: [image]
+    rename: safe
+
+content:
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/content/projects
+    subfolders: true
+    filename: "{primary}/index.md"
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: summary
+        label: Summary
+        type: text
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: draft
+        label: Draft
+        type: boolean
+      - name: tags
+        label: Tags
+        type: list
+        field:
+          name: tag
+          type: string
+        required: true
+      - name: demoUrl
+        label: Demo URL
+        type: string
+      - name: repoUrl
+        label: Repository URL
+        type: string
+      - name: body
+        label: Content
+        type: rich-text
+        options:
+          format: markdown
+          media: project_images
+          path: projects
+          rename: safe
+          switcher: true
+    operations:
+      create: true
+      update: true
+      delete: true

@@ -7,9 +7,9 @@ type Context = {
 }
 
 export async function GET(context: Context) {
-  const projects = await getCollection("projects")
-
-  projects.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  const projects = (await getCollection("projects"))
+    .filter((project) => !project.data.draft)
+    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
 
   return rss({
     title: SITE.TITLE,
