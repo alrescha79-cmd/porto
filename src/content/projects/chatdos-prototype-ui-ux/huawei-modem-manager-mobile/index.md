@@ -16,19 +16,15 @@ coverImage: /projects/release.jpg
 > A mobile app for monitoring, controlling, and optimizing Huawei LTE modem connections.
 
 
-<p>
-  <a href="https://github.com/alrescha79-cmd/huawei-manager-mobile/releases">
-    <img src="https://img.shields.io/github/downloads/alrescha79-cmd/huawei-manager-mobile/total?style=flat-square&logo=github&label=Downloads" alt="Downloads">
-  </a>
-  <a href="https://github.com/alrescha79-cmd/huawei-manager-mobile/stargazers">
-    <img src="https://img.shields.io/github/stars/alrescha79-cmd/huawei-manager-mobile?style=flat-square&logo=github&label=Stars" alt="Stars">
-  </a>
-  <a href="https://github.com/alrescha79-cmd/huawei-manager-mobile/forks">
-    <img src="https://img.shields.io/github/forks/alrescha79-cmd/huawei-manager-mobile?style=flat-square&logo=github&label=Forks" alt="Forks">
-  </a>
-</p>
 
+<div align="center">
 
+![GitHub Downloads](https://img.shields.io/github/downloads/alrescha79-cmd/huawei-manager-mobile/total?style=flat&logo=android&label=Downloads&color=blue)
+![GitHub Stars](https://img.shields.io/github/stars/alrescha79-cmd/huawei-manager-mobile?style=flat&logo=github&label=Stars&color=yellow)
+![GitHub Forks](https://img.shields.io/github/forks/alrescha79-cmd/huawei-manager-mobile?style=flat&logo=github&label=Forks&color=green)
+![Last PR](https://img.shields.io/github/issues-pr-closed-raw/alrescha79-cmd/huawei-manager-mobile?label=PR%20Closed&logo=github)
+
+</div>
 
 **Mobile Development · React Native · TypeScript · Networking · Open Source**
 
