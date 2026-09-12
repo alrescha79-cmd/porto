@@ -35,9 +35,16 @@ content:
         type: boolean
       - name: tags
         label: Tags
+        type: select
+        options:
+          values: [Backend, FrontEnd, FullStack, Machine Learning, Mobile, New, UI UX]
+          multiple: true
+          placeholder: Select existing tags
+        required: true
+      - name: customTags
+        label: Custom tags
         type: string
         list: true
-        required: true
       - name: demoUrl
         label: Demo URL
         type: string

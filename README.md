@@ -70,6 +70,39 @@ Follow these instructions to set up the project locally:
 
 5. Open your browser and visit `http://localhost:4321` to view the website.
 
+## **Mengelola Konten dengan Pages CMS**
+
+Proyek ini menggunakan [Pages CMS](https://pagescms.org/) untuk mengelola data proyek melalui GitHub. Pages CMS menulis perubahan langsung ke repository, lalu Vercel akan melakukan deploy otomatis setelah commit masuk ke branch `main`.
+
+### **URL dan Repository**
+
+- **CMS:** [pagescms.org](https://pagescms.org/)
+- **Repository:** [github.com/alrescha79-cmd/porto](https://github.com/alrescha79-cmd/porto)
+- **Konfigurasi CMS:** `.pages.yml`
+- **Lokasi konten proyek:** `src/content/projects`
+- **Lokasi gambar proyek:** `public/projects`
+
+### **Cara Menambah atau Mengubah Proyek**
+
+1. Buka [Pages CMS](https://pagescms.org/) dan masuk menggunakan akun GitHub yang memiliki akses ke repository.
+2. Pilih repository `alrescha79-cmd/porto`.
+3. Buka koleksi **Projects**.
+4. Pilih **New** untuk membuat proyek atau buka proyek yang sudah ada untuk mengeditnya.
+5. Isi judul, ringkasan, tanggal, tags, link demo, link repository, cover image, dan isi proyek.
+6. Klik **Save** atau **Commit** untuk menyimpan perubahan ke GitHub.
+7. Tunggu Vercel menyelesaikan deploy, lalu periksa halaman proyek di website.
+
+### **Catatan Penting**
+
+- Field `Tags` menyediakan dropdown multi-pilihan untuk tag yang sudah tersedia: `Backend`, `FrontEnd`, `FullStack`, `Machine Learning`, `Mobile`, `New`, dan `UI UX`.
+- Untuk tag baru, masukkan nilai pada field `Custom tags` sebagai daftar. Setelah commit, gabungkan nilainya ke field `tags` pada frontmatter proyek, lalu hapus `customTags` agar schema Astro tetap sesuai.
+- Aktifkan `Draft` jika proyek belum ingin ditampilkan di website.
+- Upload gambar melalui media library Pages CMS. File akan tersimpan di `public/projects` dan URL-nya dimulai dengan `/projects/`.
+- Gunakan format Markdown pada isi proyek jika membutuhkan heading, daftar, link, atau gambar.
+- Pastikan ringkasan tidak memakai baris baru mentah di dalam nilai YAML. Gunakan editor Pages CMS atau format satu paragraf agar build Astro tetap berhasil.
+- Jangan mengedit file hasil CMS secara bersamaan dari Pages CMS dan lokal sebelum melakukan `git pull`.
+- Jika perubahan lokal dibuat setelah CMS melakukan commit, jalankan `git pull` sebelum `git push`.
+
 ## **Lighthouse Report**
 
 ![porto](public/perform.png)
