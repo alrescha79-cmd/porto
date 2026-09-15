@@ -1,13 +1,11 @@
 ---
-import { Image } from "astro:assets"
-import type { ImageMetadata } from "astro"
 
 interface Props {
   modalId: string
   provider: string
   dateFormatted: string
   name: string
-  image: ImageMetadata
+  image: string
   imageAlt?: string
   link?: string
 }
@@ -33,12 +31,11 @@ const { modalId, provider, dateFormatted, name, image, imageAlt, link } = Astro.
       </div>
       <h3 class="font-bold text-base md:text-lg text-black dark:text-white mb-4 leading-snug">{name}</h3>
       <div class="w-full rounded-xl overflow-hidden bg-neutral-100 dark:bg-neutral-800 border border-black/10 dark:border-white/10 mb-5">
-        <Image
+        <img
           src={image}
           alt={imageAlt || name}
-          width={640}
-          height={480}
-          quality={90}
+          width="640"
+          height="480"
           class="w-full h-auto max-h-[50vh] object-contain m-auto block"
         />
       </div>

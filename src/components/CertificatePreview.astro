@@ -1,8 +1,10 @@
 ---
 import ArrowCertificateCard from "../components/ArrowCertificateCard.astro"
-import { certificateData, sortedCertificates } from "../data"
+import { getCollection } from "astro:content"
+import { sortedCertificates } from "../data"
 
-const sorted = sortedCertificates(certificateData)
+const certificates = await getCollection("certificates")
+const sorted = sortedCertificates(certificates.map(({ data }) => data))
 
 // Pinned certificates first; fallback to the 5 most recent
 const pinnedCertificates = sorted.filter(cert => cert.pinned)

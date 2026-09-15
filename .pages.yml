@@ -5,6 +5,12 @@ media:
     output: /projects
     categories: [image]
     rename: safe
+  - name: certificate_images
+    label: Certificate images
+    input: src/assets/certificates
+    output: ""
+    categories: [image]
+    rename: safe
 
 content:
   - name: projects
@@ -68,6 +74,47 @@ content:
           path: projects
           rename: safe
           switcher: true
+    operations:
+      create: true
+      update: true
+      delete: true
+
+  - name: certificates
+    label: Certificates
+    type: collection
+    path: src/content/certificates
+    subfolders: false
+    filename: "{primary}.md"
+    view:
+      primary: name
+      sort: date
+      order: desc
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: provider
+        label: Provider
+        type: string
+        required: true
+      - name: date
+        label: Issue date
+        type: date
+        required: true
+      - name: image
+        label: Certificate image
+        type: image
+        options:
+          media: certificate_images
+          extensions: [png, jpg, jpeg, webp]
+        required: true
+      - name: link
+        label: Credential URL
+        type: string
+      - name: pinned
+        label: Featured certificate
+        type: boolean
     operations:
       create: true
       update: true

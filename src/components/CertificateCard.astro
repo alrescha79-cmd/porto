@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets"
 import CertificateModal from "./CertificateModal.astro"
 
 const { image, provider, date, name, link, pinned } = Astro.props
@@ -22,12 +21,11 @@ const modalId = `modal-${name.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`
 >
   <div class="w-full text-left flex flex-col h-full">
     <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-neutral-100 dark:bg-neutral-800/80 mb-3.5 border border-black/5 dark:border-white/5 flex items-center justify-center">
-      <Image
+      <img
         src={image}
         alt={name}
-        width={400}
-        height={300}
-        quality={75}
+        width="400"
+        height="300"
         class="w-full h-full object-contain p-1.5 transition-transform duration-220 ease-out group-hover:scale-[1.03]"
         loading="lazy"
       />

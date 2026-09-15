@@ -1,9 +1,11 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro"
 import { CERTIFICATIONS } from "../../consts"
-import { certificateData, sortedCertificates } from "../../data"
+import { getCollection } from "astro:content"
+import { sortedCertificates } from "../../data"
 import Certificates from "../../components/Certificates.astro"
-const filtered = sortedCertificates(certificateData)
+const certificates = await getCollection("certificates")
+const filtered = sortedCertificates(certificates.map(({ data }) => data))
 
 ---
 
