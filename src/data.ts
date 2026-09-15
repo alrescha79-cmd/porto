@@ -1,4 +1,4 @@
-export const certImage = (file: string): string => `/certificates/${file}`
+export const certImage = (file: string): string => `/certificates/${file.split("/").pop()}`
 
 interface SkillItem {
   name: string

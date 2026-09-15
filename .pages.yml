@@ -7,8 +7,8 @@ media:
     rename: safe
   - name: certificate_images
     label: Certificate images
-    input: src/assets/certificates
-    output: ""
+    input: public/certificates
+    output: /certificates
     categories: [image]
     rename: safe
 
