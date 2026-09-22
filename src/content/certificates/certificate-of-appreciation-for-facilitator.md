@@ -1,5 +1,5 @@
 ---
-name: Certificate of Appreciation for FAcilitator
+name: Certificate of Appreciation for Facilitator
 provider: Dicoding
 date: 2025-10-15
 image: /certificates/anggun-caksonopage-0001.jpg
